@@ -25,7 +25,7 @@ jobs:
     - name: Checkout local
       uses: actions/checkout@v4
       with:
-        path: ./n8n-i18n-japanese
+        path: . # Checkout to the root of the workspace
 
     # - name: Read version from package.json
     #   id: get_version
@@ -33,7 +33,7 @@ jobs:
     #     VERSION=$(jq -r '.version' package.json)
     #     echo "Version: $VERSION"
     #     echo "version=$VERSION" >> $GITHUB_OUTPUT
-    #   working-directory: /home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n
+    #   working-directory: ./n8n # Assuming package.json is in the n8n checkout
 
     - name: Check if tag exists
       id: check_tag
@@ -45,7 +45,7 @@ jobs:
         else
           echo "exists=false" >> $GITHUB_OUTPUT
         fi
-      working-directory: /home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n-i18n-japanese
+      working-directory: . # Runs in the root of this repository
 
     - name: Exit if tags exist
       if: steps.check_tag.outputs.exists == 'true'
@@ -73,13 +73,13 @@ jobs:
 
     - run: pnpm install --frozen-lockfile
       if: steps.check_tag.outputs.exists == 'false'
-      working-directory: /home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n
+      working-directory: ./n8n # Runs in the n8n checkout directory
 
     - name: check n8n editor-ui is old
       id: editorui_dir
       run: |
-        DIR_PATH="/home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n/packages/frontend/editor-ui"       # 確認するディレクトリ
-        FALLBACK_DIR="/home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n/packages/editor-ui" # フォールバックディレクトリ
+        DIR_PATH="./n8n/packages/frontend/editor-ui"       # 確認するディレクトリ
+        FALLBACK_DIR="./n8n/packages/editor-ui" # フォールバックディレクトリ
 
         if [ -d "$DIR_PATH" ]; then
           echo "flag=new" >> $GITHUB_OUTPUT
@@ -88,20 +88,22 @@ jobs:
           echo "flag=old" >> $GITHUB_OUTPUT
           echo "dir=$FALLBACK_DIR" >> $GITHUB_OUTPUT
         fi
+      working-directory: . # This script uses paths relative to workspace root
 
     - name: Move editor-ui i18n language
       if: steps.check_tag.outputs.exists == 'false'
-      run:     cp -r /home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n-i18n-japanese/languages/* "${{ steps.editorui_dir.outputs.dir }}/src/plugins/i18n/locales/"
+      run:     cp -r ./languages/* "${{ steps.editorui_dir.outputs.dir }}/src/plugins/i18n/locales/"
+      working-directory: . # cp source is relative to this repo's root
 
     - name: Patch New editor-ui
       if: steps.editorui_dir.outputs.flag == 'new' && steps.check_tag.outputs.exists == 'false'
-      run: git apply /home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n-i18n-japanese/fix_editor-ui.patch
-      working-directory: /home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n
+      run: git apply ../fix_editor-ui.patch # Patch file is in this repo's root, applying to n8n checkout
+      working-directory: ./n8n
 
     - name: Patch Old editor-ui
       if: steps.editorui_dir.outputs.flag == 'old' && steps.check_tag.outputs.exists == 'false'
-      run: git apply /home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n-i18n-japanese/fix_editor-ui.old.patch
-      working-directory: /home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n
+      run: git apply ../fix_editor-ui.old.patch # Patch file is in this repo's root, applying to n8n checkout
+      working-directory: ./n8n
 
     - name: Pnpm build editor-ui
       if: steps.check_tag.outputs.exists == 'false'
@@ -117,7 +119,8 @@ jobs:
     - name: dist をプロジェクトディレクトリにコピー
       if: steps.check_tag.outputs.exists == 'false'
       run: |
-        cp -r ${{ steps.editorui_dir.outputs.dir }}/dist /home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n-i18n-japanese/editor-ui-dist
+        cp -r ${{ steps.editorui_dir.outputs.dir }}/dist ./editor-ui-dist
+      working-directory: . # Copy to the root of this repository
 
     - name: Update docker-compose.yml version
       if: steps.check_tag.outputs.exists == 'false'
@@ -125,7 +128,8 @@ jobs:
         RAW_TAG="${{ steps.latest_release.outputs.latest }}"
         VERSION="${RAW_TAG#n8n@}"  # プレフィックス n8n@ を削除
         echo "Replacing {version} with $VERSION in docker-compose.yml"
-        sed -i "s/{version}/$VERSION/g" /home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n-i18n-japanese/docker-compose.yml
+        sed -i "s/{version}/$VERSION/g" ./docker-compose.yml
+      working-directory: . # docker-compose.yml is in the root of this repository
 
     - name: Gitタグの作成
       if: steps.check_tag.outputs.exists == 'false'
@@ -138,7 +142,7 @@ jobs:
         git commit -m "chore: add built editor-ui dist for ${{ steps.latest_release.outputs.latest }}"
         git tag $TAG
         git push origin $TAG
-      working-directory: /home/runner/work/n8n-i18n-japanese/n8n-i18n-japanese/n8n-i18n-japanese
+      working-directory: . # Git commands run in the root of this repository
 
     - name: GitHub Release の作成
       if: steps.check_tag.outputs.exists == 'false'

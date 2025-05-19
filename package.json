@@ -1,14 +1,14 @@
 {
-  "name": "n8n-i18n-chinese",
+  "name": "n8n-i18n-japanese",
   "version": "1.0.0",
-  "description": "",
+  "description": "n8nのユーザーインターフェースを日本語化するためのプロジェクトです。",
   "main": "index.js",
   "scripts": {
     "i18n:translate": "node ./script/translate.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/other-blowsnow/n8n-i18n-chinese.git"
+    "url": "https://github.com/nemumusito/n8n-i18n-japanese.git"
   },
   "private": true,
   "devDependencies": {
