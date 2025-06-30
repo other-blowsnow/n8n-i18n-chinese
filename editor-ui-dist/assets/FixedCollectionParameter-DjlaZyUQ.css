@@ -1,0 +1,192 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+.fixed-collection-parameter[data-v-23b10d4d] {
+  padding-left: var(--spacing-s);
+}
+.fixed-collection-parameter .icon-button[data-v-23b10d4d] {
+  display: flex;
+  flex-direction: column;
+}
+.fixed-collection-parameter .controls[data-v-23b10d4d] .button {
+  font-weight: var(--font-weight-normal);
+  --button-font-color: var(--color-text-dark);
+  --button-border-color: var(--color-foreground-base);
+  --button-background-color: var(--color-background-base);
+  --button-hover-font-color: var(--color-text-dark);
+  --button-hover-border-color: var(--color-foreground-base);
+  --button-hover-background-color: var(--color-background-base);
+  --button-active-font-color: var(--color-text-dark);
+  --button-active-border-color: var(--color-foreground-base);
+  --button-active-background-color: var(--color-background-base);
+  --button-focus-font-color: var(--color-text-dark);
+  --button-focus-border-color: var(--color-foreground-base);
+  --button-focus-background-color: var(--color-background-base);
+}
+.fixed-collection-parameter .controls[data-v-23b10d4d] .button:active, .fixed-collection-parameter .controls[data-v-23b10d4d] .button.active, .fixed-collection-parameter .controls[data-v-23b10d4d] .button:focus {
+  outline: none;
+}
+.fixed-collection-parameter-property[data-v-23b10d4d] {
+  margin: var(--spacing-xs) 0;
+  margin-bottom: 0;
+}
+.parameter-item:hover > .parameter-item-wrapper > .icon-button[data-v-23b10d4d] {
+  opacity: 1;
+}
+.parameter-item[data-v-23b10d4d] {
+  position: relative;
+  padding: 0 0 var(--spacing-s) var(--spacing-s);
+}
+.parameter-item + .parameter-item .parameter-item-wrapper .default-top-padding[data-v-23b10d4d] {
+  top: calc(1.2 * var(--spacing-s));
+}
+.parameter-item + .parameter-item .parameter-item-wrapper .extra-top-padding[data-v-23b10d4d] {
+  top: calc(2.2 * var(--spacing-s));
+}
+.parameter-item:first-of-type .parameter-item-wrapper .default-top-padding[data-v-23b10d4d] {
+  top: var(--spacing-3xs);
+}
+.parameter-item:first-of-type .parameter-item-wrapper .extra-top-padding[data-v-23b10d4d] {
+  top: var(--spacing-l);
+}
+.border-top-dashed[data-v-23b10d4d] {
+  border-top: 1px dashed #999;
+}
+.no-items-exist[data-v-23b10d4d] {
+  margin: var(--spacing-xs) 0;
+}
+.ghost[data-v-23b10d4d],
+.dragging[data-v-23b10d4d] {
+  border-radius: var(--border-radius-base);
+  padding-right: var(--spacing-xs);
+}
+.ghost[data-v-23b10d4d] {
+  background-color: var(--color-background-base);
+  opacity: 0.5;
+}
+.dragging[data-v-23b10d4d] {
+  background-color: var(--color-background-xlight);
+  opacity: 0.7;
+}
+.dragging .parameter-item-wrapper[data-v-23b10d4d] {
+  border: none;
+}
