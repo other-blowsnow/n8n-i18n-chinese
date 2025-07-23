@@ -1,0 +1,187 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+._n8nTableScroll_28kfv_123 {
+  max-height: 100%;
+  overflow: auto;
+  position: relative;
+}
+._n8nTable_28kfv_123 {
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--color-foreground-base);
+  overflow: hidden;
+  font-size: var(--font-size-s);
+}
+._n8nTable_28kfv_123 table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  white-space: nowrap;
+}
+._n8nTable_28kfv_123 table > thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+._n8nTable_28kfv_123 th,
+._n8nTable_28kfv_123 td {
+  text-align: left;
+}
+._n8nTable_28kfv_123 th {
+  background-color: var(--color-background-light-base);
+  color: var(--color-text-base);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0 8px;
+  text-transform: capitalize;
+  height: 36px;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--color-foreground-base);
+}
+._n8nTable_28kfv_123 th:first-child {
+  padding-left: 16px;
+}
+._n8nTable_28kfv_123 th:last-child {
+  padding-right: 16px;
+}
+._n8nTable_28kfv_123 tbody > tr:hover {
+  background-color: var(--color-background-light);
+}
+._n8nTable_28kfv_123 tbody > tr:last-child > td {
+  border-bottom: 0;
+}
+._n8nTable_28kfv_123 tr {
+  background-color: var(--color-background-xlight);
+}
+._n8nTable_28kfv_123 td {
+  color: var(--color-text-dark);
+  padding: 0 8px;
+  height: 48px;
+  border-bottom: 1px solid var(--color-foreground-base);
+}
+._n8nTable_28kfv_123 td:first-child {
+  padding-left: 16px;
+}
+._n8nTable_28kfv_123 td:last-child {
+  padding-right: 16px;
+}
