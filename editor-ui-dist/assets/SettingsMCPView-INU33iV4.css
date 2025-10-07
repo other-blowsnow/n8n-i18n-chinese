@@ -1,0 +1,370 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+._container_1ngyt_123 {
+  display: flex;
+  flex-direction: column;
+}
+._instructions_1ngyt_128 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding-left: var(--spacing-l);
+  margin: var(--spacing-s);
+}
+._instructions_1ngyt_128 ._item_1ngyt_135 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+}
+._instructions_1ngyt_128 ._label_1ngyt_140 {
+  font-size: var(--font-size-s);
+}
+._instructions_1ngyt_128 ._url_1ngyt_143 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  padding-left: var(--spacing-3xs);
+  background: var(--color-background-xlight);
+  border: var(--border-base);
+  border-radius: var(--border-radius-base);
+  font-size: var(--font-size-s);
+  overflow: hidden;
+}
+._instructions_1ngyt_128 ._url_1ngyt_143 ._copy-url-button_1ngyt_154 {
+  border: none;
+  border-radius: 0;
+  border-left: var(--border-base);
+}
+@media screen and (max-width: 820px) {
+._instructions_1ngyt_128 ._url_1ngyt_143 {
+    display: block;
+    word-wrap: break-word;
+    margin-top: var(--spacing-2xs);
+}
+}
+._connectionString_1ngyt_167 {
+  flex-grow: 1;
+  position: relative;
+  padding: 0 var(--spacing-l);
+}
+._connectionString_1ngyt_167 .n8n-markdown {
+  width: 100%;
+}
+._connectionString_1ngyt_167 code {
+  font-size: var(--font-size-xs);
+}
+._connectionString_1ngyt_167:hover ._copy-json-button_1ngyt_178 {
+  display: flex;
+}
+._copy-json-button_1ngyt_178 {
+  position: absolute;
+  top: var(--spacing-xl);
+  right: var(--spacing-xl);
+  display: none;
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+._container_he5p1_123 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+}
+._container_he5p1_123 .table-pagination {
+  display: none;
+}
+._headingContainer_he5p1_132 {
+  margin-bottom: var(--spacing-xs);
+}
+._mainToggleContainer_he5p1_136 {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-s);
+  justify-content: space-between;
+  flex-shrink: 0;
+  border-radius: var(--border-radius-base);
+  border: var(--border-base);
+}
+._mainToggleInfo_he5p1_146 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+._mainTooggle_he5p1_153 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-shrink: 0;
+}
+._header_he5p1_160 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+._workflow-table_he5p1_166 tr:last-child {
+  border-bottom: none !important;
+}
+._table-link_he5p1_170 {
+  color: var(--color-text-base);
+}
+._table-link_he5p1_170 .n8n-text {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3xs);
+}
+._table-link_he5p1_170 .n8n-text ._link-icon_he5p1_178 {
+  display: none;
+}
+._table-link_he5p1_170 .n8n-text:hover ._link-icon_he5p1_178 {
+  display: inline-flex;
+}
+._table-link_he5p1_170._project-link_he5p1_184 .n8n-text {
+  gap: 0;
+}
+._table-link_he5p1_170._project-link_he5p1_184 ._link-icon_he5p1_178 {
+  margin-left: var(--spacing-3xs);
+}
+._folder-cell_he5p1_191 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4xs);
+}
