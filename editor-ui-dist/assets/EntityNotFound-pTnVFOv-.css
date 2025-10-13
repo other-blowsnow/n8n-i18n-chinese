@@ -1,0 +1,10 @@
+
+.entity-not-found-view[data-v-8cf7dee3] {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.entity-card[data-v-8cf7dee3] {
+	max-width: 400px;
+	padding: var(--spacing-xl);
+}
