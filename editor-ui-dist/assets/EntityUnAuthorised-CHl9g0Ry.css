@@ -1,0 +1,10 @@
+
+.entity-un-authorized-view[data-v-e53256d4] {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.entity-card[data-v-e53256d4] {
+	max-width: 400px;
+	padding: var(--spacing-xl);
+}

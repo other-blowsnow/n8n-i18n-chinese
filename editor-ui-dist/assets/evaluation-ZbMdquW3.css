@@ -1,0 +1,191 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+._baseCell_81i0t_123 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid var(--border-color-light) !important;
+  vertical-align: top !important;
+}
+._baseCell_81i0t_123 > div {
+  white-space: nowrap !important;
+}
+._expandedCell_81i0t_134 {
+  white-space: normal;
+  background: var(--color-background-light-base);
+  border-bottom: 1px solid var(--border-color-light) !important;
+  vertical-align: top !important;
+}
+._expandedCell_81i0t_134 > div {
+  white-space: normal !important;
+}
+._customRow_81i0t_144 {
+  cursor: pointer;
+  --color-table-row-hover-background: var(--color-background-base);
+}
+._customDisabledRow_81i0t_149 {
+  cursor: default;
+  --color-table-row-hover-background: var(--color-background-light);
+}
+._customHeaderCell_81i0t_154 {
+  display: flex;
+  gap: 4px;
+}
+._customHeaderCellLabel_81i0t_159 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-base);
+}
+._customHeaderCellSort_81i0t_168 {
+  display: flex;
+  align-items: center;
+}
+._table_81i0t_173 {
+  border-radius: 12px;
+}
+._table_81i0t_173 .el-table__column-resize-proxy {
+  background-color: var(--color-primary);
+  width: 3px;
+}
+._table_81i0t_173 thead th {
+  padding: 6px 0;
+}
+._table_81i0t_173 .caret-wrapper {
+  display: none;
+}
+._table_81i0t_173 .el-scrollbar__thumb {
+  background-color: var(--color-foreground-base);
+}
+._table_81i0t_173 .el-scrollbar__bar {
+  opacity: 1;
+}
+._table_81i0t_173 * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+._table_81i0t_173 *::-webkit-scrollbar {
+  display: none;
+}
