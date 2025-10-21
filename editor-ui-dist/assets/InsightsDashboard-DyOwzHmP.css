@@ -1,0 +1,221 @@
+
+.perks-list {
+&[data-v-6866dc42] {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing--sm);
+}
+> li[data-v-6866dc42] {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing--2xs);
+}
+}
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+._insightsView_1ob2s_123 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: auto;
+}
+._insightsContainer_1ob2s_131 {
+  width: 100%;
+  max-width: var(--content-container-width);
+  padding: var(--spacing--lg) var(--spacing--2xl);
+  margin: 0 auto;
+}
+._insightsBanner_1ob2s_138 {
+  padding-bottom: 0;
+}
+._insightsBanner_1ob2s_138 ul {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+._insightsContent_1ob2s_146 {
+  padding: var(--spacing--lg) 0;
+  border: var(--border-width) var(--border-style) var(--color--foreground);
+  border-top: 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: var(--color--background--light-3);
+}
+._insightsContentWrapper_1ob2s_155 {
+  position: relative;
+  overflow-x: hidden;
+}
+._insightsChartWrapper_1ob2s_160 {
+  position: relative;
+  height: 292px;
+  padding: 0 var(--spacing--lg);
+  z-index: 1;
+}
+._insightsTableWrapper_1ob2s_167 {
+  position: relative;
+  padding: var(--spacing--lg) var(--spacing--lg) 0;
+  z-index: 1;
+}
+._dataLoader_1ob2s_173 {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  z-index: 2;
+}
+._dataLoader_1ob2s_173._isDataLoading_1ob2s_186 {
+  transition: left 0s linear;
+  left: 0;
+  transition-delay: 0.5s;
+}
+._dataLoader_1ob2s_173 > span {
+  position: relative;
+  z-index: 2;
+}
+._dataLoader_1ob2s_173::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color--background--light-3);
+  opacity: 0.75;
+  z-index: 1;
+}
+._projectSelect_1ob2s_208 {
+  min-width: 200px;
+}
+._projectSelect_1ob2s_208 .el-input--suffix .el-input__inner {
+  padding-right: 26px;
+}
