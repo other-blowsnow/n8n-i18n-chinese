@@ -1,0 +1,336 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+.schema-header-wrapper[data-v-bd5ef0d2] {
+  padding-bottom: var(--spacing--2xs);
+}
+.schema-header[data-v-bd5ef0d2] {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.toggle[data-v-bd5ef0d2] {
+  padding-left: var(--spacing--5xs);
+  padding-right: var(--spacing--3xs);
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color--text--tint-1);
+}
+.collapse-icon[data-v-bd5ef0d2] {
+  transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.collapsed[data-v-bd5ef0d2] {
+  transform: rotateZ(-90deg);
+}
+.icon[data-v-bd5ef0d2] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing--3xs);
+  border: 1px solid var(--color--foreground--tint-1);
+  border-radius: var(--radius);
+  background-color: var(--color--background--light-3);
+  margin-right: var(--spacing--2xs);
+}
+.icon-trigger[data-v-bd5ef0d2] {
+  border-radius: 16px 4px 4px 16px;
+}
+.title[data-v-bd5ef0d2] {
+  font-size: var(--font-size--2xs);
+  color: var(--color--text--shade-1);
+}
+.info[data-v-bd5ef0d2] {
+  margin-left: var(--spacing--2xs);
+  color: var(--color--text--tint-1);
+  font-weight: var(--font-weight--regular);
+}
+.trigger-icon[data-v-bd5ef0d2] {
+  margin-left: var(--spacing--2xs);
+  color: var(--color--primary);
+}
+.extra-info[data-v-bd5ef0d2] {
+  font-size: var(--font-size--2xs);
+  color: var(--color--text--tint-1);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.notice[data-v-bd5ef0d2] {
+  margin-left: var(--spacing--2xl);
+  margin-top: var(--spacing--2xs);
+  padding-bottom: var(--spacing--2xs);
+  color: var(--color--text);
+  font-size: var(--font-size--2xs);
+  line-height: var(--line-height--lg);
+}
+.schema-item[data-v-ea0c3249] {
+	display: flex;
+	margin-left: calc(var(--spacing--lg) * var(--8a795c8a));
+	align-items: baseline;
+	padding-bottom: var(--spacing--2xs);
+}
+.toggle-container[data-v-ea0c3249] {
+	min-width: var(--spacing--lg);
+	min-height: 17px;
+}
+.toggle[data-v-ea0c3249] {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	font-size: var(--font-size--sm);
+	color: var(--color--text--tint-1);
+}
+.pill {
+&[data-v-ea0c3249] {
+	display: inline-flex;
+	height: 24px;
+	padding: 0 var(--spacing--3xs);
+	border: 1px solid var(--color--foreground--tint-1);
+	border-radius: var(--radius);
+	background-color: var(--color--background--light-3);
+	font-size: var(--font-size--2xs);
+	color: var(--color--text--shade-1);
+	max-width: 50%;
+	align-items: center;
+	}
+> *[data-v-ea0c3249]:not(:first-child) {
+		margin-left: var(--spacing--3xs);
+		padding-left: var(--spacing--3xs);
+		border-left: 1px solid var(--color--foreground--tint-1);
+}
+&.pill--preview {
+&[data-v-ea0c3249] {
+		/* Cannot use CSS variable inside data URL, so instead switching based on data-theme and media query */
+		--schema-preview-dashed-border: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' viewBox='0 0 400 400' fill='none' rx='4' ry='4' stroke='%230000002A' stroke-width='2' stroke-dasharray='4%2c 4' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+		--schema-preview-dashed-border-dark: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' viewBox='0 0 400 400' fill='none' rx='4' ry='4' stroke='%23FFFFFF2A' stroke-width='2' stroke-dasharray='4%2c 4' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+		color: var(--color--text--tint-1);
+		background-color: var(--run-data--color--background);
+		border: none;
+		max-width: calc(100% - var(--spacing--lg));
+		background-image: var(--schema-preview-dashed-border);
+		}
+.title[data-v-ea0c3249] {
+			color: var(--color--text--tint-1);
+}
+}
+}
+@media (prefers-color-scheme: dark) {
+body:not([data-theme]) .pill--preview[data-v-ea0c3249] {
+		background-image: var(--schema-preview-dashed-border-dark);
+}
+}
+[data-theme='dark'] .pill--preview[data-v-ea0c3249] {
+	background-image: var(--schema-preview-dashed-border-dark);
+}
+.draggable .pill.pill--highlight[data-v-ea0c3249] {
+	color: var(--color--primary);
+	border-color: var(--color--primary--tint-1);
+	background-color: var(--color--primary--tint-3);
+}
+.draggable .pill.pill--highlight .type-icon[data-v-ea0c3249] {
+	color: var(--color--primary);
+}
+.draggable .pill[data-v-ea0c3249]:not(.pill--locked) {
+	cursor: grab;
+}
+.draggable .pill[data-v-ea0c3249]:not(.pill--locked):hover {
+	background-color: var(--color--background--light-2);
+	border-color: var(--color--foreground);
+}
+.type-icon[data-v-ea0c3249] {
+	color: var(--color--text--tint-1);
+}
+.locked-icon[data-v-ea0c3249] {
+	color: var(--color--text--tint-1);
+	margin-left: var(--spacing--2xs);
+}
+.title[data-v-ea0c3249] {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 1.5;
+}
+.text[data-v-ea0c3249] {
+	font-weight: var(--font-weight-normal);
+	font-size: var(--font-size--2xs);
+	margin-left: var(--spacing--2xs);
+	word-break: break-word;
+}
+.collapse-icon[data-v-ea0c3249] {
+	transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.collapsed[data-v-ea0c3249] {
+	transform: rotateZ(-90deg);
+}
+.tooltip[data-v-ea0c3249] {
+	max-width: 260px;
+}
+
+._tooltip_1e5yq_2 {
+	max-width: 260px;
+}
+.vue-recycle-scroller{position:relative}.vue-recycle-scroller.direction-vertical:not(.page-mode){overflow-y:auto}.vue-recycle-scroller.direction-horizontal:not(.page-mode){overflow-x:auto}.vue-recycle-scroller.direction-horizontal{display:-webkit-box;display:-ms-flexbox;display:flex}.vue-recycle-scroller__slot{-webkit-box-flex:1;-ms-flex:auto 0 0px;flex:auto 0 0}.vue-recycle-scroller__item-wrapper{-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden;position:relative}.vue-recycle-scroller.ready .vue-recycle-scroller__item-view{position:absolute;top:0;left:0;will-change:transform}.vue-recycle-scroller.direction-vertical .vue-recycle-scroller__item-wrapper{width:100%}.vue-recycle-scroller.direction-horizontal .vue-recycle-scroller__item-wrapper{height:100%}.vue-recycle-scroller.ready.direction-vertical .vue-recycle-scroller__item-view{width:100%}.vue-recycle-scroller.ready.direction-horizontal .vue-recycle-scroller__item-view{height:100%}.resize-observer[data-v-b329ee4c]{position:absolute;top:0;left:0;z-index:-1;width:100%;height:100%;border:none;background-color:transparent;pointer-events:none;display:block;overflow:hidden;opacity:0}.resize-observer[data-v-b329ee4c] object{display:block;position:absolute;top:0;left:0;height:100%;width:100%;overflow:hidden;pointer-events:none;z-index:-1}
+._executeButton_107ze_2 {
+	padding: 0;
+}
+
+.full-height[data-v-a0b79edb] {
+	height: 100%;
+}
+.run-data-schema {
+&[data-v-a0b79edb] {
+	padding: 0;
+	}
+&.no-search-results[data-v-a0b79edb] {
+		display: flex;
+		justify-content: center;
+		padding: var(--spacing--lg) 0;
+}
+}
+.scroller {
+&[data-v-a0b79edb] {
+	padding: 0 var(--ndv-spacing);
+	padding-bottom: var(--spacing--2xl);
+	}
+.compact &[data-v-a0b79edb] {
+		padding: 0 var(--spacing--2xs);
+}
+}
+.icon[data-v-a0b79edb] {
+	display: inline-flex;
+	margin-left: var(--spacing--xl);
+	color: var(--color--text--tint-1);
+	margin-bottom: var(--ndv-spacing);
+}
+.notice[data-v-a0b79edb] {
+	padding-bottom: var(--spacing--xs);
+	color: var(--color--text);
+	font-size: var(--font-size--2xs);
+	line-height: var(--line-height--lg);
+	margin-left: calc(var(--spacing--lg) * var(--schema-level));
+}
+.empty-schema[data-v-a0b79edb] {
+	padding-bottom: var(--spacing--xs);
+	margin-left: calc((var(--spacing--xl) * var(--schema-level)));
+}
