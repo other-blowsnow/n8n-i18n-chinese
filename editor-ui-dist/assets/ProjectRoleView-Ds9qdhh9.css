@@ -1,0 +1,50 @@
+
+._container_14r2u_2 {
+	max-width: 700px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+._cardContainer_14r2u_9 {
+	padding: 8px 16px;
+	border-radius: 4px;
+	border: var(--border);
+	background-color: var(--color--background--light-3);
+.el-skeleton__p {
+		margin-bottom: 8px;
+		margin-top: 0;
+}
+}
+._card_14r2u_9 {
+	display: flex;
+}
+._card_14r2u_9:not(:last-child) {
+	border-bottom: var(--border);
+}
+._cardTitle_14r2u_28 {
+	width: 133px;
+}
+._backButton_14r2u_32 {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+._headerContainer_14r2u_38 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+._formContainer_14r2u_44 {
+	max-width: 415px;
+}
+._presetsContainer_14r2u_48 {
+	display: flex;
+	gap: 8px;
+}
+._checkbox_14r2u_53 {
+	display: inline-flex !important;
+	margin-bottom: 0 !important;
+label {
+		padding-bottom: 0 !important;
+}
+}
