@@ -1,0 +1,26 @@
+
+._empty_117m0_2 {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing--2xs);
+
+	line-height: 2;
+	color: var(--color--text);
+}
+._title_117m0_13 {
+	font-size: var(--font-size--md);
+	font-weight: var(--font-weight--bold);
+	color: var(--color--text);
+	margin: 0;
+}
+._description_117m0_20 {
+	font-size: var(--font-size--sm);
+	margin: 0;
+	text-align: center;
+	max-width: 240px;
+._wide_117m0_26 & {
+		max-width: none;
+}
+}
