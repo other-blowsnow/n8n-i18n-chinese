@@ -1,0 +1,18 @@
+
+._clickableRow_smt9p_2 {
+	cursor: pointer;
+}
+._filterControls_smt9p_6 {
+	display: flex;
+	gap: var(--spacing--xs);
+	margin-bottom: var(--spacing--md);
+	align-items: center;
+	justify-content: end;
+}
+._filterControls_smt9p_6 > :first-child {
+	flex: 1;
+	max-width: 400px;
+}
+._NoLineBreak_smt9p_19 {
+	white-space: nowrap;
+}
