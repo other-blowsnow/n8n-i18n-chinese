@@ -2,14 +2,14 @@ require('dotenv').config()
 const fs = require('fs');
 const lodash = require("lodash")
 
-if (!process.env.OPENAI_API_KEY){
-    console.error("请设置环境变量 OPENAI_API_KEY");
+if (!process.env.OPENROUTER_API_KEY){
+    console.error("请设置环境变量 OPENROUTER_API_KEY");
     process.exit(1);
 }
-if (!process.env.OPENAI_API_BASE){
-    console.error("请设置环境变量 OPENAI_API_BASE");
-    process.exit(1);
-}
+
+// OpenRouter 使用固定的 API 地址
+const OPENROUTER_API_BASE = "https://openrouter.ai/api/v1";
+const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || "openai/gpt-4o-mini";
 
 const targetLanguages = [
     {
@@ -19,14 +19,16 @@ const targetLanguages = [
 ]
 
 async function doTranslate(message, language) {
-    const response = await fetch(process.env.OPENAI_API_BASE + "/chat/completions", {
+    const response = await fetch(OPENROUTER_API_BASE + "/chat/completions", {
         method: "POST",
         headers: {
-            "Authorization": "Bearer " + process.env.OPENAI_API_KEY,
-            "Content-Type": "application/json"
+            "Authorization": "Bearer " + process.env.OPENROUTER_API_KEY,
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://github.com/n8n-i18n-chinese", // OpenRouter 需要
+            "X-Title": "n8n-i18n-chinese" // OpenRouter 需要
         },
         body: JSON.stringify(			{
-            "model": process.env.OPENAI_MODEL,
+            "model": OPENROUTER_MODEL,
             "messages": [
                 {
                     "role": "system",
@@ -90,7 +92,7 @@ function putObjectValue(obj, key, value) {
 async function translate(waitTranslateList, targetObject, targetLanguage) {
     let promises = [];
     let doNum = 0;
-    let concurrentNum = process.env.OPENAI_API_CONCURRENT || 2;
+    let concurrentNum = process.env.OPENROUTER_API_CONCURRENT || 2;
 
     for (let i = 0; i < waitTranslateList.length; i++) {
         let item = waitTranslateList[i];

@@ -16,10 +16,11 @@ jobs:
       matrix:
         node-version: [22.x]
     steps:
-    - name: Get latest N8N release version
+    - name: Get latest N8N release version (including pre-releases)
       id: latest_release
       run: |
-        LATEST_VERSION=$(curl -s https://api.github.com/repos/n8n-io/n8n/releases/latest | jq -r '.tag_name')
+        # 获取最新的发布版本（包括预发布版本）
+        LATEST_VERSION=$(curl -s https://api.github.com/repos/n8n-io/n8n/releases | jq -r '.[0].tag_name')
         echo "Latest release tag: $LATEST_VERSION"
         echo "latest=$LATEST_VERSION" >> $GITHUB_OUTPUT
 
@@ -63,10 +64,9 @@ jobs:
       run: pnpm install && node translate.js
       working-directory: /home/runner/work/n8n-i18n-chinese/n8n-i18n-chinese/n8n-i18n-chinese/script
       env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        OPENAI_API_BASE: ${{ vars.OPENAI_API_BASE }}
-        OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
-        OPENAI_API_CONCURRENT: ${{ vars.OPENAI_API_CONCURRENT }}
+        OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
+        OPENROUTER_API_CONCURRENT: ${{ vars.OPENROUTER_API_CONCURRENT }}
 
     - name: Translate Publish Git
       if: steps.check_tag.outputs.exists == 'false'
