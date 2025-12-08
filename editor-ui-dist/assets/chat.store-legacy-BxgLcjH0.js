@@ -1,0 +1,810 @@
+;
+(function () {
+  System.register(["./vue.runtime.esm-bundler-legacy--Sn1h8On.js", "./useTelemetry-legacy-CBjbIfKX.js", "./useToast-legacy-Bs0yTjbT.js", "./constants-legacy-DVoQkFTS.js", "./_baseOrderBy-legacy-CowL7g45.js", "./retry-legacy-CTwsGM7o.js", "./constants-legacy-DjFSod4r.js", "./fileUtils-legacy-BbiGYBne.js"], function (_export, _context) {
+    "use strict";
+
+    var computed, ref, v4_default, useTelemetry, useToast, deepCopy, emptyChatModelsResponse, chatHubProviderSchema, defineStore, streamRequest, useRootStore, makeRestApiRequest, retry, CHAT_STORE, CHAT_VIEW, convertFileToBinaryData, STREAM_SEPARATOR, fetchChatModelsApi, stopGenerationApi, fetchConversationsApi, updateConversationApi, updateConversationTitleApi, deleteConversationApi, fetchSingleConversationApi, fetchAgentApi, createAgentApi, updateAgentApi, deleteAgentApi, fetchChatSettingsApi, fetchChatProviderSettingsApi, updateChatSettingsApi, useChatStore;
+    function sendMessageApi(ctx, payload, onMessageUpdated, onDone, onError) {
+      streamRequest(ctx, "/chat/conversations/send", payload, onMessageUpdated, onDone, onError, STREAM_SEPARATOR);
+    }
+    function editMessageApi(ctx, sessionId, editId, payload, onMessageUpdated, onDone, onError) {
+      streamRequest(ctx, `/chat/conversations/${sessionId}/messages/${editId}/edit`, payload, onMessageUpdated, onDone, onError, STREAM_SEPARATOR);
+    }
+    function regenerateMessageApi(ctx, sessionId, retryId, payload, onMessageUpdated, onDone, onError) {
+      streamRequest(ctx, `/chat/conversations/${sessionId}/messages/${retryId}/regenerate`, payload, onMessageUpdated, onDone, onError, STREAM_SEPARATOR);
+    }
+    function buildChatAttachmentUrl(context, sessionId, messageId, attachmentIndex) {
+      return `${context.baseUrl}/chat/conversations/${sessionId}/messages/${messageId}/attachments/${attachmentIndex}`;
+    }
+
+    //#endregion
+    //#region src/features/ai/chatHub/chat.utils.ts
+    function findOneFromModelsResponse(response) {
+      for (const provider of chatHubProviderSchema.options) if (response[provider].models.length > 0) return response[provider].models[0];
+    }
+    function getRelativeDate(now, dateString) {
+      const date = new Date(dateString);
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const yesterday = new Date(today);
+      yesterday.setDate(yesterday.getDate() - 1);
+      const lastWeek = new Date(today);
+      lastWeek.setDate(lastWeek.getDate() - 7);
+      const conversationDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+      if (conversationDate.getTime() === today.getTime()) return "Today";else if (conversationDate.getTime() === yesterday.getTime()) return "Yesterday";else if (conversationDate >= lastWeek) return "This week";else return "Older";
+    }
+    function groupConversationsByDate(sessions) {
+      const now = /* @__PURE__ */new Date();
+      const groups = /* @__PURE__ */new Map();
+      for (const session of sessions) {
+        const group = getRelativeDate(now, session.lastMessageAt ?? session.updatedAt);
+        if (!groups.has(group)) groups.set(group, []);
+        groups.get(group).push(session);
+      }
+      return ["Today", "Yesterday", "This week", "Older"].flatMap(groupName => {
+        const sessions$1 = groups.get(groupName) ?? [];
+        return sessions$1.length > 0 ? [{
+          group: groupName,
+          sessions: sessions$1.sort((a, b) => Date.parse(b.lastMessageAt ?? b.updatedAt) - Date.parse(a.lastMessageAt ?? a.updatedAt))
+        }] : [];
+      });
+    }
+    function getAgentRoute(model) {
+      if (model.provider === "n8n") return {
+        name: CHAT_VIEW,
+        query: {
+          workflowId: model.workflowId
+        }
+      };
+      if (model.provider === "custom-agent") return {
+        name: CHAT_VIEW,
+        query: {
+          agentId: model.agentId
+        }
+      };
+      return {
+        name: CHAT_VIEW
+      };
+    }
+    function flattenModel(model) {
+      return {
+        provider: model.provider,
+        model: model?.provider === "n8n" || model?.provider === "custom-agent" ? null : model?.model ?? null,
+        workflowId: model?.provider === "n8n" ? model.workflowId : null,
+        agentId: model?.provider === "custom-agent" ? model.agentId : null
+      };
+    }
+    function unflattenModel(messageOrSession) {
+      if (messageOrSession.provider === null) return null;
+      switch (messageOrSession.provider) {
+        case "custom-agent":
+          if (!messageOrSession.agentId) return null;
+          return {
+            provider: "custom-agent",
+            agentId: messageOrSession.agentId
+          };
+        case "n8n":
+          if (!messageOrSession.workflowId) return null;
+          return {
+            provider: "n8n",
+            workflowId: messageOrSession.workflowId
+          };
+        default:
+          if (messageOrSession.model === null) return null;
+          return {
+            provider: messageOrSession.provider,
+            model: messageOrSession.model
+          };
+      }
+    }
+    function filterAndSortAgents(models, filter) {
+      let filtered = models;
+      if (filter.search.trim()) {
+        const query = filter.search.toLowerCase();
+        filtered = filtered.filter(model => model.name.toLowerCase().includes(query));
+      }
+      if (filter.provider !== "") filtered = filtered.filter(model => model.model.provider === filter.provider);
+      filtered = [...filtered].sort((a, b) => {
+        const dateAStr = a[filter.sortBy];
+        const dateBStr = b[filter.sortBy];
+        const dateA = dateAStr ? Date.parse(dateAStr) : void 0;
+        const dateB = dateBStr ? Date.parse(dateBStr) : void 0;
+        if (dateA && dateB) return dateB - dateA;
+        if (dateA && !dateB) return -1;
+        if (!dateA && dateB) return 1;
+        return 0;
+      });
+      return filtered;
+    }
+    function stringifyModel(model) {
+      return `${model.provider}::${model.provider === "custom-agent" ? model.agentId : model.provider === "n8n" ? model.workflowId : model.model}`;
+    }
+    function fromStringToModel(value) {
+      const [provider, identifier] = value.split("::");
+      const parsedProvider = chatHubProviderSchema.safeParse(provider).data;
+      if (!parsedProvider) return;
+      return parsedProvider === "n8n" ? {
+        provider: "n8n",
+        workflowId: identifier
+      } : parsedProvider === "custom-agent" ? {
+        provider: "custom-agent",
+        agentId: identifier
+      } : {
+        provider: parsedProvider,
+        model: identifier
+      };
+    }
+    function isMatchedAgent(agent, model) {
+      if (model.provider === "n8n") return agent.model.provider === "n8n" && agent.model.workflowId === model.workflowId;
+      if (model.provider === "custom-agent") return agent.model.provider === "custom-agent" && agent.model.agentId === model.agentId;
+      return agent.model.provider === model.provider && agent.model.model === model.model;
+    }
+    function createAiMessageFromStreamingState(sessionId, messageId, streaming) {
+      return {
+        id: messageId,
+        sessionId,
+        type: "ai",
+        name: "AI",
+        content: "",
+        executionId: streaming?.executionId ?? null,
+        status: "running",
+        createdAt: (/* @__PURE__ */new Date()).toISOString(),
+        updatedAt: (/* @__PURE__ */new Date()).toISOString(),
+        previousMessageId: streaming?.previousMessageId ?? null,
+        retryOfMessageId: streaming?.retryOfMessageId ?? null,
+        revisionOfMessageId: null,
+        responses: [],
+        alternatives: [],
+        attachments: [],
+        ...(streaming?.model ? flattenModel(streaming.model) : {
+          provider: null,
+          model: null,
+          workflowId: null,
+          agentId: null
+        })
+      };
+    }
+    function buildUiMessages(sessionId, conversation, streaming) {
+      const messagesToShow = [];
+      let foundRunning = false;
+      for (let index = 0; index < conversation.activeMessageChain.length; index++) {
+        const id = conversation.activeMessageChain[index];
+        const message = conversation.messages[id];
+        if (!message) continue;
+        foundRunning = foundRunning || message.status === "running";
+        if (foundRunning || streaming?.sessionId !== sessionId || message.type !== "ai") {
+          messagesToShow.push(message);
+          continue;
+        }
+        if (streaming.retryOfMessageId === id && !streaming.messageId) {
+          messagesToShow.push({
+            ...message,
+            content: "",
+            status: "running"
+          });
+          foundRunning = true;
+          continue;
+        }
+        if (index === conversation.activeMessageChain.length - 1) {
+          messagesToShow.push({
+            ...message,
+            status: "running"
+          });
+          foundRunning = true;
+          continue;
+        }
+        messagesToShow.push(message);
+      }
+      if (!foundRunning && streaming?.sessionId === sessionId && !streaming.messageId && streaming.retryOfMessageId === null && streaming.promptId === messagesToShow[messagesToShow.length - 1]?.id) messagesToShow.push(createAiMessageFromStreamingState(sessionId, v4_default(), streaming));
+      return messagesToShow;
+    }
+    function isLlmProvider(provider) {
+      return provider !== "n8n" && provider !== "custom-agent";
+    }
+    function isLlmProviderModel(model) {
+      return isLlmProvider(model?.provider);
+    }
+    function createSessionFromStreamingState(streaming) {
+      return {
+        id: streaming.sessionId,
+        title: "New Chat",
+        ownerId: "",
+        lastMessageAt: (/* @__PURE__ */new Date()).toISOString(),
+        credentialId: null,
+        agentName: streaming.agentName,
+        createdAt: (/* @__PURE__ */new Date()).toISOString(),
+        updatedAt: (/* @__PURE__ */new Date()).toISOString(),
+        tools: streaming.tools,
+        ...flattenModel(streaming.model)
+      };
+    }
+
+    //#endregion
+    //#region src/features/ai/chatHub/chat.store.ts
+    _export({
+      a: fromStringToModel,
+      c: isLlmProvider,
+      d: stringifyModel,
+      f: unflattenModel,
+      i: flattenModel,
+      l: isLlmProviderModel,
+      n: filterAndSortAgents,
+      o: getAgentRoute,
+      p: buildChatAttachmentUrl,
+      r: findOneFromModelsResponse,
+      s: groupConversationsByDate,
+      u: isMatchedAgent
+    });
+    return {
+      setters: [function (_vueRuntimeEsmBundlerLegacy003Js) {
+        computed = _vueRuntimeEsmBundlerLegacy003Js.C;
+        ref = _vueRuntimeEsmBundlerLegacy003Js.It;
+      }, function (_useTelemetryLegacy00HJs) {
+        v4_default = _useTelemetryLegacy00HJs.Ro;
+        useTelemetry = _useTelemetryLegacy00HJs.t;
+      }, function (_useToastLegacy00JJs) {
+        useToast = _useToastLegacy00JJs.t;
+      }, function (_constantsLegacy00TJs) {
+        deepCopy = _constantsLegacy00TJs.Ta;
+        emptyChatModelsResponse = _constantsLegacy00TJs.ni;
+        chatHubProviderSchema = _constantsLegacy00TJs.ti;
+      }, function (_baseOrderByLegacy00ZJs) {
+        defineStore = _baseOrderByLegacy00ZJs.k;
+        streamRequest = _baseOrderByLegacy00ZJs.p;
+        useRootStore = _baseOrderByLegacy00ZJs.r;
+        makeRestApiRequest = _baseOrderByLegacy00ZJs.u;
+      }, function (_retryLegacy01lJs) {
+        retry = _retryLegacy01lJs.t;
+      }, function (_constantsLegacy03lJs) {
+        CHAT_STORE = _constantsLegacy03lJs.c;
+        CHAT_VIEW = _constantsLegacy03lJs.l;
+      }, function (_fileUtilsLegacy03pJs) {
+        convertFileToBinaryData = _fileUtilsLegacy03pJs.t;
+      }],
+      execute: function () {
+        //#region src/features/ai/chatHub/chat.api.ts
+        STREAM_SEPARATOR = "\n";
+        _export("m", fetchChatModelsApi = async (context, payload) => {
+          return await makeRestApiRequest(context, "POST", "/chat/models", payload);
+        });
+        stopGenerationApi = async (context, sessionId, messageId) => {
+          await makeRestApiRequest(context, "POST", `/chat/conversations/${sessionId}/messages/${messageId}/stop`);
+        };
+        fetchConversationsApi = async (context, limit, cursor) => {
+          const queryParams = new URLSearchParams();
+          queryParams.append("limit", limit.toString());
+          if (cursor) queryParams.append("cursor", cursor);
+          return await makeRestApiRequest(context, "GET", `/chat/conversations?${queryParams.toString()}`);
+        };
+        updateConversationApi = async (context, sessionId, updates) => {
+          return await makeRestApiRequest(context, "PATCH", `/chat/conversations/${sessionId}`, updates);
+        };
+        updateConversationTitleApi = async (context, sessionId, title) => {
+          return await updateConversationApi(context, sessionId, {
+            title
+          });
+        };
+        deleteConversationApi = async (context, sessionId) => {
+          await makeRestApiRequest(context, "DELETE", `/chat/conversations/${sessionId}`);
+        };
+        fetchSingleConversationApi = async (context, sessionId) => {
+          return await makeRestApiRequest(context, "GET", `/chat/conversations/${sessionId}`);
+        };
+        fetchAgentApi = async (context, agentId) => {
+          return await makeRestApiRequest(context, "GET", `/chat/agents/${agentId}`);
+        };
+        createAgentApi = async (context, payload) => {
+          return await makeRestApiRequest(context, "POST", "/chat/agents", payload);
+        };
+        updateAgentApi = async (context, agentId, payload) => {
+          return await makeRestApiRequest(context, "POST", `/chat/agents/${agentId}`, payload);
+        };
+        deleteAgentApi = async (context, agentId) => {
+          await makeRestApiRequest(context, "DELETE", `/chat/agents/${agentId}`);
+        };
+        fetchChatSettingsApi = async context => {
+          return (await makeRestApiRequest(context, "GET", "/chat/settings")).providers;
+        };
+        fetchChatProviderSettingsApi = async (context, provider) => {
+          return (await makeRestApiRequest(context, "GET", "/chat/settings/" + provider)).settings;
+        };
+        updateChatSettingsApi = async (context, settings) => {
+          return await makeRestApiRequest(context, "POST", "/chat/settings", {
+            payload: settings
+          });
+        };
+        _export("t", useChatStore = defineStore(CHAT_STORE, () => {
+          const rootStore = useRootStore();
+          const toast = useToast();
+          const telemetry = useTelemetry();
+          const agents = ref();
+          const sessions = ref({
+            byId: {},
+            ids: null,
+            hasMore: false,
+            nextCursor: null
+          });
+          const sessionsLoadingMore = ref(false);
+          const streaming = ref();
+          const settingsLoading = ref(false);
+          const settings = ref(null);
+          const conversationsBySession = ref(/* @__PURE__ */new Map());
+          const getConversation = sessionId => conversationsBySession.value.get(sessionId);
+          const getActiveMessages = sessionId => {
+            const conversation = getConversation(sessionId);
+            if (!conversation) return [];
+            return buildUiMessages(sessionId, conversation, streaming.value);
+          };
+          function ensureConversation(sessionId) {
+            if (!conversationsBySession.value.has(sessionId)) conversationsBySession.value.set(sessionId, {
+              messages: {},
+              activeMessageChain: []
+            });
+            const conversation = conversationsBySession.value.get(sessionId);
+            if (!conversation) throw new Error(`Conversation for session ID ${sessionId} not found`);
+            return conversation;
+          }
+          function lastMessage(sessionId) {
+            const conversation = getConversation(sessionId);
+            if (!conversation || conversation.activeMessageChain.length === 0) return null;
+            const messageId = conversation.activeMessageChain[conversation.activeMessageChain.length - 1];
+            return conversation.messages[messageId] ?? null;
+          }
+          function isResponding(sessionId) {
+            return lastMessage(sessionId)?.status === "running";
+          }
+          function computeActiveChain(messages, messageId) {
+            const chain = [];
+            if (!messageId) return chain;
+            let id;
+            const stack = [messageId];
+            let latest = null;
+            while (id = stack.pop()) {
+              const message = messages[id];
+              if (!latest || message.createdAt > messages[latest].createdAt) latest = id;
+              for (const responseId of message.responses) stack.push(responseId);
+            }
+            if (!latest) return chain;
+            let current = latest;
+            const visited = /* @__PURE__ */new Set();
+            while (current && !visited.has(current)) {
+              chain.unshift(current);
+              visited.add(current);
+              current = messages[current]?.previousMessageId ?? null;
+            }
+            return chain;
+          }
+          function linkMessages(messages) {
+            const messagesGraph = {};
+            for (const message of messages) messagesGraph[message.id] = {
+              ...message,
+              responses: [],
+              alternatives: []
+            };
+            for (const node of Object.values(messagesGraph)) {
+              if (node.previousMessageId && messagesGraph[node.previousMessageId]) messagesGraph[node.previousMessageId].responses.push(node.id);
+              if (node.retryOfMessageId && messagesGraph[node.retryOfMessageId]) messagesGraph[node.retryOfMessageId].alternatives.push(node.id);
+              if (node.revisionOfMessageId && messagesGraph[node.revisionOfMessageId]) messagesGraph[node.revisionOfMessageId].alternatives.push(node.id);
+            }
+            const sortByRunThenTime = (first, second) => {
+              const a = messagesGraph[first];
+              const b = messagesGraph[second];
+              if (a.createdAt !== b.createdAt) return a.createdAt < b.createdAt ? -1 : 1;
+              return a.id < b.id ? -1 : 1;
+            };
+            for (const node of Object.values(messagesGraph)) {
+              if (!node.alternatives.includes(node.id)) node.alternatives.push(node.id);
+              if (node.retryOfMessageId && messagesGraph[node.retryOfMessageId]) {
+                node.alternatives.push(node.retryOfMessageId);
+                for (const other of messagesGraph[node.retryOfMessageId].alternatives) if (other !== node.id && !node.alternatives.includes(other)) node.alternatives.push(other);
+              }
+              if (node.revisionOfMessageId && messagesGraph[node.revisionOfMessageId]) {
+                node.alternatives.push(node.revisionOfMessageId);
+                for (const other of messagesGraph[node.revisionOfMessageId].alternatives) if (other !== node.id && !node.alternatives.includes(other)) node.alternatives.push(other);
+              }
+              node.responses.sort(sortByRunThenTime);
+              node.alternatives.sort(sortByRunThenTime);
+            }
+            return messagesGraph;
+          }
+          function addMessage(sessionId, message) {
+            const conversation = ensureConversation(sessionId);
+            conversation.messages[message.id] = message;
+            conversation.messages = linkMessages(Object.values(conversation.messages));
+            conversation.activeMessageChain = computeActiveChain(conversation.messages, message.id);
+            return message;
+          }
+          function replaceMessageContent(sessionId, messageId, content) {
+            const message = ensureConversation(sessionId).messages[messageId];
+            if (!message) throw new Error(`Message with ID ${messageId} not found in session ${sessionId}`);
+            message.content = content;
+          }
+          function appendMessage(sessionId, messageId, chunk) {
+            const message = ensureConversation(sessionId).messages[messageId];
+            if (!message) throw new Error(`Message with ID ${messageId} not found in session ${sessionId}`);
+            message.content += chunk;
+          }
+          function updateMessage(sessionId, messageId, status, content) {
+            const message = ensureConversation(sessionId).messages[messageId];
+            if (!message) throw new Error(`Message with ID ${messageId} not found in session ${sessionId}`);
+            message.status = status;
+            if (content) message.content = content;
+            message.updatedAt = (/* @__PURE__ */new Date()).toISOString();
+          }
+          async function fetchAgents(credentialMap) {
+            agents.value = await fetchChatModelsApi(rootStore.restApiContext, {
+              credentials: credentialMap
+            });
+            return agents.value;
+          }
+          async function fetchSessions(reset) {
+            if (sessionsLoadingMore.value) return;
+            if (!reset && sessions.value && !sessions.value.hasMore && (sessions.value.ids ?? []).length > 0) return;
+            if (!reset) sessionsLoadingMore.value = true;
+            try {
+              const cursor = reset ? void 0 : sessions.value?.nextCursor ?? void 0;
+              const [response] = await Promise.all([fetchConversationsApi(rootStore.restApiContext, 40, cursor), new Promise(resolve => setTimeout(resolve, 500))]);
+              if (reset || sessions.value.ids === null) sessions.value.ids = [];
+              sessions.value.hasMore = response.hasMore;
+              sessions.value.nextCursor = response.nextCursor;
+              for (const session of response.data) {
+                sessions.value.ids.push(session.id);
+                sessions.value.byId[session.id] = session;
+              }
+            } finally {
+              sessionsLoadingMore.value = false;
+            }
+          }
+          async function fetchMoreSessions() {
+            if (sessions.value?.hasMore && !sessionsLoadingMore.value) await fetchSessions(false);
+          }
+          async function fetchMessages(sessionId) {
+            const {
+              conversation,
+              session
+            } = await fetchSingleConversationApi(rootStore.restApiContext, sessionId);
+            const messages = linkMessages(Object.values(conversation.messages));
+            const latestMessage = Object.values(messages).sort((a, b) => a.createdAt < b.createdAt ? -1 : 1).pop();
+            conversationsBySession.value.set(sessionId, {
+              messages,
+              activeMessageChain: computeActiveChain(messages, latestMessage?.id ?? null)
+            });
+            sessions.value.byId[sessionId] = session;
+          }
+          function onBeginMessage() {
+            if (!streaming.value?.messageId) return;
+            const message = createAiMessageFromStreamingState(streaming.value.sessionId, streaming.value.messageId, streaming.value);
+            addMessage(streaming.value.sessionId, message);
+          }
+          function ensureMessage(sessionId, messageId) {
+            const message = ensureConversation(sessionId).messages[messageId];
+            if (message) return message;
+            return addMessage(sessionId, createAiMessageFromStreamingState(sessionId, messageId, streaming.value));
+          }
+          function onChunk(chunk) {
+            if (streaming.value?.messageId) appendMessage(streaming.value.sessionId, streaming.value.messageId, chunk);
+          }
+          function onEndMessage() {
+            if (streaming.value?.messageId) updateMessage(streaming.value.sessionId, streaming.value.messageId, "success");
+          }
+          function onStreamMessage(chunk) {
+            if (!streaming.value) return;
+            const {
+              sessionId
+            } = streaming.value;
+            streaming.value = {
+              ...streaming.value,
+              ...chunk.metadata
+            };
+            switch (chunk.type) {
+              case "begin":
+                onBeginMessage();
+                break;
+              case "item":
+                onChunk(chunk.content ?? "");
+                break;
+              case "end":
+                onEndMessage();
+                break;
+              case "error":
+                if (ensureMessage(sessionId, chunk.metadata.messageId).status === "cancelled") return;
+                updateMessage(sessionId, chunk.metadata.messageId, "error", chunk.content);
+                break;
+            }
+          }
+          async function onStreamDone() {
+            if (!streaming.value) return;
+            const {
+              sessionId
+            } = streaming.value;
+            streaming.value = void 0;
+            await retry(async () => {
+              return (await fetchSingleConversationApi(rootStore.restApiContext, sessionId)).session.title !== "New Chat";
+            }, 1e3, 3);
+            await fetchSessions(true);
+          }
+          function onStreamError(error) {
+            if (!streaming.value) return;
+            toast.showError(error, "Could not send message");
+            const {
+              sessionId
+            } = streaming.value;
+            streaming.value = void 0;
+            const conversation = getConversation(sessionId);
+            if (!conversation) return;
+            for (const messageId of conversation.activeMessageChain) if (conversation.messages[messageId].status === "running") updateMessage(sessionId, messageId, "error");
+          }
+          async function sendMessage(sessionId, message, model, credentials, tools, files = [], agentName) {
+            const messageId = v4_default();
+            const conversation = ensureConversation(sessionId);
+            const previousMessageId = conversation.activeMessageChain.length ? conversation.activeMessageChain[conversation.activeMessageChain.length - 1] : null;
+            const attachments = (await Promise.all(files.map(convertFileToBinaryData))).map(attachment => ({
+              fileName: attachment.fileName ?? "unnamed file",
+              mimeType: attachment.mimeType,
+              data: attachment.data
+            }));
+            addMessage(sessionId, {
+              id: messageId,
+              sessionId,
+              type: "human",
+              name: "User",
+              content: message,
+              provider: null,
+              model: isLlmProviderModel(model) ? model.model : null,
+              workflowId: null,
+              executionId: null,
+              agentId: null,
+              status: "success",
+              createdAt: (/* @__PURE__ */new Date()).toISOString(),
+              updatedAt: (/* @__PURE__ */new Date()).toISOString(),
+              previousMessageId,
+              retryOfMessageId: null,
+              revisionOfMessageId: null,
+              responses: [],
+              alternatives: [],
+              attachments
+            });
+            streaming.value = {
+              promptId: messageId,
+              sessionId,
+              model,
+              retryOfMessageId: null,
+              tools,
+              agentName
+            };
+            if (!sessions.value.byId[sessionId]) {
+              sessions.value.byId[sessionId] = createSessionFromStreamingState(streaming.value);
+              if (!sessions.value.ids) sessions.value.ids = [];
+              sessions.value.ids.unshift(sessionId);
+            }
+            sendMessageApi(rootStore.restApiContext, {
+              model,
+              messageId,
+              sessionId,
+              message,
+              credentials,
+              previousMessageId,
+              tools,
+              attachments,
+              agentName
+            }, onStreamMessage, onStreamDone, onStreamError);
+            telemetry.track("User sent chat hub message", {
+              ...flattenModel(model),
+              is_custom: model.provider === "custom-agent",
+              chat_session_id: sessionId
+            });
+          }
+          function editMessage(sessionId, editId, content, model, credentials) {
+            const promptId = v4_default();
+            const message = ensureConversation(sessionId).messages[editId];
+            const previousMessageId = message?.previousMessageId ?? null;
+            if (message?.type === "human") addMessage(sessionId, {
+              id: promptId,
+              sessionId,
+              type: "human",
+              name: message.name ?? "User",
+              content,
+              provider: null,
+              model: null,
+              workflowId: null,
+              executionId: null,
+              agentId: null,
+              status: "success",
+              createdAt: (/* @__PURE__ */new Date()).toISOString(),
+              updatedAt: (/* @__PURE__ */new Date()).toISOString(),
+              previousMessageId,
+              retryOfMessageId: null,
+              revisionOfMessageId: editId,
+              responses: [],
+              alternatives: [],
+              attachments: message.attachments ?? null
+            });else if (message?.type === "ai") replaceMessageContent(sessionId, editId, content);
+            streaming.value = {
+              promptId,
+              sessionId,
+              model,
+              retryOfMessageId: null,
+              tools: [],
+              agentName: sessions.value.byId[sessionId]?.agentName ?? ""
+            };
+            editMessageApi(rootStore.restApiContext, sessionId, editId, {
+              model,
+              messageId: promptId,
+              message: content,
+              credentials
+            }, onStreamMessage, onStreamDone, onStreamError);
+          }
+          function regenerateMessage(sessionId, retryId, model, credentials) {
+            if (!(ensureConversation(sessionId).messages[retryId]?.previousMessageId ?? null)) throw new Error("No previous message to base regeneration on");
+            streaming.value = {
+              promptId: retryId,
+              sessionId,
+              model,
+              retryOfMessageId: retryId,
+              tools: [],
+              agentName: sessions.value.byId[sessionId]?.agentName ?? ""
+            };
+            regenerateMessageApi(rootStore.restApiContext, sessionId, retryId, {
+              model,
+              credentials
+            }, onStreamMessage, onStreamDone, onStreamError);
+          }
+          async function stopStreamingMessage(sessionId) {
+            const currentMessage = lastMessage(sessionId);
+            if (currentMessage && currentMessage.status === "running") {
+              updateMessage(sessionId, currentMessage.id, "cancelled");
+              await stopGenerationApi(rootStore.restApiContext, sessionId, currentMessage.id);
+              streaming.value = void 0;
+            }
+          }
+          function updateSession(sessionId, toUpdate) {
+            const session = sessions.value.byId[sessionId];
+            if (session) sessions.value.byId[sessionId] = {
+              ...session,
+              ...toUpdate
+            };
+          }
+          async function updateToolsInSession(sessionId, tools) {
+            if (!sessions.value?.byId[sessionId]) throw new Error(`Session with ID ${sessionId} not found`);
+            updateSession(sessionId, (await updateConversationApi(rootStore.restApiContext, sessionId, {
+              tools
+            })).session);
+          }
+          async function renameSession(sessionId, title) {
+            updateSession(sessionId, (await updateConversationTitleApi(rootStore.restApiContext, sessionId, title)).session);
+          }
+          async function updateSessionModel(sessionId, model, agentName) {
+            await updateConversationApi(rootStore.restApiContext, sessionId, {
+              agent: {
+                model,
+                name: agentName
+              }
+            });
+            updateSession(sessionId, {
+              ...model,
+              agentName
+            });
+          }
+          async function deleteSession(sessionId) {
+            await deleteConversationApi(rootStore.restApiContext, sessionId);
+            delete sessions.value.byId[sessionId];
+            sessions.value.ids = sessions.value.ids?.filter(id => id !== sessionId) ?? null;
+          }
+          function switchAlternative(sessionId, messageId) {
+            const conversation = getConversation(sessionId);
+            if (!conversation?.messages[messageId]) throw new Error(`Message with ID ${messageId} not found in session ${sessionId}`);
+            conversation.activeMessageChain = computeActiveChain(conversation.messages, messageId);
+          }
+          async function fetchCustomAgent(agentId) {
+            return await fetchAgentApi(rootStore.restApiContext, agentId);
+          }
+          function getCustomAgent(agentId) {
+            return agents.value?.["custom-agent"].models.find(model => "agentId" in model && model.agentId === agentId);
+          }
+          async function createCustomAgent(payload, credentials) {
+            const agent = await createAgentApi(rootStore.restApiContext, payload);
+            const agentModel = {
+              model: {
+                provider: "custom-agent",
+                agentId: agent.id
+              },
+              name: agent.name,
+              description: agent.description ?? null,
+              createdAt: agent.createdAt,
+              updatedAt: agent.updatedAt,
+              tools: agent.tools,
+              allowFileUploads: true
+            };
+            agents.value?.["custom-agent"].models.push(agentModel);
+            await fetchAgents(credentials);
+            telemetry.track("User created agent", {
+              ...flattenModel(payload)
+            });
+            return agentModel;
+          }
+          async function updateCustomAgent(agentId, payload, credentials) {
+            const agent = await updateAgentApi(rootStore.restApiContext, agentId, payload);
+            if (agents.value?.["custom-agent"]) agents.value["custom-agent"].models = agents.value["custom-agent"].models.map(model => "agentId" in model && model.agentId === agentId ? {
+              ...model,
+              name: agent.name
+            } : model);
+            await fetchAgents(credentials);
+            return agent;
+          }
+          async function deleteCustomAgent(agentId, credentials) {
+            await deleteAgentApi(rootStore.restApiContext, agentId);
+            if (agents.value?.["custom-agent"]) agents.value["custom-agent"].models = agents.value["custom-agent"].models.filter(model => !("agentId" in model) || model.agentId !== agentId);
+            await fetchAgents(credentials);
+          }
+          function getAgent(model, fallbackName = "") {
+            const agent = agents.value?.[model.provider]?.models.find(agent$1 => isMatchedAgent(agent$1, model));
+            if (agent) return agent;
+            return {
+              model,
+              name: fallbackName,
+              description: null,
+              createdAt: null,
+              updatedAt: null,
+              allowFileUploads: true
+            };
+          }
+          async function fetchAllChatSettings() {
+            try {
+              settingsLoading.value = true;
+              settings.value = await fetchChatSettingsApi(rootStore.restApiContext);
+            } finally {
+              settingsLoading.value = false;
+            }
+            return settings.value;
+          }
+          async function fetchProviderSettings(provider) {
+            const providerSettings = await fetchChatProviderSettingsApi(rootStore.restApiContext, provider);
+            if (settings.value) settings.value[provider] = deepCopy(providerSettings);
+            return providerSettings;
+          }
+          async function updateProviderSettings(updated) {
+            if (!updated.enabled) updated.allowedModels = [];
+            const saved = await updateChatSettingsApi(rootStore.restApiContext, updated);
+            if (settings.value) settings.value[updated.provider] = deepCopy(saved);
+            return saved;
+          }
+          return {
+            agents: computed(() => agents.value ?? emptyChatModelsResponse),
+            agentsReady: computed(() => agents.value !== void 0),
+            getAgent,
+            fetchAgents,
+            getCustomAgent,
+            fetchCustomAgent,
+            createCustomAgent,
+            updateCustomAgent,
+            deleteCustomAgent,
+            sessions,
+            sessionsReady: computed(() => sessions.value.ids !== null),
+            sessionsLoading: computed(() => sessionsLoadingMore.value),
+            fetchSessions,
+            fetchMoreSessions,
+            renameSession,
+            updateSessionModel,
+            deleteSession,
+            updateToolsInSession,
+            getConversation,
+            fetchMessages,
+            getActiveMessages,
+            switchAlternative,
+            lastMessage,
+            streaming,
+            isResponding,
+            sendMessage,
+            editMessage,
+            regenerateMessage,
+            stopStreamingMessage,
+            settings,
+            settingsLoading,
+            fetchAllChatSettings,
+            fetchProviderSettings,
+            updateProviderSettings
+          };
+        })); //#endregion
+      }
+    };
+  });
+})();
