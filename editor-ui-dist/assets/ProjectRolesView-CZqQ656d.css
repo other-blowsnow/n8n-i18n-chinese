@@ -1,0 +1,17 @@
+
+._headerContainer_1yma8_2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+._headerTitle_1yma8_8 {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+._clickableRow_1yma8_14 {
+	cursor: pointer;
+}
+._tallRow_1yma8_18 {
+	height: 64px;
+}
