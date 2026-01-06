@@ -1,0 +1,327 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+._dataDisplay_6nuo6_123 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: var(--spacing--xs);
+  right: 0;
+  overflow-y: auto;
+  line-height: 1.5;
+  word-break: normal;
+  height: 100%;
+  padding-bottom: var(--spacing--3xl);
+}
+._dataDisplay_6nuo6_123._compact_6nuo6_135 {
+  padding-left: var(--spacing--2xs);
+}
+._table_6nuo6_139 {
+  border-collapse: separate;
+  text-align: left;
+  width: 100%;
+  font-size: var(--font-size--2xs);
+  color: var(--color--text);
+}
+._table_6nuo6_139 th {
+  background-color: var(--color--background);
+  border-top: var(--border);
+  border-bottom: var(--border);
+  border-left: var(--border);
+  position: sticky;
+  top: 0;
+  color: var(--color--text--shade-1);
+  z-index: 1;
+}
+._lightHeader_6nuo6_156 ._table_6nuo6_139 th {
+  background-color: var(--color--background--light-2);
+}
+._table_6nuo6_139 th._tableRightMargin_6nuo6_159 {
+  background-color: transparent;
+}
+._table_6nuo6_139 td {
+  vertical-align: top;
+  padding: var(--spacing--4xs) var(--spacing--3xs);
+  border-bottom: var(--border);
+  border-left: var(--border);
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  vertical-align: top;
+}
+._table_6nuo6_139 td:first-child,
+._table_6nuo6_139 td:nth-last-child(2) {
+  position: relative;
+  z-index: 0;
+}
+._table_6nuo6_139 td:first-child:after,
+._table_6nuo6_139 td:nth-last-child(2):after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  top: 0;
+}
+._table_6nuo6_139 td:nth-last-child(2):after {
+  right: -1px;
+}
+._table_6nuo6_139 td:first-child:after {
+  left: -1px;
+}
+._table_6nuo6_139 th:last-child,
+._table_6nuo6_139 td:last-child {
+  border-right: var(--border);
+}
+._hasCollapsingColumn_6nuo6_194 ._table_6nuo6_139 {
+  table-layout: fixed;
+}
+._hasCollapsingColumn_6nuo6_194 ._table_6nuo6_139 td:not(._isCollapsingColumn_6nuo6_197) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+._hasCollapsingColumn_6nuo6_194 ._table_6nuo6_139 td:not(._isCollapsingColumn_6nuo6_197) .n8n-tree {
+  height: 1.5em;
+  overflow: hidden;
+}
+th._isCollapsingColumn_6nuo6_197 {
+  border-top-color: var(--color--foreground--shade-2);
+  border-left-color: var(--color--foreground--shade-2);
+  border-right-color: var(--color--foreground--shade-2);
+}
+td._isCollapsingColumn_6nuo6_197 {
+  border-left-color: var(--color--foreground--shade-2);
+  border-right-color: var(--color--foreground--shade-2);
+}
+tr:last-child td._isCollapsingColumn_6nuo6_197 {
+  border-bottom-color: var(--color--foreground--shade-2);
+}
+td._isCollapsingColumn_6nuo6_197 + td,
+th._isCollapsingColumn_6nuo6_197 + th {
+  border-left-color: var(--color--foreground--shade-2);
+}
+._nodeClass_6nuo6_226 {
+  margin-bottom: var(--spacing--5xs);
+}
+._emptyCell_6nuo6_230 {
+  height: 32px;
+}
+._header_6nuo6_234 {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing--4xs) var(--spacing--3xs);
+}
+._header_6nuo6_234 span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex-grow: 1;
+}
+._draggableHeader_6nuo6_246:hover {
+  cursor: grab;
+  background-color: var(--color--foreground);
+}
+._draggableHeader_6nuo6_246:hover ._dragButton_6nuo6_250 {
+  opacity: 1;
+}
+._highlight_6nuo6_254 ._draggableHeader_6nuo6_246 {
+  color: var(--color--primary);
+}
+._draggingHeader_6nuo6_258 {
+  color: var(--color--primary);
+  background-color: var(--color--primary--tint-2);
+}
+._activeHeader_6nuo6_263 ._dragButton_6nuo6_250 {
+  opacity: 1;
+}
+._dragButton_6nuo6_250 {
+  opacity: 0;
+}
+._dragButton_6nuo6_250 > svg {
+  vertical-align: middle;
+}
+._dataKey_6nuo6_274 {
+  color: var(--color--text--shade-1);
+  line-height: 1.7;
+  font-weight: var(--font-weight--bold);
+  border-radius: var(--radius);
+  padding: 0 var(--spacing--5xs) 0 var(--spacing--5xs);
+  margin-right: var(--spacing--5xs);
+}
+._value_6nuo6_283 {
+  line-height: var(--line-height--md);
+}
+._nestedValue_6nuo6_287 {
+  margin-left: var(--spacing--4xs);
+}
+._mappable_6nuo6_292 {
+  cursor: grab;
+}
+._empty_6nuo6_230 {
+  color: var(--color--danger);
+  font-style: italic;
+}
+._limitColWidth_6nuo6_301 {
+  max-width: 300px;
+}
+._minColWidth_6nuo6_305 {
+  min-width: 240px;
+}
+._hoveringKey_6nuo6_309 {
+  background-color: var(--color--foreground);
+}
+._draggingKey_6nuo6_313 {
+  background-color: var(--color--primary--tint-2);
+}
+._tableRightMargin_6nuo6_159 {
+  width: var(--ndv--spacing);
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+._compact_6nuo6_135 ._tableRightMargin_6nuo6_159 {
+  padding: 0;
+  min-width: var(--spacing--2xs);
+  max-width: var(--spacing--2xs);
+}
+._hoveringRow_6nuo6_329 td:first-child:after,
+._hoveringRow_6nuo6_329 td:nth-last-child(2):after {
+  background-color: var(--color--secondary);
+}
+._warningTooltip_6nuo6_334 {
+  color: var(--color--warning);
+}
+._executionLinkCell_6nuo6_338 {
+  padding: var(--spacing--3xs) !important;
+}
+._executionLinkRowHeader_6nuo6_342 {
+  width: var(--spacing--md);
+}
+._collapseColumnButton_6nuo6_346 {
+  opacity: 0;
+  margin-block: calc(-2 * var(--spacing--2xs));
+}
+._collapseColumnButton_6nuo6_346 span {
+  flex-shrink: 0;
+}
+._isCollapsingColumn_6nuo6_197 ._collapseColumnButton_6nuo6_346, th._isHoveredColumn_6nuo6_353 ._collapseColumnButton_6nuo6_346, th:hover ._collapseColumnButton_6nuo6_346 {
+  opacity: 1;
+}
