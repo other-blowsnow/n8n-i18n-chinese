@@ -1,0 +1,651 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+._menuItem_aeqar_123 {
+  display: flex;
+  align-items: center;
+  border-radius: var(--spacing--4xs);
+  padding-right: 0;
+}
+._menuItem_aeqar_123:focus-within, ._menuItem_aeqar_123:has([aria-expanded=true]), ._menuItem_aeqar_123._active_aeqar_129, ._menuItem_aeqar_123:hover {
+  background-color: var(--color--background--light-1);
+}
+._menuItemLink_aeqar_133 {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing--4xs);
+  gap: var(--spacing--4xs);
+  cursor: pointer;
+  color: var(--color--text);
+  min-width: 0;
+  flex: 1;
+  text-decoration: none;
+  outline: none;
+}
+._menuItemLink_aeqar_133._compact_aeqar_145 {
+  margin-left: -1px;
+}
+._menuItemLink_aeqar_133:active {
+  color: var(--color--text--shade-1);
+}
+._textContainer_aeqar_152 {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+._label_aeqar_158 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+  line-height: var(--line-height--xl);
+  min-width: 0;
+}
+._title_aeqar_167 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+  line-height: 20px;
+  min-width: 0;
+}
+._actionDropdown_aeqar_176 {
+  opacity: 0;
+  flex-shrink: 0;
+  width: 0;
+  overflow: hidden;
+}
+._menuItem_aeqar_123:has([aria-expanded=true]) ._actionDropdown_aeqar_176, ._menuItem_aeqar_123:has(:focus) ._actionDropdown_aeqar_176, ._menuItem_aeqar_123:hover ._actionDropdown_aeqar_176, ._active_aeqar_129 ._actionDropdown_aeqar_176 {
+  width: auto;
+  opacity: 1;
+}
+._actionDropdownTrigger_aeqar_187 {
+  box-shadow: none !important;
+  outline: none !important;
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+._skeletonItem_zmho6_123 {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing--3xs);
+  gap: var(--spacing--3xs);
+  border-radius: var(--spacing--4xs);
+  height: 30px;
+}
+._skeletonAvatar_zmho6_132,
+._skeletonText_zmho6_133 {
+  background: var(--color--foreground);
+  animation: _skeleton-pulse_zmho6_1 1s ease-in-out infinite;
+}
+._skeletonAvatar_zmho6_132 {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+._skeletonText_zmho6_133 {
+  height: 14px;
+  width: 80%;
+  border-radius: var(--radius--sm);
+}
+@keyframes _skeleton-pulse_zmho6_1 {
+0%, 100% {
+    opacity: 0.6;
+}
+50% {
+    opacity: 0.3;
+}
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+._logoContainer_1wljt_123 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--4xs);
+}
+._component_1wljt_129 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+._header_1wljt_135 {
+  height: 56px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--spacing--xs);
+  gap: var(--spacing--2xs);
+}
+._logo_1wljt_123 {
+  /* Adjust vertical alignment */
+  margin-top: -4px;
+}
+._links_1wljt_151 {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--spacing--3xs) var(--spacing--2xs);
+  gap: 1px;
+}
+._links_1wljt_151._collapsed_1wljt_157 {
+  border-bottom: var(--border);
+}
+._historySections_1wljt_161 {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing--2xs) var(--spacing--3xs) var(--spacing--2xs);
+  gap: var(--spacing--sm);
+}
+._historySections_1wljt_161._collapsed_1wljt_157 {
+  gap: 0;
+}
+._group_1wljt_171 {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+._groupHeader_1wljt_177 {
+  padding: 0 var(--spacing--4xs) var(--spacing--3xs) var(--spacing--4xs);
+}
+._loading_1wljt_181,
+._empty_1wljt_182 {
+  padding: var(--spacing--xs);
+  text-align: center;
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+._sideMenu_18grn_123 {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-right: var(--border);
+  background-color: var(--menu--color--background, var(--color--background--light-2));
+}
+._sideMenu_18grn_123._sideMenuCollapsed_18grn_131 {
+  width: 42px;
+  min-width: auto;
+}
+._scrollArea_18grn_136 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
