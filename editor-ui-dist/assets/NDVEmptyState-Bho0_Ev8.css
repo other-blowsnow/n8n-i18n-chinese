@@ -1,0 +1,28 @@
+
+._empty_ylpfe_2 {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing--2xs);
+
+	line-height: 2;
+	color: var(--color--text);
+}
+._title_ylpfe_13 {
+	font-size: var(--font-size--md);
+	font-weight: var(--font-weight--bold);
+	line-height: 145%;
+	color: var(--color--text);
+	margin: 0;
+}
+._description_ylpfe_21 {
+	font-size: var(--font-size--sm);
+	line-height: var(--line-height--xl);
+	margin: 0;
+	text-align: center;
+	max-width: 240px;
+._wide_ylpfe_28 & {
+		max-width: none;
+}
+}
