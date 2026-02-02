@@ -1,0 +1,395 @@
+
+._ndvHeader_1e58b_2 {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing--2xs);
+	padding: var(--spacing--4xs);
+	background: var(--color--background--light-3);
+}
+._content_1e58b_12 {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing--2xs);
+	margin-left: var(--spacing--2xs);
+}
+._actions_1e58b_19 {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing--4xs);
+}
+._actions_1e58b_19 button:hover {
+	background-color: var(--color--background);
+}
+._actions_1e58b_19 > *:not(:last-child) {
+	border-right: var(--border);
+	padding-right: var(--spacing--2xs);
+}
+._title_1e58b_34 {
+	color: var(--color--text--shade-1);
+	font-size: var(--font-size--sm);
+}
+._docsLabel_1e58b_39 {
+	display: flex;
+	gap: var(--spacing--4xs);
+}
+._icon_1e58b_44 {
+	align-self: center;
+	z-index: 1;
+}
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._dragButton_w2o41_125 {
+  cursor: ew-resize;
+  border: none;
+  outline: none;
+  background: var(--ndv--background--color);
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing--3xs);
+  padding: var(--spacing--4xs) var(--spacing--3xs) 0 var(--spacing--3xs);
+  color: var(--color--foreground--shade-1);
+  border: var(--border);
+  border-bottom: none;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+._dragButton_w2o41_125 ._arrow_w2o41_140 {
+  opacity: 0;
+  width: 10px;
+}
+._dragButton_w2o41_125 ._handle_w2o41_144 {
+  width: 11px;
+  transform: rotate(90deg);
+}
+._dragButton_w2o41_125:hover ._arrow_w2o41_140, ._dragButton_w2o41_125._dragging_w2o41_148 ._arrow_w2o41_140 {
+  opacity: 1;
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._backdrop_lhwvj_125 {
+  position: absolute;
+  z-index: var(--ndv--z);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dialog--overlay--color--background--dark);
+}
+._dialog_lhwvj_135 {
+  position: absolute;
+  z-index: var(--ndv--z);
+  width: calc(100% - var(--spacing--2xl));
+  height: calc(100% - var(--spacing--2xl));
+  top: var(--spacing--lg);
+  left: var(--spacing--lg);
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  outline: none;
+}
+._container_lhwvj_150 {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: var(--border-color);
+  border: var(--border);
+  border-radius: var(--radius--lg);
+  color: var(--color--text);
+  min-width: 0;
+}
+._main_lhwvj_161 {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  min-height: 0;
+  position: relative;
+}
+._column_lhwvj_171 {
+  min-width: 0;
+}
+._column_lhwvj_171 + ._column_lhwvj_171 {
+  border-left: var(--border);
+}
+._column_lhwvj_171:first-child > div {
+  border-bottom-left-radius: var(--radius--lg);
+}
+._column_lhwvj_171:last-child {
+  border-bottom-right-radius: var(--radius--lg);
+}
+._input_lhwvj_184,
+._output_lhwvj_185 {
+  min-width: 280px;
+}
+._dataColumn_lhwvj_189 {
+  overflow-x: auto;
+}
+._header_lhwvj_193 {
+  background-color: var(--ndv--background--color);
+  border-bottom: var(--border);
+  border-top-left-radius: var(--radius--lg);
+  border-top-right-radius: var(--radius--lg);
+}
+._settings_lhwvj_200 {
+  overflow: hidden;
+  flex-grow: 1;
+}
+._draggable_lhwvj_205 {
+  --draggable--height: 18px;
+  position: absolute;
+  top: calc(-1 * var(--draggable--height));
+  left: 50%;
+  transform: translateX(-50%);
+  height: var(--draggable--height);
+}
+._webhookWaiting_lhwvj_214 {
+  border: none;
+}
