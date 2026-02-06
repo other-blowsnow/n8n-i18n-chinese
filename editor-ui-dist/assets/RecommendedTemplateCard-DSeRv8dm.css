@@ -1,0 +1,192 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._suggestion_1q9wt_125 {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing--lg);
+  justify-content: space-between;
+  min-width: 200px;
+  background-color: var(--color--background--light-3);
+}
+._clickable_1q9wt_134 {
+  cursor: pointer;
+}
+._clickable_1q9wt_134:hover {
+  box-shadow: var(--shadow--card-hover);
+}
+._clickable_1q9wt_134:hover ._title_1q9wt_140 {
+  color: var(--color--primary);
+  text-decoration: underline;
+}
+._cardContent_1q9wt_145 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--sm);
+  flex: 1;
+}
+._nodes_1q9wt_152 {
+  display: flex;
+  gap: var(--spacing--xs);
+}
+._statItemLeft_1q9wt_157 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--4xs);
+  min-width: 0;
+}
+._userInfo_1q9wt_164 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--4xs);
+  margin-top: auto;
+}
+._userAvatar_1q9wt_171 {
+  width: var(--spacing--sm);
+  height: var(--spacing--sm);
+  border-radius: 50%;
+  object-fit: cover;
+}
+._verifiedBadge_1q9wt_178 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--4xs);
+  margin-left: var(--spacing--xs);
+}
+._categories_1q9wt_185 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing--2xs);
+}
+._categoryTag_1q9wt_191 {
+  --tag--height: var(--spacing--lg);
+  --tag--border-color: transparent;
+  --tag--padding: var(--spacing--4xs) var(--spacing--2xs);
+}
+._statItem_1q9wt_157 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--spacing--xs);
+}
