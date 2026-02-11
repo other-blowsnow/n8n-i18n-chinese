@@ -1,0 +1,182 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._appGrid_5yuj7_125 {
+  position: relative;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-area: layout;
+  grid-template-areas: "banners banners banners" "sidebar header aside" "sidebar content aside";
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto 1fr;
+}
+._banners_5yuj7_136 {
+  grid-area: banners;
+  min-width: 0;
+  min-height: 0;
+}
+._header_5yuj7_142 {
+  grid-area: header;
+  min-width: 0;
+  min-height: 0;
+}
+._sidebar_5yuj7_148 {
+  grid-area: sidebar;
+}
+._aside_5yuj7_152 {
+  grid-area: aside;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+}
+._content_5yuj7_159 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  grid-area: content;
+}
+._contentWrapper_5yuj7_167 {
+  display: flex;
+  grid-area: content;
+  position: relative;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+._contentWrapper_5yuj7_167 main {
+  width: 100%;
+  height: 100%;
+}
+._contentFooter_5yuj7_181 {
+  height: auto;
+  z-index: 10;
+  width: 100%;
+  display: none;
+}
+._contentFooter_5yuj7_181:has(*) {
+  display: block;
+}
