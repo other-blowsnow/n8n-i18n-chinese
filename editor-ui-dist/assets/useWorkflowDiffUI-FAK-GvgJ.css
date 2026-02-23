@@ -1,0 +1,589 @@
+
+._diffBadge_osfae_2 {
+	background-color: var(--v2f23a409);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color--text--tint-3);
+	font-size: var(--font-size--3xs);
+	font-weight: 700;
+	width: 16px;
+	height: 16px;
+	border-radius: 4px;
+	flex-shrink: 0;
+}
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+/* Diff colors are now centralized in @n8n/design-system tokens */
+._codeDiff_6ow2z_126.code-diff-view {
+  height: 100%;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+._codeDiff_6ow2z_126.code-diff-view .blob-num {
+  display: none;
+}
+._codeDiff_6ow2z_126.code-diff-view[theme="dark"] {
+  /* stylelint-disable-next-line @n8n/css-var-naming */
+  --fgColor-default: var(--color--text--shade-1);
+  /* stylelint-disable-next-line @n8n/css-var-naming */
+  --bgColor-default: var(--color--background--light-2);
+  /* stylelint-disable-next-line @n8n/css-var-naming */
+  --color-fg-subtle: var(--color--text--tint-1);
+  --diff--blob--deletion-num--color--background: var(--diff--color--deleted--light);
+  --diff--blob--deletion-num--color--text: var(--color--text--tint-3);
+  --diff--color--danger--emphasis: var(--diff--color--deleted);
+  --diff--blob--addition-num--color--text: var(--color--text--tint-3);
+  --diff--blob--addition-num--color--background: var(--diff--color--new--light);
+  --diff--color--success--emphasis: var(--diff--color--new);
+  --diff--blob--hunk-num--color--background: var(--color--background--shade-1);
+}
+._codeDiff_6ow2z_126.code-diff-view[theme="dark"] .blob-code-hunk {
+  background-color: var(--diff--blob--hunk-num--color--background);
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._workflowDiffAside_1nee2_125 {
+  width: calc(var(--v5e358da0) * 1px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-left: 1px solid var(--color--foreground);
+  border-top: 1px solid var(--color--foreground);
+}
+._nodeTitle_1nee2_134 {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}/* Shared styles for workflow diff components */._sourceBadge_5j5ev_3 {
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	z-index: 1;
+	border-radius: 4px;
+	border: 1px solid var(--color--foreground--tint-1);
+	background: var(--color--foreground--tint-2);
+	display: flex;
+	height: 30px;
+	padding: 0 12px;
+	align-items: center;
+	gap: 8px;
+	align-self: stretch;
+}/* Node status styles */._deleted_5j5ev_20,
+._added_5j5ev_21,
+._modified_5j5ev_22 {
+	position: relative;
+&::before {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: 4px;
+		color: var(--color--text--tint-3);
+		font-family: Inter, var(--font-family);
+		font-size: 10px;
+		font-weight: 700;
+		z-index: 1;
+		width: 16px;
+		height: 16px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+}
+}._deleted_5j5ev_20 {
+	--canvas-node--color--background: var(--diff--color--deleted--faint);
+	--canvas-node--border-color: var(--diff--color--deleted);
+	--sticky--color--background: var(--diff--color--deleted--faint);
+	--sticky--border-color: var(--diff--color--deleted);
+> div {
+		--canvas-node--border-width: 2px;
+}
+&::before {
+		content: 'D';
+		background-color: var(--diff--color--deleted);
+}
+.canvas-node-handle-main-output .source,
+	.canvas-node-handle-main-input .target {
+		background-color: var(--diff--color--deleted);
+		border: none;
+}
+[class*='disabled'] {
+		--canvas-node--border-color: var(--diff--color--deleted) !important;
+}
+}._added_5j5ev_21 {
+	--canvas-node--border-color: var(--diff--color--new);
+	--canvas-node--color--background: var(--diff--color--new--faint);
+	--sticky--color--background: var(--diff--color--new--faint);
+	--sticky--border-color: var(--diff--color--new);
+	position: relative;
+> div {
+		--canvas-node--border-width: 2px;
+}
+&::before {
+		content: 'N';
+		background-color: var(--diff--color--new);
+}
+.canvas-node-handle-main-output .source,
+	.canvas-node-handle-main-input .target {
+		background-color: var(--diff--color--new);
+		border: none;
+}
+[class*='disabled'] {
+		--canvas-node--border-color: var(--diff--color--new) !important;
+}
+}._equal_5j5ev_95 {
+	opacity: 0.5;
+	position: relative;
+	pointer-events: none;
+	cursor: default;
+	--sticky--color--background: rgba(126, 129, 134, 0.2);
+	--canvas-node--icon-color: var(--color--foreground--shade-2);
+	--sticky--border-color: var(--color--foreground--shade-2);
+&:deep(img) {
+		filter: contrast(0) grayscale(100%);
+}
+}._modified_5j5ev_22 {
+	--canvas-node--border-width: 2px;
+	--canvas-node--border-color: var(--diff--color--modified);
+	--canvas-node--color--background: var(--diff--color--modified--faint);
+	--sticky--color--background: var(--diff--color--modified--faint);
+	--sticky--border-color: var(--diff--color--modified);
+	position: relative;
+> div {
+		--canvas-node--border-width: 2px;
+}
+&::before {
+		content: 'M';
+		background-color: var(--diff--color--modified);
+}
+.canvas-node-handle-main-output .source,
+	.canvas-node-handle-main-input .target {
+		background-color: var(--diff--color--modified);
+		border: none;
+}
+[class*='disabled'] {
+		--canvas-node--border-color: var(--diff--color--modified) !important;
+}
+}/* Edge status styles */._edge-deleted_5j5ev_136 {
+	--canvas-edge--color: var(--diff--color--deleted);
+	--edge--color--highlight: var(--diff--color--deleted--light);
+}._edge-added_5j5ev_141 {
+	--canvas-edge--color: var(--diff--color--new);
+	--edge--color--highlight: var(--diff--color--new--light);
+}._edge-equal_5j5ev_146 {
+	opacity: 0.5;
+}
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._workflowDiffContent_p1w5q_125 {
+  display: flex;
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+._workflowDiff_p1w5q_125 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+}
+._workflowDiffPanel_p1w5q_139 {
+  flex: 1;
+  position: relative;
+  border-top: 1px solid var(--color--foreground);
+  background: var(--canvas--color--background);
+}
+._sourceBadge_p1w5q_146 {
+}
+._emptyWorkflow_p1w5q_150 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Node status styles - composed from shared module */
+._deleted_p1w5q_159 {
+}
+._added_p1w5q_163 {
+}
+._equal_p1w5q_167 {
+}
+._modified_p1w5q_171 {
+}
+
+/* Edge status styles - composed from shared module */
+._edge-deleted_p1w5q_176 {
+}
+._edge-added_p1w5q_180 {
+}
+._edge-equal_p1w5q_184 {
+}
