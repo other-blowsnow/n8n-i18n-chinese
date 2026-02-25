@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   n8ntest:
-    image: n8nio/n8n:{version}
+    image: n8nio/n8n:2.9.4
     container_name: n8ntest
     ports:
       - "15678:5678"
