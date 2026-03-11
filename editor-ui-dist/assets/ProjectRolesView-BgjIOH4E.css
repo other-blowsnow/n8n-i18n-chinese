@@ -1,0 +1,25 @@
+
+._headerContainer_he3bu_2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+._headerTitle_he3bu_8 {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+._clickableRow_he3bu_14 {
+	cursor: pointer;
+}
+._tallRow_he3bu_18 {
+	height: 64px;
+}
+._projectCountLink_he3bu_22 {
+	color: var(--color--text);
+	text-decoration: underline;
+	font-weight: var(--font-weight--bold);
+}
+._projectCountLink_he3bu_22:hover {
+	color: var(--color--primary);
+}
