@@ -1,0 +1,106 @@
+import { $ as openBlock, A as createTextVNode, C as createBaseVNode, Ft as ref, N as defineComponent, Sn as toDisplayString, Wt as unref, X as onMounted, _n as normalizeClass, j as createVNode, w as createBlock, yt as withCtx } from "./vue.runtime.esm-bundler-dg1EVmSK.js";
+import { yt as useI18n } from "./_MapCache-Dm0zgpAe.js";
+import { Gi as N8nButton_default, Hi as N8nHeading_default, Wi as N8nText_default, bt as createEventBus, ct as N8nFormInput_default } from "./src-DpXAQiaT.js";
+import { t as __plugin_vue_export_helper_default } from "./_plugin-vue_export-helper-DltO58Gh.js";
+import "./sanitize-html-JHjOJhXQ.js";
+import "./users.store-KDduniYy.js";
+import { li as PROVIDER_CREDENTIAL_TYPE_MAP } from "./constants-BFYSGQP4.js";
+import "./merge-B0uVzL8N.js";
+import "./_baseOrderBy-CjnCEHwl.js";
+import "./dateformat-CIyrhJiH.js";
+import "./useDebounce-DBvy4NsP.js";
+import { t as Modal_default } from "./Modal-DS2IP3Wk.js";
+import { t as CredentialIcon_default } from "./CredentialIcon-Bw1bGZDR.js";
+import { i as CHAT_MODEL_BY_ID_SELECTOR_MODAL_KEY, y as providerDisplayNames } from "./constants-CrjCGXcB.js";
+var ModelByIdSelectorModal_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
+	__name: "ModelByIdSelectorModal",
+	props: {
+		modalName: {},
+		data: {}
+	},
+	setup(__props) {
+		const props = __props;
+		const modalBus = ref(createEventBus());
+		const modelId = ref(props.data.initialValue);
+		const inputRef = ref(null);
+		const i18n = useI18n();
+		onMounted(() => {
+			setTimeout(() => {
+				inputRef.value?.inputRef?.select();
+				inputRef.value?.inputRef?.focus();
+			});
+		});
+		function onConfirm() {
+			if (modelId.value) {
+				props.data.onSelect(props.data.provider, modelId.value);
+				modalBus.value.emit("close");
+			}
+		}
+		function onCancel() {
+			modalBus.value.emit("close");
+		}
+		return (_ctx, _cache) => {
+			return openBlock(), createBlock(Modal_default, {
+				name: unref(CHAT_MODEL_BY_ID_SELECTOR_MODAL_KEY),
+				"event-bus": modalBus.value,
+				width: "50%",
+				center: true,
+				"max-width": "460px",
+				"min-height": "250px"
+			}, {
+				header: withCtx(() => [createBaseVNode("div", { class: normalizeClass(_ctx.$style.header) }, [createVNode(CredentialIcon_default, {
+					"credential-type-name": unref(PROVIDER_CREDENTIAL_TYPE_MAP)[__props.data.provider],
+					size: 24,
+					class: normalizeClass(_ctx.$style.icon)
+				}, null, 8, ["credential-type-name", "class"]), createVNode(unref(N8nHeading_default), {
+					size: "medium",
+					tag: "h2",
+					class: normalizeClass(_ctx.$style.title)
+				}, {
+					default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("chatHub.models.byIdSelector.title", { interpolate: { provider: unref(providerDisplayNames)[__props.data.provider] } })), 1)]),
+					_: 1
+				}, 8, ["class"])], 2)]),
+				content: withCtx(() => [createBaseVNode("div", { class: normalizeClass(_ctx.$style.content) }, [createVNode(unref(N8nText_default), {
+					size: "small",
+					color: "text-base"
+				}, {
+					default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("chatHub.models.byIdSelector.choose")), 1)]),
+					_: 1
+				}), createVNode(unref(N8nFormInput_default), {
+					ref_key: "inputRef",
+					ref: inputRef,
+					modelValue: modelId.value,
+					"onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => modelId.value = $event),
+					name: "model",
+					label: "",
+					"max-length": "64",
+					"focus-initially": "",
+					onEnter: onConfirm
+				}, null, 8, ["modelValue"])], 2)]),
+				footer: withCtx(() => [createBaseVNode("div", { class: normalizeClass(_ctx.$style.footer) }, [createVNode(unref(N8nButton_default), {
+					variant: "subtle",
+					onClick: onCancel
+				}, {
+					default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("chatHub.models.byIdSelector.cancel")), 1)]),
+					_: 1
+				}), createVNode(unref(N8nButton_default), {
+					variant: "solid",
+					disabled: !modelId.value,
+					onClick: onConfirm
+				}, {
+					default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("chatHub.models.byIdSelector.confirm")), 1)]),
+					_: 1
+				}, 8, ["disabled"])], 2)]),
+				_: 1
+			}, 8, ["name", "event-bus"]);
+		};
+	}
+});
+var ModelByIdSelectorModal_vue_vue_type_style_index_0_lang_module_default = {
+	content: "_content_uxwis_125",
+	footer: "_footer_uxwis_132",
+	header: "_header_uxwis_139",
+	icon: "_icon_uxwis_145"
+};
+var ModelByIdSelectorModal_default = /* @__PURE__ */ __plugin_vue_export_helper_default(ModelByIdSelectorModal_vue_vue_type_script_setup_true_lang_default, [["__cssModules", { "$style": ModelByIdSelectorModal_vue_vue_type_style_index_0_lang_module_default }]]);
+export { ModelByIdSelectorModal_default as default };

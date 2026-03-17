@@ -1,0 +1,208 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._container_1811n_125 {
+  display: block;
+  width: 100%;
+  max-width: var(--content-container--width);
+}
+._content_1811n_131 {
+  width: 100%;
+  padding: 0 var(--spacing--2xl) var(--spacing--lg) var(--spacing--2xl);
+}
+._breadcrumbLink_1811n_136 {
+  font-family: "DM Sans", var(--font-family);
+  font-size: var(--font-size--sm);
+  color: var(--color--primary);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+._breadcrumbLink_1811n_136:hover {
+  color: var(--color--primary--shade-1);
+  text-decoration: underline;
+}
+._breadcrumbSeparator_1811n_148 {
+  color: var(--color--text--tint-1);
+}
+._breadcrumbCurrent_1811n_152 {
+  font-family: "DM Sans", var(--font-family);
+  font-size: var(--font-size--sm);
+  color: var(--color--text--shade-1);
+  font-weight: 500;
+}
+._sortSelect_1811n_159 {
+  min-width: 150px;
+}
+._sectionHeader_1811n_163 {
+  margin-bottom: var(--spacing--xl);
+}
+._sectionTitle_1811n_167 {
+  font-size: var(--font-size--2xl);
+  font-weight: var(--font-weight--bold);
+  letter-spacing: -0.01em;
+  color: var(--color--text--shade-1);
+  margin: 0;
+}
+._grid_1811n_175 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing--lg);
+}
+@media (max-width: 1400px) {
+._grid_1811n_175 {
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+@media (max-width: 1000px) {
+._grid_1811n_175 {
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+@media (max-width: 600px) {
+._grid_1811n_175 {
+    grid-template-columns: 1fr;
+}
+}
+._loading_1811n_196 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing--lg);
+  grid-column: 1/-1;
+}
+._viewAllLink_1811n_204 {
+  margin-top: var(--spacing--xl);
+  text-align: center;
+}
+._viewAllLink_1811n_204 a {
+  color: var(--color--primary);
+  cursor: pointer;
+  font-size: var(--font-size--sm);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing--4xs);
+}
+._viewAllLink_1811n_204 a:hover {
+  text-decoration: underline;
+}
