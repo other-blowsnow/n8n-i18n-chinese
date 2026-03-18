@@ -1,0 +1,10 @@
+const MCP_ENDPOINT = "mcp-server/http";
+const MCP_DOCS_PAGE_URL = "https://docs.n8n.io/advanced-ai/accessing-n8n-mcp-server";
+const ELIGIBLE_WORKFLOWS_DOCS_SECTION = "workflow-eligibility";
+const MCP_SETTINGS_VIEW = "McpSettings";
+const MCP_STORE = "mcp";
+const LOADING_INDICATOR_TIMEOUT = 200;
+const MCP_TOOLTIP_DELAY = 100;
+const MCP_CONNECT_POPOVER_WIDTH = 460;
+const MCP_CONNECT_WORKFLOWS_MODAL_KEY = "mcpConnectWorkflowsModal";
+export { MCP_DOCS_PAGE_URL as a, MCP_STORE as c, MCP_CONNECT_WORKFLOWS_MODAL_KEY as i, MCP_TOOLTIP_DELAY as l, LOADING_INDICATOR_TIMEOUT as n, MCP_ENDPOINT as o, MCP_CONNECT_POPOVER_WIDTH as r, MCP_SETTINGS_VIEW as s, ELIGIBLE_WORKFLOWS_DOCS_SECTION as t };
