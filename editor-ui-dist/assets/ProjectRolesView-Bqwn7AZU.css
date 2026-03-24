@@ -1,0 +1,92 @@
+
+._headerContainer_cwn8u_2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+._headerTitle_cwn8u_8 {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing--2xs);
+}
+._newTag_cwn8u_14 {
+	background-color: var(--color--foreground--shade-2);
+	color: var(--color--background);
+	border-color: var(--color--foreground--shade-2);
+	font-size: var(--font-size--3xs);
+	font-weight: var(--font-weight--bold);
+	padding: var(--spacing--5xs) var(--spacing--4xs);
+	border-radius: var(--spacing--sm);
+	min-height: auto;
+	height: auto;
+	line-height: 1;
+}
+._paywallContainer_cwn8u_27 {
+	border: 2px dashed var(--color--foreground);
+	border-radius: var(--radius--lg);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: var(--spacing--3xl);
+	gap: var(--spacing--lg);
+}
+._paywallIcons_cwn8u_37 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+._iconBox_cwn8u_43 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	background: var(--color--foreground--tint-2);
+	border: 1px solid var(--color--foreground);
+	border-radius: var(--radius);
+	box-shadow:
+		0 0 0.5px 0 light-dark(var(--color--black-alpha-200), var(--color--white-alpha-100)),
+		0 3px 8px 0 light-dark(var(--color--black-alpha-200), var(--color--white-alpha-100)),
+		0 1px 3px 0 light-dark(var(--color--black-alpha-200), var(--color--white-alpha-100));
+}
+._iconBoxLeft_cwn8u_58 {
+	transform: rotate(-8deg);
+	margin: var(--spacing--2xs) var(--spacing--5xs) 0 0;
+}
+._iconBoxCenter_cwn8u_63 {
+	z-index: 1;
+	box-shadow:
+		0 0 0.5px 0 light-dark(var(--color--black-alpha-200), var(--color--white-alpha-200)),
+		0 5px 12px 0 light-dark(var(--color--black-alpha-300), var(--color--white-alpha-200)),
+		0 1px 3px 0 light-dark(var(--color--black-alpha-200), var(--color--white-alpha-100));
+	margin: 0 -3px;
+}
+._iconBoxRight_cwn8u_72 {
+	transform: rotate(8deg);
+	margin: var(--spacing--2xs) 0 0 var(--spacing--5xs);
+}
+._paywallText_cwn8u_77 {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing--2xs);
+	text-align: center;
+}
+._paywallActions_cwn8u_84 {
+	display: flex;
+	gap: var(--spacing--xs);
+	align-items: center;
+}
+._clickableRow_cwn8u_90 {
+	cursor: pointer;
+}
+._tallRow_cwn8u_94 {
+	height: var(--spacing--3xl);
+}
+._projectCountLink_cwn8u_98 {
+	color: var(--color--text);
+	text-decoration: underline;
+	font-weight: var(--font-weight--bold);
+}
+._projectCountLink_cwn8u_98:hover {
+	color: var(--color--primary);
+}
