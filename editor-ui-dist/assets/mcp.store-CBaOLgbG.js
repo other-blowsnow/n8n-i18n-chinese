@@ -1,0 +1,125 @@
+import { Ft as ref, S as computed } from "./vue.runtime.esm-bundler-Bw8GKr4Y.js";
+import { Rr as isWorkflowListItem, oa as useWorkflowDocumentStore, ra as createWorkflowDocumentId, s as useWorkflowsStore, sr as useWorkflowsListStore } from "./users.store-BZtsNFvU.js";
+import { T as defineStore, c as makeRestApiRequest, s as getFullApiResponse, t as useRootStore } from "./useRootStore-BEIaSKen.js";
+import { t as useSettingsStore } from "./settings.store-C7t3M9-w.js";
+//#region src/features/ai/mcpAccess/mcp.api.ts
+async function updateMcpSettings(context, enabled) {
+	return await makeRestApiRequest(context, "PATCH", "/mcp/settings", { mcpAccessEnabled: enabled });
+}
+async function fetchApiKey(context) {
+	return await makeRestApiRequest(context, "GET", "/mcp/api-key");
+}
+async function rotateApiKey(context) {
+	return await makeRestApiRequest(context, "POST", "/mcp/api-key/rotate");
+}
+async function toggleWorkflowMcpAccessApi(context, workflowId, availableInMCP) {
+	return await makeRestApiRequest(context, "PATCH", `/mcp/workflows/${encodeURIComponent(workflowId)}/toggle-access`, { availableInMCP });
+}
+async function fetchOAuthClients(context) {
+	return await makeRestApiRequest(context, "GET", "/mcp/oauth-clients");
+}
+async function deleteOAuthClient(context, clientId) {
+	return await makeRestApiRequest(context, "DELETE", `/mcp/oauth-clients/${encodeURIComponent(clientId)}`);
+}
+async function fetchMcpEligibleWorkflows(context, options) {
+	const params = {};
+	if (options?.take !== void 0) params.take = options.take;
+	if (options?.skip !== void 0) params.skip = options.skip;
+	if (options?.query) params.filter = JSON.stringify({ query: options.query });
+	return await getFullApiResponse(context, "GET", "/mcp/workflows", params);
+}
+//#endregion
+//#region src/features/ai/mcpAccess/mcp.store.ts
+var useMCPStore = defineStore("mcp", () => {
+	const workflowsStore = useWorkflowsStore();
+	const workflowsListStore = useWorkflowsListStore();
+	const rootStore = useRootStore();
+	const settingsStore = useSettingsStore();
+	const currentUserMCPKey = ref(null);
+	const oauthClients = ref([]);
+	const connectPopoverOpen = ref(false);
+	const mcpAccessEnabled = computed(() => !!settingsStore.moduleSettings.mcp?.mcpAccessEnabled);
+	async function fetchWorkflowsAvailableForMCP(page = 1, pageSize = 50) {
+		return (await workflowsListStore.fetchWorkflowsPage(void 0, page, pageSize, "updatedAt:desc", {
+			isArchived: false,
+			availableInMCP: true
+		}, false, false)).filter(isWorkflowListItem);
+	}
+	async function setMcpAccessEnabled(enabled) {
+		const { mcpAccessEnabled: updated } = await updateMcpSettings(rootStore.restApiContext, enabled);
+		settingsStore.moduleSettings.mcp = {
+			...settingsStore.moduleSettings.mcp ?? {},
+			mcpAccessEnabled: updated
+		};
+		return updated;
+	}
+	async function toggleWorkflowMcpAccess(workflowId, availableInMCP) {
+		const response = await toggleWorkflowMcpAccessApi(rootStore.restApiContext, workflowId, availableInMCP);
+		const { id, settings, versionId } = response;
+		if (id === workflowsStore.workflowId) {
+			workflowsStore.setWorkflowVersionData({
+				versionId,
+				name: workflowsStore.versionData?.name ?? null,
+				description: workflowsStore.versionData?.description ?? null
+			});
+			if (settings) useWorkflowDocumentStore(createWorkflowDocumentId(id)).mergeSettings(settings);
+		}
+		if (workflowsListStore.workflowsById[id]) workflowsListStore.workflowsById[id] = {
+			...workflowsListStore.workflowsById[id],
+			settings,
+			versionId
+		};
+		return response;
+	}
+	async function getOrCreateApiKey() {
+		const apiKey = await fetchApiKey(rootStore.restApiContext);
+		currentUserMCPKey.value = apiKey;
+		return apiKey;
+	}
+	async function generateNewApiKey() {
+		const apiKey = await rotateApiKey(rootStore.restApiContext);
+		currentUserMCPKey.value = apiKey;
+		return apiKey;
+	}
+	function resetCurrentUserMCPKey() {
+		currentUserMCPKey.value = null;
+	}
+	async function getAllOAuthClients() {
+		const response = await fetchOAuthClients(rootStore.restApiContext);
+		oauthClients.value = response.data;
+		return response.data;
+	}
+	async function removeOAuthClient(clientId) {
+		const response = await deleteOAuthClient(rootStore.restApiContext, clientId);
+		oauthClients.value = oauthClients.value.filter((client) => client.id !== clientId);
+		return response;
+	}
+	async function getMcpEligibleWorkflows(options) {
+		return await fetchMcpEligibleWorkflows(rootStore.restApiContext, options);
+	}
+	function openConnectPopover() {
+		connectPopoverOpen.value = true;
+	}
+	function closeConnectPopover() {
+		connectPopoverOpen.value = false;
+	}
+	return {
+		mcpAccessEnabled,
+		fetchWorkflowsAvailableForMCP,
+		setMcpAccessEnabled,
+		toggleWorkflowMcpAccess,
+		currentUserMCPKey,
+		getOrCreateApiKey,
+		generateNewApiKey,
+		resetCurrentUserMCPKey,
+		oauthClients,
+		getAllOAuthClients,
+		removeOAuthClient,
+		getMcpEligibleWorkflows,
+		connectPopoverOpen,
+		openConnectPopover,
+		closeConnectPopover
+	};
+});
+//#endregion
+export { useMCPStore as t };
