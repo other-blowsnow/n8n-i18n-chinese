@@ -1,0 +1,687 @@
+import "./chunk-CC9Q-vWm.js";
+import { $ as openBlock, A as createTextVNode, C as createBaseVNode, E as createElementBlock, Ft as ref, K as onBeforeMount, N as defineComponent, Nt as reactive, O as createSlots, S as computed, Sn as toDisplayString, T as createCommentVNode, Wt as unref, X as onMounted, _ as Fragment, _n as normalizeClass, gt as watch, h as withModifiers, j as createVNode, q as onBeforeUnmount, rt as renderList, w as createBlock, yt as withCtx } from "./vue.runtime.esm-bundler-Bw8GKr4Y.js";
+import { at as useI18n, nt as i18n, ot as I18nT } from "./core-C5WMGiem.js";
+import { Di as N8nTooltip_default, F as N8nPopover_default, Ft as N8nBadge_default, Qi as N8nIcon_default, Xi as N8nText_default, Zi as N8nButton_default, _t as N8nSelect_default, dt as Checkbox_default, ji as Input_default, tt as N8nLink_default, vt as N8nOption_default } from "./src-CJGJHCUt.js";
+import { t as _plugin_vue_export_helper_default } from "./_plugin-vue_export-helper-Da88TEg1.js";
+import { t as ElDatePicker } from "./date-picker-rFLIg1o0.js";
+import { fr as useTelemetry, r as useUIStore, ya as isEmpty } from "./users.store-BBlwYPqI.js";
+import { Qc as EnterpriseEditionFeature, Ts as STOP_MANY_EXECUTIONS_MODAL_KEY } from "./constants-fJx0oi9Z.js";
+import { c as makeRestApiRequest, t as useRootStore } from "./useRootStore-BEIaSKen.js";
+import { t as useSettingsStore } from "./settings.store-C7t3M9-w.js";
+import { t as useDebounce } from "./useDebounce-D4kkI-x5.js";
+import { t as usePageRedirectionHelper } from "./usePageRedirectionHelper-DNO8XBUP.js";
+import { t as convertToDisplayDate } from "./dateFormatter-BLwqYkDR.js";
+import { t as WorkflowTagsDropdown_default } from "./WorkflowTagsDropdown-BEnBessh.js";
+import { t as AnnotationTagsDropdown_ee_default } from "./AnnotationTagsDropdown.ee-C4_ajrGa.js";
+//#region src/features/execution/executions/components/ConcurrentExecutionsHeader.vue?vue&type=script&setup=true&lang.ts
+var ConcurrentExecutionsHeader_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
+	__name: "ConcurrentExecutionsHeader",
+	props: {
+		runningExecutionsCount: {},
+		concurrencyCap: {},
+		isCloudDeployment: { type: Boolean }
+	},
+	emits: ["goToUpgrade"],
+	setup(__props, { emit: __emit }) {
+		const props = __props;
+		const emit = __emit;
+		const i18n = useI18n();
+		const tooltipText = computed(() => {
+			let text = i18n.baseText("executionsList.activeExecutions.tooltip", { interpolate: {
+				running: props.runningExecutionsCount,
+				cap: props.concurrencyCap
+			} });
+			text += "\n" + i18n.baseText("executionsList.activeExecutions.evaluationNote");
+			return text;
+		});
+		const headerText = computed(() => {
+			if (props.runningExecutionsCount === 0) return i18n.baseText("executionsList.activeExecutions.none");
+			return i18n.baseText("executionsList.activeExecutions.header", { interpolate: {
+				running: props.runningExecutionsCount,
+				cap: props.concurrencyCap
+			} });
+		});
+		return (_ctx, _cache) => {
+			return openBlock(), createElementBlock("div", {
+				"data-test-id": "concurrent-executions-header",
+				class: normalizeClass(_ctx.$style.concurrentExecutionHeader)
+			}, [createVNode(unref(N8nText_default), null, {
+				default: withCtx(() => [createTextVNode(toDisplayString(headerText.value), 1)]),
+				_: 1
+			}), createVNode(unref(N8nTooltip_default), null, {
+				content: withCtx(() => [createBaseVNode("div", { class: normalizeClass(_ctx.$style.tooltip) }, [createTextVNode(toDisplayString(tooltipText.value) + " ", 1), props.isCloudDeployment ? (openBlock(), createBlock(unref(N8nLink_default), {
+					key: 0,
+					bold: "",
+					size: "small",
+					class: normalizeClass(_ctx.$style.link),
+					onClick: _cache[0] || (_cache[0] = ($event) => emit("goToUpgrade"))
+				}, {
+					default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("generic.upgradeNow")), 1)]),
+					_: 1
+				}, 8, ["class"])) : (openBlock(), createBlock(unref(N8nLink_default), {
+					key: 1,
+					class: normalizeClass(_ctx.$style.link),
+					href: unref(i18n).baseText("executions.concurrency.docsLink"),
+					target: "_blank"
+				}, {
+					default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("generic.viewDocs")), 1)]),
+					_: 1
+				}, 8, ["class", "href"]))], 2)]),
+				default: withCtx(() => [createVNode(unref(N8nIcon_default), {
+					icon: "info",
+					class: "ml-2xs"
+				})]),
+				_: 1
+			})], 2);
+		};
+	}
+});
+var ConcurrentExecutionsHeader_vue_vue_type_style_index_0_lang_module_default = {
+	tooltip: "_tooltip_1c31h_125",
+	link: "_link_1c31h_130",
+	concurrentExecutionHeader: "_concurrentExecutionHeader_1c31h_134"
+};
+var ConcurrentExecutionsHeader_default = /* @__PURE__ */ _plugin_vue_export_helper_default(ConcurrentExecutionsHeader_vue_vue_type_script_setup_true_lang_default, [["__cssModules", { "$style": ConcurrentExecutionsHeader_vue_vue_type_style_index_0_lang_module_default }]]);
+//#endregion
+//#region src/features/execution/executions/components/ExecutionsFilter.vue?vue&type=script&setup=true&lang.ts
+var _hoisted_1 = { "data-test-id": "execution-filter-form" };
+var _hoisted_2 = { for: "execution-filter-workflows" };
+var _hoisted_3 = { for: "execution-filter-tags" };
+var _hoisted_4 = { for: "execution-filter-status" };
+var _hoisted_5 = { for: "execution-filter-start-date" };
+var _hoisted_6 = { for: "execution-filter-annotation-tags" };
+var _hoisted_7 = { for: "execution-filter-annotation-vote" };
+var _hoisted_8 = { for: "execution-filter-saved-data-key" };
+var _hoisted_9 = { for: "execution-filter-saved-data-value" };
+var DATE_TIME_MASK = "YYYY-MM-DD HH:mm";
+var ExecutionsFilter_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
+	__name: "ExecutionsFilter",
+	props: {
+		workflows: { default: () => [] },
+		workflowId: {},
+		popoverSide: { default: "bottom" },
+		popoverAlign: { default: "center" },
+		teleported: {
+			type: Boolean,
+			default: true
+		}
+	},
+	emits: ["filterChanged"],
+	setup(__props, { emit: __emit }) {
+		const settingsStore = useSettingsStore();
+		const rootStore = useRootStore();
+		const { debounce } = useDebounce();
+		const telemetry = useTelemetry();
+		const pageRedirectionHelper = usePageRedirectionHelper();
+		const props = __props;
+		const emit = __emit;
+		const debouncedEmit = debounce(emit, { debounceTime: 500 });
+		const isCustomDataFilterTracked = ref(false);
+		const isAdvancedExecutionFilterEnabled = computed(() => settingsStore.isEnterpriseFeatureEnabled[EnterpriseEditionFeature.AdvancedExecutionFilters]);
+		const isAnnotationFiltersEnabled = computed(() => isAdvancedExecutionFilterEnabled.value);
+		const showTags = computed(() => false);
+		const getDefaultFilter = () => ({
+			status: "all",
+			workflowId: "all",
+			tags: [],
+			annotationTags: [],
+			startDate: "",
+			endDate: "",
+			metadata: [{
+				key: "",
+				value: "",
+				exactMatch: false
+			}],
+			vote: "all",
+			workflowVersionId: "all"
+		});
+		const filter = reactive(getDefaultFilter());
+		const workflowVersions = ref([]);
+		const isLoadingVersions = ref(false);
+		const hasFetchedVersions = ref(false);
+		const versionFilterOptions = computed(() => {
+			const options = [{
+				id: "all",
+				name: i18n.baseText("executionsFilter.version.all")
+			}];
+			for (const version of workflowVersions.value) {
+				const name = version.name ?? i18n.baseText("executionDetails.versionAutosave");
+				const { date, time } = convertToDisplayDate(version.createdAt);
+				options.push({
+					id: version.versionId,
+					name: i18n.baseText("executionsFilter.version.label", { interpolate: {
+						name,
+						date: `${date} ${time}`
+					} })
+				});
+			}
+			return options;
+		});
+		function fetchVersions() {
+			const workflowId = props.workflowId;
+			if (!workflowId || hasFetchedVersions.value || isLoadingVersions.value) return;
+			isLoadingVersions.value = true;
+			makeRestApiRequest(rootStore.restApiContext, "GET", `/executions/versions/${workflowId}`).then((versions) => {
+				workflowVersions.value = versions;
+				hasFetchedVersions.value = true;
+			}).catch(() => {}).finally(() => {
+				isLoadingVersions.value = false;
+			});
+		}
+		watch(filter, (newFilter) => {
+			if (newFilter.startDate || newFilter.endDate) debouncedEmit("filterChanged", newFilter);
+			else emit("filterChanged", newFilter);
+		}, {
+			deep: true,
+			immediate: false
+		});
+		const statuses = computed(() => [
+			{
+				id: "all",
+				name: i18n.baseText("executionsList.anyStatus")
+			},
+			{
+				id: "error",
+				name: i18n.baseText("executionsList.error")
+			},
+			{
+				id: "canceled",
+				name: i18n.baseText("executionsList.canceled")
+			},
+			{
+				id: "new",
+				name: i18n.baseText("executionsList.new")
+			},
+			{
+				id: "running",
+				name: i18n.baseText("executionsList.running")
+			},
+			{
+				id: "success",
+				name: i18n.baseText("executionsList.success")
+			},
+			{
+				id: "waiting",
+				name: i18n.baseText("executionsList.waiting")
+			}
+		]);
+		const voteFilterOptions = computed(() => [
+			{
+				id: "all",
+				name: i18n.baseText("executionsFilter.annotation.rating.all")
+			},
+			{
+				id: "up",
+				name: i18n.baseText("executionsFilter.annotation.rating.good")
+			},
+			{
+				id: "down",
+				name: i18n.baseText("executionsFilter.annotation.rating.bad")
+			}
+		]);
+		const countSelectedFilterProps = computed(() => {
+			return [
+				filter.status !== "all",
+				filter.workflowId !== "all" && props.workflows.length,
+				!isEmpty(filter.tags),
+				!isEmpty(filter.annotationTags),
+				filter.vote !== "all",
+				filter.workflowVersionId !== "all",
+				!isEmpty(filter.metadata),
+				!!filter.startDate,
+				!!filter.endDate
+			].filter(Boolean).length;
+		});
+		const onFilterMetaChange = (index, prop, value) => {
+			if (!filter.metadata[index]) filter.metadata[index] = {
+				key: "",
+				value: "",
+				exactMatch: false
+			};
+			filter.metadata[index][prop] = value;
+			if (!isCustomDataFilterTracked.value) {
+				telemetry.track("User filtered executions with custom data");
+				isCustomDataFilterTracked.value = true;
+			}
+			debouncedEmit("filterChanged", filter);
+		};
+		const onTagsChange = () => {
+			emit("filterChanged", filter);
+		};
+		const onAnnotationTagsChange = () => {
+			emit("filterChanged", filter);
+		};
+		const onFilterReset = () => {
+			Object.assign(filter, getDefaultFilter());
+		};
+		const goToUpgrade = () => {
+			pageRedirectionHelper.goToUpgrade("custom-data-filter", "upgrade-custom-data-filter");
+		};
+		const onExactMatchChange = (e) => {
+			if (typeof e === "boolean") onFilterMetaChange(0, "exactMatch", e);
+		};
+		onBeforeMount(() => {
+			isCustomDataFilterTracked.value = false;
+		});
+		return (_ctx, _cache) => {
+			return openBlock(), createBlock(unref(N8nPopover_default), {
+				side: props.popoverSide,
+				align: props.popoverAlign,
+				"position-strategy": "absolute",
+				width: "440px",
+				"content-class": _ctx.$style["popover-content"],
+				"show-arrow": "",
+				"onUpdate:open": _cache[10] || (_cache[10] = ($event) => $event && fetchVersions())
+			}, {
+				trigger: withCtx(() => [createVNode(unref(N8nButton_default), {
+					variant: "subtle",
+					iconOnly: "",
+					icon: "funnel",
+					size: "medium",
+					"aria-label": unref(i18n).baseText("forms.resourceFiltersDropdown.filters"),
+					active: !!countSelectedFilterProps.value,
+					"data-test-id": "executions-filter-button",
+					class: normalizeClass(_ctx.$style.filterButton)
+				}, createSlots({ _: 2 }, [!!countSelectedFilterProps.value ? {
+					name: "default",
+					fn: withCtx(() => [createVNode(unref(N8nBadge_default), {
+						theme: "primary",
+						class: normalizeClass(["mr-4xs", _ctx.$style.filterBadge]),
+						"data-test-id": "execution-filter-badge"
+					}, {
+						default: withCtx(() => [createTextVNode(toDisplayString(countSelectedFilterProps.value), 1)]),
+						_: 1
+					}, 8, ["class"])]),
+					key: "0"
+				} : void 0]), 1032, [
+					"aria-label",
+					"active",
+					"class"
+				])]),
+				content: withCtx(() => [createBaseVNode("div", _hoisted_1, [
+					__props.workflows && __props.workflows.length > 0 ? (openBlock(), createElementBlock("div", {
+						key: 0,
+						class: normalizeClass(_ctx.$style.group)
+					}, [createBaseVNode("label", _hoisted_2, toDisplayString(unref(i18n).baseText("workflows.heading")), 1), createVNode(unref(N8nSelect_default), {
+						id: "execution-filter-workflows",
+						modelValue: filter.workflowId,
+						"onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => filter.workflowId = $event),
+						placeholder: unref(i18n).baseText("executionsFilter.selectWorkflow"),
+						filterable: "",
+						"data-test-id": "executions-filter-workflows-select",
+						teleported: __props.teleported
+					}, {
+						default: withCtx(() => [createBaseVNode("div", null, [(openBlock(true), createElementBlock(Fragment, null, renderList(props.workflows, (item, idx) => {
+							return openBlock(), createBlock(unref(N8nOption_default), {
+								key: idx,
+								label: item.name,
+								value: item.id
+							}, null, 8, ["label", "value"]);
+						}), 128))])]),
+						_: 1
+					}, 8, [
+						"modelValue",
+						"placeholder",
+						"teleported"
+					])], 2)) : createCommentVNode("", true),
+					showTags.value ? (openBlock(), createElementBlock("div", {
+						key: 1,
+						class: normalizeClass(_ctx.$style.group)
+					}, [createBaseVNode("label", _hoisted_3, toDisplayString(unref(i18n).baseText("workflows.filters.tags")), 1), createVNode(WorkflowTagsDropdown_default, {
+						id: "execution-filter-tags",
+						modelValue: filter.tags,
+						"onUpdate:modelValue": [_cache[1] || (_cache[1] = ($event) => filter.tags = $event), onTagsChange],
+						placeholder: unref(i18n).baseText("workflowOpen.filterWorkflows"),
+						"create-enabled": false,
+						"data-test-id": "executions-filter-tags-select"
+					}, null, 8, ["modelValue", "placeholder"])], 2)) : createCommentVNode("", true),
+					createBaseVNode("div", { class: normalizeClass(_ctx.$style.group) }, [createBaseVNode("label", _hoisted_4, toDisplayString(unref(i18n).baseText("executionsList.status")), 1), createVNode(unref(N8nSelect_default), {
+						id: "execution-filter-status",
+						modelValue: filter.status,
+						"onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => filter.status = $event),
+						placeholder: unref(i18n).baseText("executionsFilter.selectStatus"),
+						filterable: "",
+						"data-test-id": "executions-filter-status-select",
+						teleported: __props.teleported
+					}, {
+						default: withCtx(() => [(openBlock(true), createElementBlock(Fragment, null, renderList(statuses.value, (item, idx) => {
+							return openBlock(), createBlock(unref(N8nOption_default), {
+								key: idx,
+								label: item.name,
+								value: item.id
+							}, null, 8, ["label", "value"]);
+						}), 128))]),
+						_: 1
+					}, 8, [
+						"modelValue",
+						"placeholder",
+						"teleported"
+					])], 2),
+					createBaseVNode("div", { class: normalizeClass(_ctx.$style.group) }, [createBaseVNode("label", _hoisted_5, toDisplayString(unref(i18n).baseText("executionsFilter.start")), 1), createBaseVNode("div", { class: normalizeClass(_ctx.$style.dates) }, [
+						createVNode(unref(ElDatePicker), {
+							id: "execution-filter-start-date",
+							modelValue: filter.startDate,
+							"onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => filter.startDate = $event),
+							type: "datetime",
+							teleported: __props.teleported,
+							format: DATE_TIME_MASK,
+							placeholder: unref(i18n).baseText("executionsFilter.startDate"),
+							"data-test-id": "executions-filter-start-date-picker"
+						}, null, 8, [
+							"modelValue",
+							"teleported",
+							"placeholder"
+						]),
+						createBaseVNode("span", { class: normalizeClass(_ctx.$style.divider) }, "to", 2),
+						createVNode(unref(ElDatePicker), {
+							id: "execution-filter-end-date",
+							modelValue: filter.endDate,
+							"onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => filter.endDate = $event),
+							type: "datetime",
+							teleported: __props.teleported,
+							format: DATE_TIME_MASK,
+							placeholder: unref(i18n).baseText("executionsFilter.endDate"),
+							"data-test-id": "executions-filter-end-date-picker"
+						}, null, 8, [
+							"modelValue",
+							"teleported",
+							"placeholder"
+						])
+					], 2)], 2),
+					isAnnotationFiltersEnabled.value ? (openBlock(), createElementBlock("div", {
+						key: 2,
+						class: normalizeClass(_ctx.$style.group)
+					}, [createBaseVNode("label", _hoisted_6, toDisplayString(unref(i18n).baseText("executionsFilter.annotation.tags")), 1), createVNode(AnnotationTagsDropdown_ee_default, {
+						id: "execution-filter-annotation-tags",
+						modelValue: filter.annotationTags,
+						"onUpdate:modelValue": [_cache[5] || (_cache[5] = ($event) => filter.annotationTags = $event), onAnnotationTagsChange],
+						placeholder: unref(i18n).baseText("workflowOpen.filterWorkflows"),
+						"create-enabled": false,
+						"data-test-id": "executions-filter-annotation-tags-select"
+					}, null, 8, ["modelValue", "placeholder"])], 2)) : createCommentVNode("", true),
+					props.workflowId ? (openBlock(), createElementBlock("div", {
+						key: 3,
+						class: normalizeClass(_ctx.$style.group)
+					}, [createVNode(unref(N8nTooltip_default), { placement: "right" }, {
+						content: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("executionsFilter.version.hint")), 1)]),
+						default: withCtx(() => [createBaseVNode("span", { class: normalizeClass([_ctx.$style.label, _ctx.$style.savedDataLabel]) }, [createBaseVNode("span", null, toDisplayString(unref(i18n).baseText("executionsFilter.version")), 1), createVNode(unref(N8nIcon_default), {
+							class: normalizeClass(_ctx.$style.tooltipIcon),
+							icon: "circle-help",
+							size: "medium"
+						}, null, 8, ["class"])], 2)]),
+						_: 1
+					}), createVNode(unref(N8nTooltip_default), {
+						disabled: isLoadingVersions.value || versionFilterOptions.value.length > 1,
+						placement: "top"
+					}, {
+						content: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("executionsFilter.version.noVersions")), 1)]),
+						default: withCtx(() => [createVNode(unref(N8nSelect_default), {
+							id: "execution-filter-version",
+							modelValue: filter.workflowVersionId,
+							"onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => filter.workflowVersionId = $event),
+							placeholder: unref(i18n).baseText("executionsFilter.version.select"),
+							filterable: "",
+							disabled: isLoadingVersions.value || versionFilterOptions.value.length <= 1,
+							"data-test-id": "executions-filter-version-select",
+							teleported: __props.teleported
+						}, createSlots({
+							default: withCtx(() => [(openBlock(true), createElementBlock(Fragment, null, renderList(versionFilterOptions.value, (item, idx) => {
+								return openBlock(), createBlock(unref(N8nOption_default), {
+									key: idx,
+									label: item.name,
+									value: item.id
+								}, null, 8, ["label", "value"]);
+							}), 128))]),
+							_: 2
+						}, [isLoadingVersions.value ? {
+							name: "prefix",
+							fn: withCtx(() => [createVNode(unref(N8nIcon_default), {
+								icon: "spinner",
+								spin: ""
+							})]),
+							key: "0"
+						} : void 0]), 1032, [
+							"modelValue",
+							"placeholder",
+							"disabled",
+							"teleported"
+						])]),
+						_: 1
+					}, 8, ["disabled"])], 2)) : createCommentVNode("", true),
+					isAnnotationFiltersEnabled.value ? (openBlock(), createElementBlock("div", {
+						key: 4,
+						class: normalizeClass(_ctx.$style.group)
+					}, [createBaseVNode("label", _hoisted_7, toDisplayString(unref(i18n).baseText("executionsFilter.annotation.rating")), 1), createVNode(unref(N8nSelect_default), {
+						id: "execution-filter-annotation-vote",
+						modelValue: filter.vote,
+						"onUpdate:modelValue": _cache[7] || (_cache[7] = ($event) => filter.vote = $event),
+						placeholder: unref(i18n).baseText("executionsFilter.annotation.selectVoteFilter"),
+						filterable: "",
+						"data-test-id": "executions-filter-annotation-vote-select",
+						teleported: __props.teleported
+					}, {
+						default: withCtx(() => [(openBlock(true), createElementBlock(Fragment, null, renderList(voteFilterOptions.value, (item, idx) => {
+							return openBlock(), createBlock(unref(N8nOption_default), {
+								key: idx,
+								label: item.name,
+								value: item.id
+							}, null, 8, ["label", "value"]);
+						}), 128))]),
+						_: 1
+					}, 8, [
+						"modelValue",
+						"placeholder",
+						"teleported"
+					])], 2)) : createCommentVNode("", true),
+					createBaseVNode("div", { class: normalizeClass(_ctx.$style.group) }, [createVNode(unref(N8nTooltip_default), { placement: "right" }, {
+						content: withCtx(() => [createVNode(unref(I18nT), {
+							tag: "span",
+							keypath: "executionsFilter.customData.docsTooltip",
+							scope: "global"
+						})]),
+						default: withCtx(() => [createBaseVNode("span", { class: normalizeClass([_ctx.$style.label, _ctx.$style.savedDataLabel]) }, [createBaseVNode("span", null, toDisplayString(unref(i18n).baseText("executionsFilter.savedData")), 1), createVNode(unref(N8nIcon_default), {
+							class: normalizeClass(_ctx.$style.tooltipIcon),
+							icon: "circle-help",
+							size: "medium"
+						}, null, 8, ["class"])], 2)]),
+						_: 1
+					}), createBaseVNode("div", { class: normalizeClass(_ctx.$style.subGroup) }, [
+						createBaseVNode("label", _hoisted_8, toDisplayString(unref(i18n).baseText("executionsFilter.savedDataKey")), 1),
+						createVNode(unref(N8nTooltip_default), {
+							disabled: isAdvancedExecutionFilterEnabled.value,
+							placement: "top"
+						}, {
+							content: withCtx(() => [createVNode(unref(I18nT), {
+								tag: "span",
+								keypath: "executionsFilter.customData.inputTooltip",
+								scope: "global"
+							}, {
+								link: withCtx(() => [createBaseVNode("a", {
+									href: "#",
+									"data-test-id": "executions-filter-view-plans-link",
+									onClick: withModifiers(goToUpgrade, ["prevent"])
+								}, toDisplayString(unref(i18n).baseText("executionsFilter.customData.inputTooltip.link")), 1)]),
+								_: 1
+							})]),
+							default: withCtx(() => [createVNode(unref(Input_default), {
+								id: "execution-filter-saved-data-key",
+								name: "execution-filter-saved-data-key",
+								type: "text",
+								disabled: !isAdvancedExecutionFilterEnabled.value,
+								placeholder: unref(i18n).baseText("executionsFilter.savedDataKeyPlaceholder"),
+								"model-value": filter.metadata[0]?.key,
+								"data-test-id": "execution-filter-saved-data-key-input",
+								"onUpdate:modelValue": _cache[8] || (_cache[8] = ($event) => onFilterMetaChange(0, "key", $event))
+							}, null, 8, [
+								"disabled",
+								"placeholder",
+								"model-value"
+							])]),
+							_: 1
+						}, 8, ["disabled"]),
+						createBaseVNode("div", { class: normalizeClass(_ctx.$style.checkboxWrapper) }, [createVNode(unref(N8nTooltip_default), {
+							disabled: isAdvancedExecutionFilterEnabled.value,
+							placement: "top"
+						}, {
+							content: withCtx(() => [createVNode(unref(I18nT), {
+								tag: "span",
+								keypath: "executionsFilter.customData.inputTooltip",
+								scope: "global"
+							}, {
+								link: withCtx(() => [createBaseVNode("a", {
+									href: "#",
+									onClick: withModifiers(goToUpgrade, ["prevent"])
+								}, toDisplayString(unref(i18n).baseText("executionsFilter.customData.inputTooltip.link")), 1)]),
+								_: 1
+							})]),
+							default: withCtx(() => [createVNode(unref(Checkbox_default), {
+								label: unref(i18n).baseText("executionsFilter.savedDataExactMatch"),
+								"model-value": filter.metadata[0]?.exactMatch,
+								disabled: !isAdvancedExecutionFilterEnabled.value,
+								"data-test-id": "execution-filter-saved-data-exact-match-checkbox",
+								"onUpdate:modelValue": onExactMatchChange
+							}, null, 8, [
+								"label",
+								"model-value",
+								"disabled"
+							])]),
+							_: 1
+						}, 8, ["disabled"])], 2),
+						createBaseVNode("label", _hoisted_9, toDisplayString(unref(i18n).baseText("executionsFilter.savedDataValue")), 1),
+						createVNode(unref(N8nTooltip_default), {
+							disabled: isAdvancedExecutionFilterEnabled.value,
+							placement: "top"
+						}, {
+							content: withCtx(() => [createVNode(unref(I18nT), {
+								tag: "span",
+								keypath: "executionsFilter.customData.inputTooltip",
+								scope: "global"
+							}, {
+								link: withCtx(() => [createBaseVNode("a", {
+									href: "#",
+									onClick: withModifiers(goToUpgrade, ["prevent"])
+								}, toDisplayString(unref(i18n).baseText("executionsFilter.customData.inputTooltip.link")), 1)]),
+								_: 1
+							})]),
+							default: withCtx(() => [createVNode(unref(Input_default), {
+								id: "execution-filter-saved-data-value",
+								name: "execution-filter-saved-data-value",
+								type: "text",
+								disabled: !isAdvancedExecutionFilterEnabled.value,
+								placeholder: unref(i18n).baseText("executionsFilter.savedDataValuePlaceholder"),
+								"model-value": filter.metadata[0]?.value,
+								"data-test-id": "execution-filter-saved-data-value-input",
+								"onUpdate:modelValue": _cache[9] || (_cache[9] = ($event) => onFilterMetaChange(0, "value", $event))
+							}, null, 8, [
+								"disabled",
+								"placeholder",
+								"model-value"
+							])]),
+							_: 1
+						}, 8, ["disabled"])
+					], 2)], 2),
+					!!countSelectedFilterProps.value ? (openBlock(), createBlock(unref(N8nButton_default), {
+						key: 5,
+						variant: "ghost",
+						class: normalizeClass(_ctx.$style.resetBtn),
+						size: "large",
+						"data-test-id": "executions-filter-reset-button",
+						onClick: onFilterReset
+					}, {
+						default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("executionsFilter.reset")), 1)]),
+						_: 1
+					}, 8, ["class"])) : createCommentVNode("", true)
+				])]),
+				_: 1
+			}, 8, [
+				"side",
+				"align",
+				"content-class"
+			]);
+		};
+	}
+});
+var ExecutionsFilter_vue_vue_type_style_index_0_lang_module_default = {
+	group: "_group_1yvvq_125",
+	label: "_label_1yvvq_126",
+	savedDataLabel: "_savedDataLabel_1yvvq_133",
+	subGroup: "_subGroup_1yvvq_141",
+	checkboxWrapper: "_checkboxWrapper_1yvvq_149",
+	dates: "_dates_1yvvq_157",
+	divider: "_divider_1yvvq_165",
+	resetBtn: "_resetBtn_1yvvq_170",
+	tooltipIcon: "_tooltipIcon_1yvvq_175",
+	filterButton: "_filterButton_1yvvq_179",
+	filterBadge: "_filterBadge_1yvvq_182",
+	"popover-content": "_popover-content_1yvvq_189"
+};
+var ExecutionsFilter_default = /* @__PURE__ */ _plugin_vue_export_helper_default(ExecutionsFilter_vue_vue_type_script_setup_true_lang_default, [["__cssModules", { "$style": ExecutionsFilter_vue_vue_type_style_index_0_lang_module_default }], ["__scopeId", "data-v-0c6b43c6"]]);
+//#endregion
+//#region src/features/execution/executions/components/ExecutionStopAllText.vue?vue&type=script&setup=true&lang.ts
+var ExecutionStopAllText_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
+	__name: "ExecutionStopAllText",
+	props: { executions: {} },
+	setup(__props) {
+		const props = __props;
+		const uiStore = useUIStore();
+		const i18n = useI18n();
+		const hasCancellableExecution = computed(() => props.executions.find((x) => [
+			"new",
+			"running",
+			"waiting"
+		].includes(x.status)));
+		const telemetry = useTelemetry();
+		function onStopManyExecutions() {
+			telemetry.track("User initiated stop many executions");
+			uiStore.openModal(STOP_MANY_EXECUTIONS_MODAL_KEY);
+		}
+		return (_ctx, _cache) => {
+			return hasCancellableExecution.value ? (openBlock(), createBlock(unref(N8nText_default), {
+				key: 0,
+				class: normalizeClass(_ctx.$style.stopAll),
+				size: "small",
+				color: "text-base",
+				onClick: onStopManyExecutions
+			}, {
+				default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("generic.stopAll")), 1)]),
+				_: 1
+			}, 8, ["class"])) : createCommentVNode("", true);
+		};
+	}
+});
+var ExecutionStopAllText_vue_vue_type_style_index_0_lang_module_default = { stopAll: "_stopAll_jkvxp_125" };
+var ExecutionStopAllText_default = /* @__PURE__ */ _plugin_vue_export_helper_default(ExecutionStopAllText_vue_vue_type_script_setup_true_lang_default, [["__cssModules", { "$style": ExecutionStopAllText_vue_vue_type_style_index_0_lang_module_default }]]);
+//#endregion
+//#region src/features/execution/executions/components/ExecutionsTime.vue
+var ExecutionsTime_default = /* @__PURE__ */ defineComponent({
+	__name: "ExecutionsTime",
+	props: { startTime: {} },
+	setup(__props) {
+		const props = __props;
+		const i18n = useI18n();
+		const nowTime = ref(-1);
+		const intervalTimer = ref(null);
+		const time = computed(() => {
+			if (!props.startTime) return "...";
+			const msPassed = nowTime.value - new Date(props.startTime).getTime();
+			return i18n.displayTimer(msPassed);
+		});
+		onMounted(() => {
+			setNow();
+			intervalTimer.value = setInterval(() => {
+				setNow();
+			}, 1e3);
+		});
+		onBeforeUnmount(() => {
+			if (intervalTimer.value !== null) clearInterval(intervalTimer.value);
+		});
+		function setNow() {
+			nowTime.value = (/* @__PURE__ */ new Date()).getTime();
+		}
+		return (_ctx, _cache) => {
+			return openBlock(), createElementBlock("span", null, toDisplayString(time.value), 1);
+		};
+	}
+});
+//#endregion
+export { ConcurrentExecutionsHeader_default as i, ExecutionStopAllText_default as n, ExecutionsFilter_default as r, ExecutionsTime_default as t };
