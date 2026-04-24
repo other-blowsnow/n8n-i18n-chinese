@@ -1,0 +1,545 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._body_rwd47_125 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: var(--spacing--lg);
+  gap: var(--spacing--sm);
+}
+._description_rwd47_133 {
+  text-align: center;
+  font-size: var(--font-size--md);
+  line-height: var(--line-height--xl);
+  margin-top: var(--spacing--sm);
+}
+._heroIcon_rwd47_140 {
+  display: flex;
+  justify-content: center;
+}
+._badge_rwd47_145 {
+  display: inline-block;
+  padding: var(--spacing--3xs) var(--spacing--xs);
+  border-radius: var(--radius--3xs);
+  background: #e9dbf8;
+  color: #6b35ad;
+  font-size: var(--font-size--sm);
+}
+._warningBox_rwd47_154 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--xs);
+  padding: var(--spacing--sm);
+  background: var(--color--orange-900);
+  border: 1px solid var(--color--orange-800);
+  border-radius: var(--radius--xs);
+  color: var(--color--orange-250);
+}
+body:not([data-theme='dark']) ._warningBox_rwd47_154 {
+  background: var(--color--orange-50);
+  border: 1px solid var(--color--orange-200);
+  color: var(--color--orange-700);
+}
+._warningIcon_rwd47_171 {
+  flex-shrink: 0;
+  color: var(--color--orange-250);
+  margin-top: 2px;
+}
+body:not([data-theme='dark']) ._warningIcon_rwd47_171 {
+  color: var(--color--orange-700);
+}
+._warningText_rwd47_181 {
+  line-height: var(--line-height--xl);
+  color: var(--color--orange-250);
+}
+body:not([data-theme='dark']) ._warningText_rwd47_181 {
+  color: var(--color--orange-700);
+}
+._badgeWrap_rwd47_190 {
+  display: flex;
+  justify-content: center;
+}
+._title_rwd47_195 {
+  font-size: var(--font-size--2xl);
+  line-height: var(--line-height--sm);
+  margin: 0;
+  text-align: center;
+}
+._toggleGroup_rwd47_202 {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+._toggleGroup_rwd47_202 ._toggleCard_rwd47_207:first-child {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+._toggleGroup_rwd47_202 ._toggleCard_rwd47_207:last-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+._toggleCard_rwd47_207 {
+  display: block;
+  padding: var(--spacing--sm);
+  border: 1px solid var(--border-color--strong);
+  border-radius: var(--radius--xs);
+  cursor: pointer;
+  background: var(--color--foreground--tint-2);
+}
+body[data-theme='dark'] ._toggleCard_rwd47_207 {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+._toggleMain_rwd47_231 {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+._radioIndicator_rwd47_237 {
+  flex-shrink: 0;
+  width: var(--spacing--sm);
+  height: var(--spacing--sm);
+  border-radius: 50%;
+  border: 2px solid var(--border-color--strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+._toggleCardSelected_rwd47_248 ._radioIndicator_rwd47_237 {
+  border: 4px solid var(--color--orange-400);
+}
+._radioIndicatorInner_rwd47_252 {
+  width: var(--spacing--sm);
+  height: var(--spacing--2xs);
+  border-radius: 50%;
+  background: transparent;
+}
+._toggleLabels_rwd47_259 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--3xs);
+  text-align: left;
+}
+._footer_rwd47_266 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--spacing--sm);
+  margin-top: var(--spacing--4xs);
+}
+._disclaimer_rwd47_274 {
+  max-width: 340px;
+  line-height: 1.4;
+}
+._readMore_rwd47_279 {
+  text-decoration: underline;
+}
+._continueButton_rwd47_283 {
+  min-width: 170px;
+}
+._gatewayBody_rwd47_287 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--sm);
+  padding: var(--spacing--md);
+}
+._gatewayHeader_rwd47_294 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing--xs);
+}
+._gatewayHeaderLeft_rwd47_301 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+._gatewayTitle_rwd47_307 {
+  margin: 0;
+  font-size: var(--font-size--xl);
+}
+._optionalBadge_rwd47_312 {
+  padding: var(--spacing--4xs) var(--spacing--2xs);
+  border: 1px solid var(--color--foreground);
+  border-radius: var(--radius--full);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color--text--tint-1);
+}
+._gatewayTextBlock_rwd47_323 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: var(--font-size--xs);
+  line-height: var(--line-height--xl);
+  margin-bottom: var(--spacing--sm);
+}
+._gatewayDivider_rwd47_332 {
+  border: none;
+  border-top: 1px solid var(--color--foreground);
+  margin: 0;
+}
+._osTabs_rwd47_338 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border-color--subtle);
+  border-radius: var(--radius--xs);
+  padding: var(--spacing--4xs);
+  gap: var(--spacing--4xs);
+  background: var(--border-color--subtle);
+}
+._osTab_rwd47_338 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing--2xs);
+  border: 0;
+  border-radius: var(--radius--xs);
+  padding: 10px var(--spacing--2xs);
+  background: transparent;
+  color: var(--color--text--tint-1);
+  font-weight: var(--font-weight--bold);
+  cursor: pointer;
+  opacity: 0.7;
+}
+._osTabActive_rwd47_363 {
+  background: var(--border-color--subtle);
+  color: var(--color--text);
+  opacity: 1;
+}
+._osTabIcon_rwd47_369 {
+  width: var(--spacing--sm);
+  height: var(--spacing--sm);
+}
+._commandCard_rwd47_374 {
+  border-radius: var(--radius--xs);
+  overflow: hidden;
+}
+._commandLabel_rwd47_379 {
+  font-size: var(--font-size--xs);
+}
+._commandRow_rwd47_383 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: var(--spacing--xs) 14px;
+  background: var(--color--neutral-950);
+}
+._commandText_rwd47_392 {
+  color: var(--color--text--tint-1);
+  white-space: nowrap;
+  overflow: auto;
+}
+._commandText_rwd47_392::-webkit-scrollbar {
+  display: none;
+}
+._commandText_rwd47_392 {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-size: var(--font-size--xs);
+}
+._commandTextFaded_rwd47_406 {
+  mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+}
+._copyButton_rwd47_410 {
+  flex-shrink: 0;
+  --button--color: var(--color--text--tint-1);
+}
+._connectedRow_rwd47_415 {
+  display: flex;
+  font-size: var(--font-size--2xs);
+  align-items: center;
+  gap: var(--spacing--2xs);
+  padding: 10px 14px;
+  background: var(--color--green-950);
+  color: var(--color--green-400);
+  font-weight: var(--font-weight--bold);
+}
+body:not([data-theme='dark']) ._connectedRow_rwd47_415 {
+  background: var(--color--green-600);
+  color: var(--color--green-50);
+}
+._waitingRow_rwd47_431 {
+  display: flex;
+  font-size: var(--font-size--2xs);
+  align-items: center;
+  gap: var(--spacing--2xs);
+  padding: 10px 14px;
+  background: var(--color--background--light-2);
+  color: var(--color--text--tint-1);
+  font-weight: var(--font-weight--bold);
+}
+body:not([data-theme='dark']) ._waitingRow_rwd47_431 {
+  background: var(--color--black-alpha-700);
+  color: var(--color--text--tint-2);
+}
+._gatewayInstructions_rwd47_447 {
+  font-size: var(--font-size--xs);
+  line-height: var(--line-height--xl);
+  color: var(--color--text--tint-2);
+}
+body:not([data-theme='dark']) ._gatewayInstructions_rwd47_447 {
+  color: var(--color--text);
+}
+._gatewayActions_rwd47_457 {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing--2xs);
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+.instance-ai-welcome-modal .el-dialog__header {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+.instance-ai-welcome-modal .el-dialog__body {
+  padding: 0;
+}
