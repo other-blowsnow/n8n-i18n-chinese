@@ -1,0 +1,206 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._group_o0gi6_125 {
+  padding: 0 0 var(--spacing--sm);
+  width: 100%;
+  display: block;
+}
+._group_o0gi6_125 hr {
+  margin: 0 0 var(--spacing--xl);
+  border: 1px solid var(--color--foreground--tint-1);
+}
+._group_o0gi6_125 > label {
+  display: inline-block;
+  padding: 0 0 var(--spacing--2xs);
+  font-size: var(--font-size--sm);
+}
+._group_o0gi6_125 small {
+  display: inline-block;
+  padding: var(--spacing--2xs) 0 0;
+  font-size: var(--font-size--2xs);
+  color: var(--color--text--tint-1);
+}
+._readOnly_o0gi6_146 span {
+  font-size: var(--font-size--sm) !important;
+}
+._groupFlex_o0gi6_150 {
+  display: flex;
+  align-items: flex-start;
+}
+._groupFlex_o0gi6_150 > div {
+  flex: 1;
+}
+._groupFlex_o0gi6_150 > div:last-child {
+  margin-left: var(--spacing--2xs);
+}
+._groupFlex_o0gi6_150 input {
+  width: 100%;
+}
+._connect_o0gi6_164 {
+  margin: calc(var(--spacing--2xs) * -1) 0 var(--spacing--2xs);
+}
+._disconnectButton_o0gi6_168 {
+  margin: 0 0 0 var(--spacing--2xs);
+  height: 40px;
+}
+._actionBox_o0gi6_173 {
+  margin: var(--spacing--2xl) 0 0;
+}
+._sshInput_o0gi6_177 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+._sshInput_o0gi6_177 > div {
+  flex: 1 1 auto;
+}
+._sshInput_o0gi6_177 > button {
+  height: 42px;
+}
+._sshInput_o0gi6_177 ._copyInput_o0gi6_188 {
+  margin: 0 var(--spacing--2xs);
+}
+._sshKeyTypeSelect_o0gi6_192 {
+  min-width: 120px;
+}
+._copyInput_o0gi6_188 {
+  overflow: auto;
+}
+._branchSelection_o0gi6_200 {
+  display: flex;
+}
+._branchSelection_o0gi6_200 > div:first-child {
+  flex: 1;
+}
+._branchSelection_o0gi6_200 > div:first-child input {
+  height: 36px;
+}
+._branchSelection_o0gi6_200 button._refreshBranches_o0gi6_209 {
+  margin-left: var(--spacing--xs);
+}
+._branchSelection_o0gi6_200 button._refreshBranches_o0gi6_209 svg {
+  width: 16px;
+  height: 16px;
+}
