@@ -1,0 +1,153 @@
+import { Ft as ref, S as computed, gt as watch } from "./vue.runtime.esm-bundler-Bw8GKr4Y.js";
+import { ut as useRouter } from "./src-R8Z6Npql.js";
+import { _r as useTelemetry, br as usePostHog, qt as useTemplatesStore, s as useWorkflowsStore } from "./users.store-D5hjaxvb.js";
+import { Hs as OPEN_AI_API_CREDENTIAL_TYPE, Zc as RESOURCE_CENTER_EXPERIMENT, ns as deepCopy, zr as VIEWS } from "./constants-BxmNKFHG.js";
+import { T as defineStore } from "./useRootStore-DAiGYPcV.js";
+import { i as READY_TO_RUN_AI_WORKFLOW, n as READY_TO_RUN_WORKFLOW_V5, t as useReadyToRunStore } from "./readyToRun.store-BXj73VvH.js";
+//#region src/experiments/resourceCenter/data/quickStartWorkflows.ts
+var quickStartWorkflows = [{
+	id: "summarize-the-news",
+	name: "Summarize the news",
+	description: "Get AI-powered news summaries from top sources",
+	workflow: READY_TO_RUN_AI_WORKFLOW,
+	nodeTypes: ["n8n-nodes-base.rssFeedReadTool", "@n8n/n8n-nodes-langchain.agent"]
+}, {
+	id: "chat-with-the-news",
+	name: "Chat with the news",
+	description: "Chat with an AI agent about the latest news",
+	workflow: READY_TO_RUN_WORKFLOW_V5,
+	nodeTypes: ["@n8n/n8n-nodes-langchain.chatTrigger", "@n8n/n8n-nodes-langchain.agent"]
+}];
+//#endregion
+//#region src/experiments/resourceCenter/stores/resourceCenter.store.ts
+var LOCAL_STORAGE_CREDENTIAL_KEY = "N8N_READY_TO_RUN_OPENAI_CREDENTIAL_ID";
+var TOOLTIP_STORAGE_KEY = "n8n-resourceCenter-tooltipDismissed";
+var useResourceCenterStore = defineStore("resourceCenter", () => {
+	const posthogStore = usePostHog();
+	const templatesStore = useTemplatesStore();
+	const workflowsStore = useWorkflowsStore();
+	const readyToRunStore = useReadyToRunStore();
+	const telemetry = useTelemetry();
+	const router = useRouter();
+	const isLoadingTemplates = ref(false);
+	const hasTooltipBeenDismissed = ref(localStorage.getItem(TOOLTIP_STORAGE_KEY) === "true");
+	const isFeatureEnabled = () => {
+		const variant = posthogStore.getVariant(RESOURCE_CENTER_EXPERIMENT.name);
+		return variant === RESOURCE_CENTER_EXPERIMENT.variantResources || variant === RESOURCE_CENTER_EXPERIMENT.variantInspiration;
+	};
+	const getCurrentVariant = () => {
+		return posthogStore.getVariant(RESOURCE_CENTER_EXPERIMENT.name);
+	};
+	const shouldShowResourceCenterTooltip = computed(() => {
+		return isFeatureEnabled() && !hasTooltipBeenDismissed.value;
+	});
+	function markResourceCenterTooltipDismissed() {
+		hasTooltipBeenDismissed.value = true;
+		localStorage.setItem(TOOLTIP_STORAGE_KEY, "true");
+	}
+	function trackResourceCenterTooltipView() {
+		telemetry.track("User viewed resource center tooltip");
+	}
+	function trackResourceCenterTooltipDismiss() {
+		telemetry.track("User dismissed resource center tooltip");
+	}
+	async function fetchTemplateById(templateId) {
+		try {
+			return await templatesStore.fetchTemplateById(templateId.toString());
+		} catch (error) {
+			console.error(`Failed to fetch template ${templateId}:`, error);
+			return null;
+		}
+	}
+	async function loadTemplates(templateIds) {
+		isLoadingTemplates.value = true;
+		try {
+			const promises = templateIds.map(async (id) => await fetchTemplateById(id));
+			return (await Promise.allSettled(promises)).filter((result) => result.status === "fulfilled" && result.value !== null).map((result) => result.value);
+		} finally {
+			isLoadingTemplates.value = false;
+		}
+	}
+	function getTemplateRoute(id) {
+		return {
+			name: VIEWS.TEMPLATE,
+			params: { id }
+		};
+	}
+	function trackResourceCenterView() {
+		telemetry.track("User visited resource center");
+	}
+	function trackSectionView(section) {
+		telemetry.track("User visited resource center section", { section });
+	}
+	function trackTileClick(section, type, id) {
+		telemetry.track("User clicked on resource center tile", {
+			section,
+			type,
+			id
+		});
+	}
+	function trackTemplateRepoVisit() {
+		telemetry.track("User visited template repo", { source: "resource_center" });
+	}
+	async function createAndOpenQuickStartWorkflow(quickStartId) {
+		const quickStart = quickStartWorkflows.find((w) => w.id === quickStartId);
+		if (!quickStart) return;
+		if (readyToRunStore.userCanClaimOpenAiCredits) await readyToRunStore.claimFreeAiCredits();
+		let workflowToCreate = {
+			...quickStart.workflow,
+			name: quickStart.name
+		};
+		const credentialId = localStorage.getItem(LOCAL_STORAGE_CREDENTIAL_KEY);
+		if (credentialId && workflowToCreate.nodes) {
+			const clonedWorkflow = deepCopy(workflowToCreate);
+			const openAiNode = clonedWorkflow.nodes?.find((node) => node.name === "OpenAI Model");
+			if (openAiNode) {
+				openAiNode.credentials ??= {};
+				openAiNode.credentials[OPEN_AI_API_CREDENTIAL_TYPE] = {
+					id: credentialId,
+					name: ""
+				};
+			}
+			workflowToCreate = clonedWorkflow;
+		}
+		const createdWorkflow = await workflowsStore.createNewWorkflow(workflowToCreate);
+		await router.push({
+			name: VIEWS.WORKFLOW,
+			params: { name: createdWorkflow.id }
+		});
+	}
+	const trackExperimentParticipation = () => {
+		const variant = posthogStore.getVariant(RESOURCE_CENTER_EXPERIMENT.name);
+		if (variant) telemetry.track("User is part of experiment", {
+			name: RESOURCE_CENTER_EXPERIMENT.name,
+			variant
+		});
+	};
+	let hasTrackedExperiment = false;
+	watch(() => isFeatureEnabled(), (enabled) => {
+		if (enabled && !hasTrackedExperiment) {
+			hasTrackedExperiment = true;
+			trackExperimentParticipation();
+		}
+	}, { immediate: true });
+	return {
+		isFeatureEnabled,
+		getCurrentVariant,
+		isLoadingTemplates,
+		shouldShowResourceCenterTooltip,
+		fetchTemplateById,
+		loadTemplates,
+		getTemplateRoute,
+		createAndOpenQuickStartWorkflow,
+		markResourceCenterTooltipDismissed,
+		trackResourceCenterView,
+		trackResourceCenterTooltipView,
+		trackResourceCenterTooltipDismiss,
+		trackSectionView,
+		trackTileClick,
+		trackTemplateRepoVisit
+	};
+});
+//#endregion
+export { quickStartWorkflows as n, useResourceCenterStore as t };
