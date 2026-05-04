@@ -1,0 +1,419 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._body_139t2_125 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: var(--spacing--lg);
+  gap: var(--spacing--sm);
+}
+._description_139t2_133 {
+  text-align: center;
+  font-size: var(--font-size--md);
+  line-height: var(--line-height--xl);
+  margin-top: var(--spacing--sm);
+}
+._heroIcon_139t2_140 {
+  display: flex;
+  justify-content: center;
+}
+._badge_139t2_145 {
+  display: inline-block;
+  padding: var(--spacing--3xs) var(--spacing--xs);
+  border-radius: var(--radius--3xs);
+  background: #e9dbf8;
+  color: #6b35ad;
+  font-size: var(--font-size--sm);
+}
+._warningBox_139t2_154 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--xs);
+  padding: var(--spacing--sm);
+  background: var(--color--orange-900);
+  border: 1px solid var(--color--orange-800);
+  border-radius: var(--radius--xs);
+  color: var(--color--orange-250);
+}
+body:not([data-theme='dark']) ._warningBox_139t2_154 {
+  background: var(--color--orange-50);
+  border: 1px solid var(--color--orange-200);
+  color: var(--color--orange-700);
+}
+._warningIcon_139t2_171 {
+  flex-shrink: 0;
+  color: var(--color--orange-250);
+  margin-top: 2px;
+}
+body:not([data-theme='dark']) ._warningIcon_139t2_171 {
+  color: var(--color--orange-700);
+}
+._warningText_139t2_181 {
+  line-height: var(--line-height--xl);
+  color: var(--color--orange-250);
+}
+body:not([data-theme='dark']) ._warningText_139t2_181 {
+  color: var(--color--orange-700);
+}
+._badgeWrap_139t2_190 {
+  display: flex;
+  justify-content: center;
+}
+._title_139t2_195 {
+  font-size: var(--font-size--2xl);
+  line-height: var(--line-height--sm);
+  margin: 0;
+  text-align: center;
+}
+._toggleGroup_139t2_202 {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+._toggleGroup_139t2_202 ._toggleCard_139t2_207:first-child {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+._toggleGroup_139t2_202 ._toggleCard_139t2_207:last-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+._toggleCard_139t2_207 {
+  display: block;
+  padding: var(--spacing--sm);
+  border: 1px solid var(--border-color--strong);
+  border-radius: var(--radius--xs);
+  cursor: pointer;
+  background: var(--color--foreground--tint-2);
+}
+body[data-theme='dark'] ._toggleCard_139t2_207 {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+._toggleMain_139t2_231 {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+._radioIndicator_139t2_237 {
+  flex-shrink: 0;
+  width: var(--spacing--sm);
+  height: var(--spacing--sm);
+  border-radius: 50%;
+  border: 2px solid var(--border-color--strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+._toggleCardSelected_139t2_248 ._radioIndicator_139t2_237 {
+  border: 4px solid var(--color--orange-400);
+}
+._radioIndicatorInner_139t2_252 {
+  width: var(--spacing--sm);
+  height: var(--spacing--2xs);
+  border-radius: 50%;
+  background: transparent;
+}
+._toggleLabels_139t2_259 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--3xs);
+  text-align: left;
+}
+._computerUseRow_139t2_266 {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: var(--spacing--sm);
+  border: 1px solid var(--border-color--strong);
+  border-radius: var(--radius--xs);
+  background: var(--color--foreground--tint-2);
+  cursor: pointer;
+  -webkit-user-select: none;
+          user-select: none;
+}
+body[data-theme='dark'] ._computerUseRow_139t2_266 {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+._computerUseCheckbox_139t2_283 {
+  flex-shrink: 0;
+  margin-top: 2px;
+  pointer-events: none;
+}
+._computerUseLabels_139t2_289 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--3xs);
+}
+._footer_139t2_295 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--spacing--sm);
+  margin-top: var(--spacing--4xs);
+}
+._disclaimer_139t2_303 {
+  max-width: 340px;
+  line-height: 1.4;
+}
+._readMore_139t2_308 {
+  text-decoration: underline;
+}
+._continueButton_139t2_312 {
+  min-width: 170px;
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+.instance-ai-welcome-modal .el-dialog__header {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+.instance-ai-welcome-modal .el-dialog__body {
+  padding: 0;
+}
