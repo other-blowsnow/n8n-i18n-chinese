@@ -1,0 +1,280 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._body_di8ei_125 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--sm);
+  padding: var(--spacing--md);
+}
+._header_di8ei_132 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing--xs);
+}
+._title_di8ei_139 {
+  margin: 0;
+  font-size: var(--font-size--xl);
+}
+._textBlock_di8ei_144 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--2xs);
+  font-size: var(--font-size--2xs);
+  line-height: var(--line-height--xl);
+  margin-bottom: var(--spacing--sm);
+  color: var(--color--text--tint-1);
+}
+._osTabs_di8ei_154 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing--4xs);
+  gap: var(--spacing--4xs);
+  background: var(--color--foreground);
+}
+._osTab_di8ei_154 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing--2xs);
+  border: 0;
+  border-radius: var(--radius);
+  padding: var(--spacing--2xs);
+  background: transparent;
+  color: var(--color--text--tint-1);
+  font-weight: var(--font-weight--bold);
+  cursor: pointer;
+  opacity: 0.7;
+}
+._osTabActive_di8ei_179 {
+  background: var(--color--background--light-2);
+  color: var(--color--text);
+  opacity: 1;
+}
+._osTabIcon_di8ei_185 {
+  width: var(--spacing--sm);
+  height: var(--spacing--sm);
+}
+._commandCard_di8ei_190 {
+  border: var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+._commandRow_di8ei_196 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing--2xs);
+  padding: var(--spacing--xs);
+  background: var(--color--background--shade-2);
+}
+._commandText_di8ei_205 {
+  color: var(--color--text--tint-1);
+  white-space: nowrap;
+  overflow: auto;
+  font-size: var(--font-size--xs);
+  font-family: monospace;
+}
+._commandText_di8ei_205::-webkit-scrollbar {
+  display: none;
+}
+._commandText_di8ei_205 {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+._commandTextFaded_di8ei_220 {
+  mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+}
+._copyButton_di8ei_224 {
+  flex-shrink: 0;
+  color: var(--color--text);
+}
+._connectedBlock_di8ei_229 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--3xs);
+  padding: var(--spacing--2xs) var(--spacing--xs);
+  background: var(--color--foreground--tint-2);
+  border-radius: var(--radius--lg);
+}
+._statusRow_di8ei_238 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--3xs);
+}
+._statusDot_di8ei_244 {
+  width: var(--spacing--2xs);
+  height: var(--spacing--2xs);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+._statusDotConnected_di8ei_251 {
+  background: var(--color--success);
+}
+._directoryRow_di8ei_255 {
+  padding-left: calc(var(--spacing--2xs) + var(--spacing--3xs));
+}
+._toolCategories_di8ei_259 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing--4xs);
+  padding-left: calc(var(--spacing--2xs) + var(--spacing--3xs));
+}
+._categoryPill_di8ei_266 {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing--5xs);
+  padding: var(--spacing--5xs) var(--spacing--3xs);
+  background: var(--color--background);
+  border: var(--border);
+  border-radius: var(--radius);
+  font-size: var(--font-size--3xs);
+  color: var(--color--text--tint-1);
+}
+._categoryPillDisabled_di8ei_278 {
+  opacity: 0.4;
+}
+._categorySublabel_di8ei_282 {
+  color: var(--color--text--tint-1);
+}
+._browserHint_di8ei_286 {
+  font-size: var(--font-size--xs);
+  line-height: var(--line-height--xl);
+}
+._waitingRow_di8ei_291 {
+  display: flex;
+  font-size: var(--font-size--2xs);
+  align-items: center;
+  gap: var(--spacing--2xs);
+  padding: var(--spacing--2xs) var(--spacing--xs);
+  border-top: var(--border);
+  color: var(--color--text--tint-1);
+}
+._instructions_di8ei_301 {
+  font-size: var(--font-size--xs);
+  line-height: var(--line-height--xl);
+}
