@@ -1,0 +1,131 @@
+
+._content_bm3ht_2 {
+	margin-top: var(--spacing--sm);
+	max-height: 400px;
+	overflow-y: auto;
+}
+._memberList_bm3ht_8 {
+	display: flex;
+	flex-direction: column;
+}
+._memberRow_bm3ht_13 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--spacing--xs) 0;
+	border-bottom: var(--border);
+}
+._memberRow_bm3ht_13:last-child {
+	border-bottom: none;
+}
+._roleLabel_bm3ht_25 {
+	flex-shrink: 0;
+	margin-left: var(--spacing--sm);
+}
+
+._container_1r9vx_2 {
+	margin-top: var(--spacing--sm);
+}
+._emptyState_1r9vx_6 {
+	padding: var(--spacing--xl);
+	text-align: center;
+}
+._alignRight_1r9vx_11 {
+	text-align: right !important;
+}
+._sortableHeader_1r9vx_15 {
+	cursor: pointer;
+	-webkit-user-select: none;
+	        user-select: none;
+}
+._projectLink_1r9vx_20 {
+	color: var(--color--text);
+	text-decoration: underline;
+}
+._projectLink_1r9vx_20:hover {
+	color: var(--color--primary);
+}
+._memberCountButton_1r9vx_29 {
+	background: none;
+	border: none;
+	color: var(--color--text);
+	text-decoration: underline;
+	cursor: pointer;
+	font-size: inherit;
+	padding: 0;
+}
+._memberCountButton_1r9vx_29:hover {
+	color: var(--color--primary);
+}
+
+._container_qjp8b_2 {
+	max-width: 700px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+._cardContainer_qjp8b_9 {
+	padding: 8px 16px;
+	border-radius: 4px;
+	border: var(--border);
+	background-color: var(--color--background--light-3);
+.el-skeleton__p {
+		margin-bottom: 8px;
+		margin-top: 0;
+}
+}
+._card_qjp8b_9 {
+	display: flex;
+}
+._card_qjp8b_9:not(:last-child) {
+	border-bottom: var(--border);
+}
+._cardTitle_qjp8b_28 {
+	width: 133px;
+}
+._backButton_qjp8b_32 {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+._headerContainer_qjp8b_38 {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: var(--spacing--sm);
+}
+._headingContainer_qjp8b_45 {
+	min-width: 0;
+}
+._heading_qjp8b_45 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+._headerActions_qjp8b_55 {
+	display: flex;
+	gap: var(--spacing--2xs);
+	flex-shrink: 0;
+}
+._formContainer_qjp8b_61 {
+	max-width: 415px;
+}
+._presetsContainer_qjp8b_65 {
+	display: flex;
+	gap: 8px;
+}
+._checkbox_qjp8b_70 {
+	display: inline-flex !important;
+	margin-bottom: 0 !important;
+label {
+		padding-bottom: 0 !important;
+}
+}
+._assignmentsLink_qjp8b_78 {
+	color: var(--color--text);
+	cursor: pointer;
+	text-decoration: underline;
+}
+._assignmentsLink_qjp8b_78:hover {
+	color: var(--color--primary);
+}
