@@ -1,0 +1,466 @@
+import { $ as openBlock, A as createTextVNode, C as createBaseVNode, E as createElementBlock, Ft as ref, N as defineComponent, Rt as shallowRef, S as computed, Sn as toDisplayString, T as createCommentVNode, Wt as unref, X as onMounted, _ as Fragment, _n as normalizeClass, gt as watch, j as createVNode, rt as renderList, w as createBlock, yt as withCtx } from "./vue.runtime.esm-bundler-Bw8GKr4Y.js";
+import { at as useI18n } from "./core-BYwHXEXE.js";
+import { Li as N8nIconButton_default, Lt as N8nBadge_default, _a as N8nButton_default, bt as N8nOption_default, f as DateRangePicker_default, g as N8nDataTableServer_default, ga as N8nText_default, ma as N8nHeading_default, nt as N8nLink_default, o as AlertDialog_default, va as N8nIcon_default, yt as N8nSelect_default } from "./src-BvkWedrz.js";
+import { t as _plugin_vue_export_helper_default } from "./_plugin-vue_export-helper-Da88TEg1.js";
+import { i as $fae977aafc393c5c$export$6b862160d295c8e } from "./CalendarDate-DaCb8yxn.js";
+import { t as useToast } from "./useToast-DwpLkaYu.js";
+import { T as defineStore, c as makeRestApiRequest, t as useRootStore } from "./useRootStore-CeppkcDO.js";
+import "./settings.store-CpQNx9Cm.js";
+import { t as useDocumentTitle } from "./useDocumentTitle-D6HApKxk.js";
+import { t as useClipboard } from "./useClipboard-Dbvpl364.js";
+//#region src/features/settings/encryption-keys/encryption-keys.api.ts
+var ENDPOINT = "/encryption/keys";
+var getEncryptionKeys = async (context) => {
+	return await makeRestApiRequest(context, "GET", ENDPOINT, { type: "data_encryption" });
+};
+var rotateEncryptionKey = async (context) => {
+	return await makeRestApiRequest(context, "POST", ENDPOINT, { type: "data_encryption" });
+};
+//#endregion
+//#region src/features/settings/encryption-keys/encryption-keys.store.ts
+var DEFAULT_SORT = {
+	field: "createdAt",
+	direction: "desc"
+};
+var DEFAULT_FILTERS = {
+	activatedFrom: null,
+	activatedTo: null
+};
+var localDateFormatter = new Intl.DateTimeFormat("en-CA");
+var useEncryptionKeysStore = defineStore("encryptionKeys", () => {
+	const rootStore = useRootStore();
+	const keys = ref([]);
+	const isLoading = ref(false);
+	const isRotating = ref(false);
+	const sort = ref({ ...DEFAULT_SORT });
+	const filters = ref({ ...DEFAULT_FILTERS });
+	const compareKeys = (a, b, field) => {
+		if (field === "status") return a.status.localeCompare(b.status);
+		if (field === "updatedAt") {
+			const valueA = a.status === "inactive" ? a.updatedAt : null;
+			const valueB = b.status === "inactive" ? b.updatedAt : null;
+			if (valueA === null && valueB === null) return 0;
+			if (valueA === null) return 1;
+			if (valueB === null) return -1;
+			return new Date(valueA).getTime() - new Date(valueB).getTime();
+		}
+		return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+	};
+	const matchesFilters = (key) => {
+		const { activatedFrom, activatedTo } = filters.value;
+		if (!activatedFrom && !activatedTo) return true;
+		const activatedDay = localDateFormatter.format(new Date(key.createdAt));
+		if (activatedFrom && activatedDay < activatedFrom) return false;
+		if (activatedTo && activatedDay > activatedTo) return false;
+		return true;
+	};
+	const visibleKeys = computed(() => {
+		return [...keys.value.filter(matchesFilters)].sort((a, b) => {
+			const diff = compareKeys(a, b, sort.value.field);
+			return sort.value.direction === "asc" ? diff : -diff;
+		});
+	});
+	const activeKey = computed(() => keys.value.find((key) => key.status === "active") ?? null);
+	const isEmpty = computed(() => !isLoading.value && keys.value.length === 0);
+	const fetchKeys = async () => {
+		isLoading.value = true;
+		try {
+			keys.value = await getEncryptionKeys(rootStore.restApiContext);
+		} finally {
+			isLoading.value = false;
+		}
+	};
+	const rotateKey = async () => {
+		isRotating.value = true;
+		try {
+			await rotateEncryptionKey(rootStore.restApiContext);
+			await fetchKeys();
+		} finally {
+			isRotating.value = false;
+		}
+	};
+	const setSort = (next) => {
+		sort.value = { ...next };
+	};
+	const setFilters = (next) => {
+		filters.value = {
+			...filters.value,
+			...next
+		};
+	};
+	const resetFilters = () => {
+		filters.value = { ...DEFAULT_FILTERS };
+	};
+	return {
+		keys,
+		visibleKeys,
+		activeKey,
+		isLoading,
+		isRotating,
+		isEmpty,
+		sort,
+		filters,
+		fetchKeys,
+		rotateKey,
+		setSort,
+		setFilters,
+		resetFilters
+	};
+});
+//#endregion
+//#region src/features/settings/encryption-keys/views/SettingsEncryptionKeys.vue?vue&type=script&setup=true&lang.ts
+var DOCS_URL = "https://docs.n8n.io/hosting/configuration/encryption-keys/";
+var SettingsEncryptionKeys_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
+	__name: "SettingsEncryptionKeys",
+	setup(__props) {
+		const i18n = useI18n();
+		const documentTitle = useDocumentTitle();
+		const { showMessage, showError } = useToast();
+		const clipboard = useClipboard();
+		const store = useEncryptionKeysStore();
+		const isConfirmRotateOpen = ref(false);
+		const sortOptions = computed(() => [
+			{
+				value: "createdAt",
+				label: i18n.baseText("settings.encryptionKeys.sortBy.activated")
+			},
+			{
+				value: "updatedAt",
+				label: i18n.baseText("settings.encryptionKeys.sortBy.archived")
+			},
+			{
+				value: "status",
+				label: i18n.baseText("settings.encryptionKeys.sortBy.type")
+			}
+		]);
+		const dateFormatter = new Intl.DateTimeFormat("en-GB", {
+			day: "numeric",
+			month: "short",
+			year: "numeric"
+		});
+		const formatDate = (value) => {
+			if (!value) return "—";
+			const parsed = new Date(value);
+			if (Number.isNaN(parsed.getTime())) return "—";
+			return dateFormatter.format(parsed);
+		};
+		const maskId = (id) => {
+			if (id.length <= 8) return id;
+			return `${id.slice(0, 4)}••••••••${id.slice(-4)}`;
+		};
+		const headers = computed(() => [
+			{
+				title: i18n.baseText("settings.encryptionKeys.column.key"),
+				key: "id",
+				value: (row) => row.id,
+				minWidth: 220
+			},
+			{
+				title: i18n.baseText("settings.encryptionKeys.column.type"),
+				key: "status",
+				value: (row) => row.status,
+				minWidth: 120
+			},
+			{
+				title: i18n.baseText("settings.encryptionKeys.column.activated"),
+				key: "createdAt",
+				value: (row) => row.createdAt,
+				minWidth: 140
+			},
+			{
+				title: i18n.baseText("settings.encryptionKeys.column.archived"),
+				key: "updatedAt",
+				value: (row) => row.status === "inactive" ? row.updatedAt : "",
+				minWidth: 140
+			}
+		]);
+		const archiveDate = (key) => key.status === "inactive" ? key.updatedAt : null;
+		const visibleKeys = computed(() => store.visibleKeys);
+		const pageState = ref({
+			page: 1,
+			itemsPerPage: 25
+		});
+		const sortByModel = computed({
+			get: () => store.sort.field,
+			set: (field) => {
+				store.setSort({
+					field,
+					direction: store.sort.direction
+				});
+			}
+		});
+		const isFilterOpen = ref(false);
+		const stringToDateValue = (value) => {
+			if (!value) return void 0;
+			try {
+				return $fae977aafc393c5c$export$6b862160d295c8e(value);
+			} catch {
+				return;
+			}
+		};
+		const dateValueToString = (value) => value ? value.toString() : null;
+		const draftRange = shallowRef({
+			start: stringToDateValue(store.filters.activatedFrom),
+			end: stringToDateValue(store.filters.activatedTo)
+		});
+		const seedDraftFromStore = () => {
+			draftRange.value = {
+				start: stringToDateValue(store.filters.activatedFrom),
+				end: stringToDateValue(store.filters.activatedTo)
+			};
+		};
+		watch(isFilterOpen, (open) => {
+			if (open) seedDraftFromStore();
+		});
+		const hasActiveFilter = computed(() => store.filters.activatedFrom !== null || store.filters.activatedTo !== null);
+		const onApplyFilter = () => {
+			store.setFilters({
+				activatedFrom: dateValueToString(draftRange.value.start),
+				activatedTo: dateValueToString(draftRange.value.end)
+			});
+			isFilterOpen.value = false;
+		};
+		const onClearFilter = () => {
+			store.resetFilters();
+			seedDraftFromStore();
+			isFilterOpen.value = false;
+		};
+		const openRotateConfirm = () => {
+			isConfirmRotateOpen.value = true;
+		};
+		const closeRotateConfirm = () => {
+			if (!store.isRotating) isConfirmRotateOpen.value = false;
+		};
+		const onConfirmRotate = async () => {
+			try {
+				await store.rotateKey();
+				isConfirmRotateOpen.value = false;
+				showMessage({
+					type: "success",
+					title: i18n.baseText("settings.encryptionKeys.rotate.success")
+				});
+			} catch (error) {
+				showError(error, i18n.baseText("settings.encryptionKeys.rotate.error"));
+			}
+		};
+		const copyKeyId = async (id) => {
+			await clipboard.copy(id);
+			showMessage({
+				type: "success",
+				title: i18n.baseText("settings.encryptionKeys.copyId.success")
+			});
+		};
+		onMounted(async () => {
+			documentTitle.set(i18n.baseText("settings.encryptionKeys.title"));
+			try {
+				await store.fetchKeys();
+			} catch (error) {
+				showError(error, i18n.baseText("settings.encryptionKeys.loadError"));
+			}
+		});
+		return (_ctx, _cache) => {
+			return openBlock(), createElementBlock("div", {
+				class: normalizeClass(_ctx.$style.page),
+				"data-testid": "settings-encryption-keys"
+			}, [
+				createBaseVNode("header", { class: normalizeClass(_ctx.$style.header) }, [createVNode(unref(N8nHeading_default), {
+					tag: "h1",
+					size: "2xlarge",
+					bold: ""
+				}, {
+					default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("settings.encryptionKeys.title")), 1)]),
+					_: 1
+				}), createVNode(unref(N8nText_default), { color: "text-base" }, {
+					default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("settings.encryptionKeys.description")) + " ", 1), createVNode(unref(N8nLink_default), {
+						href: DOCS_URL,
+						"new-window": ""
+					}, {
+						default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("settings.encryptionKeys.description.docsLink")), 1)]),
+						_: 1
+					})]),
+					_: 1
+				})], 2),
+				createBaseVNode("div", { class: normalizeClass(_ctx.$style.controls) }, [
+					createBaseVNode("div", { class: normalizeClass(_ctx.$style.sortControl) }, [createVNode(unref(N8nText_default), {
+						tag: "label",
+						color: "text-light",
+						size: "small",
+						class: normalizeClass(_ctx.$style.sortLabel)
+					}, {
+						default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("settings.encryptionKeys.sortBy.label")), 1)]),
+						_: 1
+					}, 8, ["class"]), createVNode(unref(N8nSelect_default), {
+						modelValue: sortByModel.value,
+						"onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => sortByModel.value = $event),
+						"data-testid": "encryption-keys-sort-select",
+						size: "medium",
+						class: normalizeClass(_ctx.$style.sortSelect)
+					}, {
+						default: withCtx(() => [(openBlock(true), createElementBlock(Fragment, null, renderList(sortOptions.value, (option) => {
+							return openBlock(), createBlock(unref(N8nOption_default), {
+								key: option.value,
+								value: option.value,
+								label: option.label
+							}, null, 8, ["value", "label"]);
+						}), 128))]),
+						_: 1
+					}, 8, ["modelValue", "class"])], 2),
+					createVNode(unref(DateRangePicker_default), {
+						modelValue: draftRange.value,
+						"onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => draftRange.value = $event),
+						open: isFilterOpen.value,
+						"onUpdate:open": _cache[2] || (_cache[2] = ($event) => isFilterOpen.value = $event)
+					}, {
+						trigger: withCtx(() => [createVNode(unref(N8nIconButton_default), {
+							icon: "funnel",
+							type: "tertiary",
+							size: "medium",
+							"data-testid": "encryption-keys-filter-button",
+							title: unref(i18n).baseText("settings.encryptionKeys.filter.title")
+						}, null, 8, ["title"])]),
+						footer: withCtx(() => [createBaseVNode("div", { class: normalizeClass(_ctx.$style.filterFooter) }, [hasActiveFilter.value ? (openBlock(), createBlock(unref(N8nButton_default), {
+							key: 0,
+							variant: "ghost",
+							size: "small",
+							label: unref(i18n).baseText("settings.encryptionKeys.filter.clear"),
+							"data-testid": "encryption-keys-filter-clear",
+							onClick: onClearFilter
+						}, null, 8, ["label"])) : createCommentVNode("", true), createVNode(unref(N8nButton_default), {
+							variant: "solid",
+							size: "small",
+							label: unref(i18n).baseText("settings.encryptionKeys.filter.apply"),
+							"data-testid": "encryption-keys-filter-apply",
+							onClick: onApplyFilter
+						}, null, 8, ["label"])], 2)]),
+						_: 1
+					}, 8, ["modelValue", "open"]),
+					createVNode(unref(N8nButton_default), {
+						type: "primary",
+						size: "medium",
+						loading: unref(store).isRotating,
+						"data-testid": "encryption-keys-rotate-button",
+						onClick: openRotateConfirm
+					}, {
+						default: withCtx(() => [createVNode(unref(N8nIcon_default), {
+							icon: "refresh-cw",
+							class: normalizeClass([_ctx.$style.rotateIcon, { [_ctx.$style.isRotating]: unref(store).isRotating }])
+						}, null, 8, ["class"]), createTextVNode(" " + toDisplayString(unref(i18n).baseText("settings.encryptionKeys.rotate.button")), 1)]),
+						_: 1
+					}, 8, ["loading"])
+				], 2),
+				createBaseVNode("div", { class: normalizeClass(_ctx.$style.tableWrapper) }, [createVNode(unref(N8nDataTableServer_default), {
+					page: pageState.value.page,
+					"onUpdate:page": _cache[3] || (_cache[3] = ($event) => pageState.value.page = $event),
+					"items-per-page": pageState.value.itemsPerPage,
+					"onUpdate:itemsPerPage": _cache[4] || (_cache[4] = ($event) => pageState.value.itemsPerPage = $event),
+					headers: headers.value,
+					items: visibleKeys.value,
+					"items-length": visibleKeys.value.length,
+					loading: unref(store).isLoading,
+					"page-sizes": [
+						10,
+						25,
+						50
+					],
+					"data-testid": "encryption-keys-table"
+				}, {
+					[`item.id`]: withCtx(({ item }) => [createBaseVNode("div", { class: normalizeClass(_ctx.$style.keyCell) }, [createBaseVNode("code", { class: normalizeClass(_ctx.$style.keyValue) }, toDisplayString(maskId(item.id)), 3), createVNode(unref(N8nIconButton_default), {
+						icon: "copy",
+						type: "tertiary",
+						size: "mini",
+						"data-testid": "encryption-keys-copy-id-button",
+						title: unref(i18n).baseText("settings.encryptionKeys.copyId.success"),
+						onClick: ($event) => copyKeyId(item.id)
+					}, null, 8, ["title", "onClick"])], 2)]),
+					[`item.status`]: withCtx(({ item }) => [createVNode(unref(N8nBadge_default), {
+						theme: item.status === "active" ? "success" : "default",
+						size: "small"
+					}, {
+						default: withCtx(() => [createVNode(unref(N8nIcon_default), {
+							icon: item.status === "active" ? "circle-check" : "circle",
+							size: "xsmall"
+						}, null, 8, ["icon"]), createTextVNode(" " + toDisplayString(unref(i18n).baseText(item.status === "active" ? "settings.encryptionKeys.status.active" : "settings.encryptionKeys.status.inactive")), 1)]),
+						_: 2
+					}, 1032, ["theme"])]),
+					[`item.createdAt`]: withCtx(({ item }) => [createTextVNode(toDisplayString(formatDate(item.createdAt)), 1)]),
+					[`item.updatedAt`]: withCtx(({ item }) => [createTextVNode(toDisplayString(formatDate(archiveDate(item))), 1)]),
+					_: 2
+				}, 1032, [
+					"page",
+					"items-per-page",
+					"headers",
+					"items",
+					"items-length",
+					"loading"
+				]), unref(store).isEmpty ? (openBlock(), createElementBlock("div", {
+					key: 0,
+					class: normalizeClass(_ctx.$style.emptyState),
+					"data-testid": "encryption-keys-empty"
+				}, [createVNode(unref(N8nHeading_default), {
+					tag: "h2",
+					size: "large"
+				}, {
+					default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("settings.encryptionKeys.empty.title")), 1)]),
+					_: 1
+				}), createVNode(unref(N8nText_default), { color: "text-base" }, {
+					default: withCtx(() => [createTextVNode(toDisplayString(unref(i18n).baseText("settings.encryptionKeys.empty.description")), 1)]),
+					_: 1
+				})], 2)) : createCommentVNode("", true)], 2),
+				createVNode(unref(AlertDialog_default), {
+					open: isConfirmRotateOpen.value,
+					title: unref(i18n).baseText("settings.encryptionKeys.rotate.confirm.title"),
+					description: unref(i18n).baseText("settings.encryptionKeys.rotate.confirm.body"),
+					"action-label": unref(i18n).baseText("settings.encryptionKeys.rotate.confirm.action"),
+					"cancel-label": unref(i18n).baseText("settings.encryptionKeys.rotate.confirm.cancel"),
+					"action-variant": "destructive",
+					loading: unref(store).isRotating,
+					"data-testid": "encryption-keys-rotate-confirm",
+					onAction: onConfirmRotate,
+					onCancel: closeRotateConfirm,
+					"onUpdate:open": _cache[5] || (_cache[5] = ($event) => isConfirmRotateOpen.value = $event)
+				}, null, 8, [
+					"open",
+					"title",
+					"description",
+					"action-label",
+					"cancel-label",
+					"loading"
+				])
+			], 2);
+		};
+	}
+});
+//#endregion
+//#region src/features/settings/encryption-keys/views/SettingsEncryptionKeys.vue?vue&type=style&index=0&lang.module.scss
+var page = "_page_spxom_125";
+var header = "_header_spxom_132";
+var controls = "_controls_spxom_138";
+var sortControl = "_sortControl_spxom_146";
+var sortLabel = "_sortLabel_spxom_152";
+var sortSelect = "_sortSelect_spxom_156";
+var tableWrapper = "_tableWrapper_spxom_160";
+var keyCell = "_keyCell_spxom_164";
+var keyValue = "_keyValue_spxom_170";
+var rotateIcon = "_rotateIcon_spxom_176";
+var isRotating = "_isRotating_spxom_181";
+var filterFooter = "_filterFooter_spxom_193";
+var emptyState = "_emptyState_spxom_201";
+var SettingsEncryptionKeys_vue_vue_type_style_index_0_lang_module_default = {
+	page,
+	header,
+	controls,
+	sortControl,
+	sortLabel,
+	sortSelect,
+	tableWrapper,
+	keyCell,
+	keyValue,
+	rotateIcon,
+	isRotating,
+	"settings-encryption-keys-spin": "_settings-encryption-keys-spin_spxom_1",
+	filterFooter,
+	emptyState
+};
+var SettingsEncryptionKeys_default = /* @__PURE__ */ _plugin_vue_export_helper_default(SettingsEncryptionKeys_vue_vue_type_script_setup_true_lang_default, [["__cssModules", { "$style": SettingsEncryptionKeys_vue_vue_type_style_index_0_lang_module_default }]]);
+//#endregion
+export { SettingsEncryptionKeys_default as default };
