@@ -1,0 +1,348 @@
+
+._card_kk9r8_2 {
+	width: 100%;
+	margin-bottom: var(--spacing--sm);
+}
+._flatBody_kk9r8_7 {
+	width: 100%;
+}
+._cardHeader_kk9r8_11 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+._statusRow_kk9r8_17 {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing--2xs);
+}
+._statusDot_kk9r8_23 {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+._statusConnected_kk9r8_30 {
+	background-color: var(--color--success);
+}
+._statusDisconnected_kk9r8_34 {
+	background-color: var(--color--foreground--shade-1);
+}
+._statusLabel_kk9r8_38 {
+	color: var(--color--text--tint-2);
+}
+._cardBody_kk9r8_42 {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing--sm);
+}
+._description_kk9r8_48,
+._helpText_kk9r8_49 {
+	color: var(--color--text--tint-1);
+}
+._field_kk9r8_53 {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing--2xs);
+}
+._toggleRow_kk9r8_59 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing--sm);
+}
+._actions_kk9r8_66 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing--2xs);
+}
+._saveActions_kk9r8_73 {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing--2xs);
+	margin-left: auto;
+}
+._errorText_kk9r8_80 {
+	color: var(--color--danger);
+}
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._body_1yzn2_125 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--sm);
+  padding-top: var(--spacing--xs);
+}
+._pickerRow_1yzn2_132 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--2xs);
+}
+._triggerPicker_1yzn2_138 .el-input .el-input__prefix {
+  display: flex;
+  align-items: center;
+  left: var(--spacing--xs);
+}
+._triggerPicker_1yzn2_138._triggerPickerWithIcon_1yzn2_144 .el-input .el-input__inner {
+  padding-left: calc(var(--spacing--xl) + var(--spacing--2xs));
+}
+._optionRow_1yzn2_148 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--2xs);
+  min-width: 0;
+  padding: 0 var(--spacing--3xs);
+}
+._optionIcon_1yzn2_156 {
+  flex: 0 0 auto;
+}
+._optionLabel_1yzn2_160 {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+._placeholderState_1yzn2_167 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing--xl) var(--spacing--lg);
+  border: 1px dashed var(--color--foreground);
+  border-radius: var(--radius);
+  text-align: center;
+}
+._integrationConfig_1yzn2_177 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--sm);
+}
+._modalDescription_1yzn2_183 {
+  color: var(--color--text--tint-1);
+}
+._connectForm_1yzn2_187 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--xs);
+}
+._label_1yzn2_193 {
+  display: block;
+}
+._selectRow_1yzn2_197 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--4xs);
+}
+._select_1yzn2_197 {
+  flex: 1;
+  min-width: 0;
+}
+._footer_1yzn2_208 {
+  display: flex;
+  gap: var(--spacing--2xs);
+  justify-content: space-between;
+}
+._footerActions_1yzn2_214 {
+  display: flex;
+  gap: var(--spacing--2xs);
+  margin-left: auto;
+}
+._connectedSection_1yzn2_220 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--sm);
+}
+._manifestSection_1yzn2_226 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--2xs);
+}
+._manifestHint_1yzn2_232 {
+  color: var(--color--text--tint-1);
+}
+._codeBlock_1yzn2_236 {
+  position: relative;
+  margin-top: var(--spacing--3xs);
+}
+
+/* Sit on top of the rounded container itself rather than inside the scrolling
+   <pre>, so the button stays put as the user scrolls and never collides with
+   the scrollbar groove. The right offset clears typical macOS / overlay
+   scrollbars (~14px) plus our normal inner padding. */
+._codeBlockCopy_1yzn2_245 {
+  position: absolute;
+  top: var(--spacing--2xs);
+  right: var(--spacing--lg);
+  z-index: 1;
+}
+._manifestCode_1yzn2_252 {
+  margin: 0;
+  padding: var(--spacing--xs);
+  padding-right: calc(var(--spacing--2xl) + var(--spacing--lg));
+  background-color: var(--color--foreground--tint-2);
+  border-radius: var(--radius);
+  font-size: var(--font-size--2xs);
+  line-height: var(--line-height--xl);
+  overflow-x: auto;
+  max-height: 240px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+  white-space: pre;
+  font-family: monospace;
+  color: var(--color--text);
+}
+._errorText_1yzn2_270 {
+  color: var(--color--danger);
+}
+._link_1yzn2_274 {
+  color: var(--color--primary);
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: var(--spacing--4xs);
+}
+._webhookRow_1yzn2_281 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--2xs);
+}
+._webhookInput_1yzn2_287 {
+  flex: 1;
+  min-width: 0;
+  padding: var(--spacing--3xs) var(--spacing--2xs);
+  background-color: var(--color--foreground--tint-2);
+  border: var(--border);
+  border-radius: var(--radius);
+  font-family: monospace;
+  font-size: var(--font-size--2xs);
+  color: var(--color--text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+._webhookInput_1yzn2_287:focus {
+  outline: none;
+  border-color: var(--color--primary);
+}
