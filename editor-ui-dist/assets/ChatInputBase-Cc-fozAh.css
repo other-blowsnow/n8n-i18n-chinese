@@ -1,0 +1,185 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._inputWrapper_1drnf_125 {
+  width: 100%;
+  border-radius: var(--radius--xl);
+  padding: var(--spacing--sm);
+  box-shadow: var(--shadow--xs), inset 0 0 0 1px light-dark(var(--color--black-alpha-100), var(--color--white-alpha-100));
+  background-color: var(--background--surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--md);
+  outline: 1px solid transparent;
+}
+._inputWrapper_1drnf_125:focus-within {
+  outline-color: var(--focus--border-color);
+}
+._inputWrapper_1drnf_125 textarea {
+  font-size: var(--font-size--md);
+  line-height: 1.5em;
+  resize: none;
+  padding: 0 !important;
+  scrollbar-color: transparent transparent;
+}
+._inputWrapper_1drnf_125 .n8n-input > div {
+  padding: 0;
+}
+._inputWrapper_1drnf_125 .n8n-input__wrapper {
+  --input--radius: var(--radius--xl);
+  box-shadow: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+}
+._footer_1drnf_156 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: var(--spacing--sm);
+}
+._footerStart_1drnf_163 {
+  flex-grow: 1;
+}
+._actions_1drnf_167 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--2xs);
+}
+._actions_1drnf_167 button path {
+  stroke-width: 2.5;
+}
+._fileInput_1drnf_176 {
+  display: none;
+}
+._recording_1drnf_180 {
+  animation: _chatInputRecordingPulse_1drnf_1 1.5s ease-in-out infinite;
+}
+@keyframes _chatInputRecordingPulse_1drnf_1 {
+0%, 100% {
+    opacity: 1;
+}
+50% {
+    opacity: 0.6;
+}
+}
