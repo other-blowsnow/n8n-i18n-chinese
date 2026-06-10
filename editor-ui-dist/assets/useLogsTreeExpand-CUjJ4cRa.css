@@ -1,0 +1,153 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._tree_1j0rt_125 {
+  padding: 0 var(--spacing--2xs) var(--spacing--2xs) var(--spacing--2xs);
+  /* For programmatically triggered scroll in useVirtualList to animate, make it scroll smoothly */
+  scroll-behavior: smooth;
+}
+._container_1j0rt_130:not(._staticScrollBar_1j0rt_130) ._tree_1j0rt_125 {
+  scroll-padding-block: var(--spacing--3xs);
+}
+@supports not (selector(::-webkit-scrollbar)) {
+._container_1j0rt_130:not(._staticScrollBar_1j0rt_130) ._tree_1j0rt_125 {
+    scrollbar-width: thin;
+}
+}
+@supports selector(::-webkit-scrollbar) {
+._container_1j0rt_130:not(._staticScrollBar_1j0rt_130) ._tree_1j0rt_125 {
+    padding-right: var(--spacing--5xs);
+    scrollbar-gutter: stable;
+}
+._container_1j0rt_130:not(._staticScrollBar_1j0rt_130) ._tree_1j0rt_125::-webkit-scrollbar {
+    width: var(--spacing--4xs);
+}
+._container_1j0rt_130:not(._staticScrollBar_1j0rt_130) ._tree_1j0rt_125::-webkit-scrollbar-thumb {
+    border-radius: var(--spacing--4xs);
+    background: var(--color--foreground--shade-1);
+}
+}
+._tree_1j0rt_125 .el-icon {
+  display: none;
+}
