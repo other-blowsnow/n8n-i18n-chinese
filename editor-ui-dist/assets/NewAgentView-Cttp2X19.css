@@ -1,0 +1,447 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._progress_1vr89_125 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing--2xl) var(--spacing--xl);
+  overflow: hidden;
+}
+._centerColumn_1vr89_134 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 720px;
+  gap: var(--spacing--2xs);
+}
+._loader_1vr89_143 {
+  color: #ea4b71;
+  margin-bottom: var(--spacing--sm);
+}
+._nodeLoader_1vr89_148 {
+  display: block;
+  width: var(--spacing--3xl);
+  height: auto;
+  overflow: visible;
+}
+._nodeLoader_1vr89_148 path,
+._nodeLoader_1vr89_148 circle {
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+._nodeLoaderActive_1vr89_165 path,
+._nodeLoaderActive_1vr89_165 circle {
+  animation: _drawNode_1vr89_1 2400ms cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+._nodeLoaderActive_1vr89_165 path:nth-of-type(1) {
+  animation-delay: 0ms;
+}
+._nodeLoaderActive_1vr89_165 circle:nth-of-type(1) {
+  animation-delay: 0ms;
+}
+._nodeLoaderActive_1vr89_165 path:nth-of-type(2) {
+  animation-delay: 280ms;
+}
+._nodeLoaderActive_1vr89_165 path:nth-of-type(3) {
+  animation-delay: 420ms;
+}
+._nodeLoaderActive_1vr89_165 circle:nth-of-type(2) {
+  animation-delay: 200ms;
+}
+._nodeLoaderActive_1vr89_165 circle:nth-of-type(3) {
+  animation-delay: 620ms;
+}
+._nodeLoaderActive_1vr89_165 circle:nth-of-type(4) {
+  animation-delay: 760ms;
+}
+@keyframes _drawNode_1vr89_1 {
+0% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+}
+16% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+}
+46% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+}
+58% {
+    stroke-dashoffset: -1;
+    opacity: 0;
+}
+100% {
+    stroke-dashoffset: -1;
+    opacity: 0;
+}
+}
+@media (prefers-reduced-motion: reduce) {
+._nodeLoader_1vr89_148 path,
+  ._nodeLoader_1vr89_148 circle {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
+}
+}
+._heading_1vr89_228 {
+  margin: 0;
+  color: var(--color--text);
+}
+._subheading_1vr89_233 {
+  margin-bottom: var(--spacing--xl);
+  text-align: center;
+}
+._logBox_1vr89_238 {
+  width: 42ch;
+  max-width: 100%;
+  max-height: 140px;
+  overflow: hidden;
+  position: relative;
+  /* Soft fade at the top so older lines visually dissolve */
+  mask-image: linear-gradient(to bottom, transparent 0, black 32px, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 32px, black 100%);
+}
+._logInner_1vr89_249 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--5xs);
+}
+._line_1vr89_255 {
+  font-family: var(--font-family--monospace);
+  font-size: var(--font-size--2xs);
+  line-height: var(--line-height--xl);
+  color: var(--color--text);
+  text-align: center;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.builder-line-enter-active,
+.builder-line-leave-active {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.builder-line-enter-from {
+  opacity: 0;
+  transform: translateY(4px);
+}
+.builder-line-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+.builder-line-leave-active {
+  position: absolute;
+}
+._page_17eez_2 {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+._buildingOverlay_17eez_10 {
+	position: absolute;
+	inset: 0;
+	z-index: 10;
+	display: flex;
+	background: var(--color--background--light-3);
+	-webkit-backdrop-filter: blur(4px);
+	        backdrop-filter: blur(4px);
+	pointer-events: all;
+}
+._content_17eez_20 {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
+}
+.building-overlay-enter-active {
+	transition: opacity calc(var(--duration--base) * 1.5) var(--easing--ease-out)
+		calc(var(--duration--base) / 3);
+}
+.building-overlay-enter-from {
+	opacity: 0;
+}
+.new-agent-content-leave-active {
+	transition:
+		opacity var(--duration--base) var(--easing--ease-out),
+		filter var(--duration--base) var(--easing--ease-out),
+		transform var(--duration--base) var(--easing--ease-out);
+}
+.new-agent-content-leave-to {
+	opacity: 0;
+	filter: blur(3px);
+	transform: translateY(calc(-1 * var(--spacing--xs)));
+}
+._topBar_17eez_49 {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: var(--spacing--xs) var(--spacing--xs);
+	background-image: linear-gradient(
+		to bottom,
+		var(--color--background--light-3),
+		var(--color--background--light-3) 1px,
+		transparent 1px
+	);
+}
+._center_17eez_62 {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: var(--spacing--2xl) var(--spacing--lg);
+	max-width: 640px;
+	margin: 0 auto;
+	width: 100%;
+}
+._heading_17eez_74 {
+	font-size: var(--font-size--2xl);
+	font-weight: var(--font-weight--bold);
+	color: var(--color--text--shade-1);
+	margin: 0 0 var(--spacing--lg);
+	animation: _headingLift_17eez_1 var(--duration--base) var(--easing--ease-out) both;
+}
+._inputWrapper_17eez_82 {
+	width: 100%;
+	margin-bottom: var(--spacing--xl);
+	animation: _contentDropIn_17eez_1 var(--duration--base) var(--easing--ease-out)
+		calc(var(--duration--base) / 4) both;
+}
+._suggestions_17eez_89 {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	animation: _contentDropIn_17eez_1 var(--duration--base) var(--easing--ease-out) 160ms both;
+}
+._suggestionsLabel_17eez_97 {
+	margin: 0 0 var(--spacing--sm);
+	text-align: center;
+	color: var(--color--text);
+}
+._suggestionGrid_17eez_103 {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: var(--spacing--2xs);
+	width: 100%;
+}
+._suggestionCard_17eez_110 {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: var(--spacing--4xs);
+	padding: var(--spacing--xs) var(--spacing--sm);
+	border-radius: var(--radius--lg);
+	border: var(--border-width) var(--border-style) var(--color--foreground);
+	background: var(--color--background--light-3);
+	cursor: pointer;
+	transition:
+		background-color var(--duration--snappy) var(--easing--ease-out),
+		border-color var(--duration--snappy) var(--easing--ease-out),
+		box-shadow var(--duration--snappy) var(--easing--ease-out);
+	text-align: left;
+	font: inherit;
+	animation: _suggestionCardIn_17eez_1 var(--duration--base) var(--easing--ease-out)
+		calc(240ms + var(--suggestion-index) * 80ms) both;
+}
+._suggestionCard_17eez_110:hover,
+._suggestionCard_17eez_110:focus-visible {
+	background-color: var(--color--background--light-2);
+	border-color: var(--color--foreground--shade-1);
+	box-shadow: var(--shadow--card-hover);
+}
+._suggestionCard_17eez_110:active {
+	background-color: var(--color--background--light-1);
+}
+._suggestionHeader_17eez_141 {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing--3xs);
+}
+._suggestionIcon_17eez_147 {
+	font-size: var(--font-size--md);
+	line-height: var(--line-height--xl);
+}
+._suggestionName_17eez_152 {
+	white-space: nowrap;
+}
+._suggestionDescription_17eez_156 {
+	min-width: 0;
+}
+@keyframes _headingLift_17eez_1 {
+from {
+		opacity: 0;
+		filter: blur(3px);
+		transform: translateY(var(--spacing--xs));
+}
+to {
+		opacity: 1;
+		filter: blur(0);
+		transform: translateY(calc(-1 * var(--spacing--xs)));
+}
+}
+@keyframes _contentDropIn_17eez_1 {
+from {
+		opacity: 0;
+		filter: blur(3px);
+		transform: translateY(calc(-1 * var(--spacing--xs)));
+}
+to {
+		opacity: 1;
+		filter: blur(0);
+		transform: translateY(0);
+}
+}
+@keyframes _suggestionCardIn_17eez_1 {
+from {
+		opacity: 0;
+		transform: translateY(var(--spacing--2xs));
+}
+to {
+		opacity: 1;
+		transform: translateY(0);
+}
+}
+@media (prefers-reduced-motion: reduce) {
+._heading_17eez_74,
+	._inputWrapper_17eez_82,
+	._suggestions_17eez_89,
+	._suggestionCard_17eez_110 {
+		animation: none;
+}
+.building-overlay-enter-active,
+	.new-agent-content-leave-active {
+		transition: none;
+}
+}
