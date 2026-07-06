@@ -1,0 +1,282 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._body_14qng_125 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--sm);
+  padding: var(--spacing--md);
+}
+._header_14qng_132 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing--xs);
+}
+._title_14qng_139 {
+  margin: 0;
+  font-size: var(--font-size--xl);
+}
+._textBlock_14qng_144 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--2xs);
+  font-size: var(--font-size--2xs);
+  line-height: var(--line-height--xl);
+  color: var(--color--text--tint-1);
+}
+._osTabs_14qng_153 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing--4xs);
+  gap: var(--spacing--4xs);
+  background: var(--color--foreground);
+}
+._osTab_14qng_153 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing--2xs);
+  border: 0;
+  border-radius: var(--radius);
+  padding: var(--spacing--2xs);
+  background: transparent;
+  color: var(--color--text--tint-1);
+  font-weight: var(--font-weight--bold);
+  cursor: pointer;
+  opacity: 0.7;
+}
+._osTabActive_14qng_178 {
+  background: var(--color--background--light-2);
+  color: var(--color--text);
+  opacity: 1;
+}
+._osTabIcon_14qng_184 {
+  width: var(--spacing--sm);
+  height: var(--spacing--sm);
+}
+._commandCard_14qng_189 {
+  border: var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+._commandRow_14qng_195 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing--2xs);
+  padding: var(--spacing--xs);
+  background: var(--color--neutral-950);
+}
+._commandText_14qng_204 {
+  color: var(--color--neutral-300);
+  white-space: nowrap;
+  overflow: auto;
+  font-size: var(--font-size--xs);
+  font-family: monospace;
+}
+._commandText_14qng_204::-webkit-scrollbar {
+  display: none;
+}
+._commandText_14qng_204 {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+._commandTextFaded_14qng_219 {
+  mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+}
+._copyButton_14qng_223 {
+  flex-shrink: 0;
+  color: var(--color--neutral-300);
+}
+._connectedBlock_14qng_228 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--3xs);
+  padding: var(--spacing--2xs) var(--spacing--xs);
+  background: var(--color--foreground--tint-2);
+  border-radius: var(--radius--lg);
+}
+._statusRow_14qng_237 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--3xs);
+}
+._statusDot_14qng_243 {
+  width: var(--spacing--2xs);
+  height: var(--spacing--2xs);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+._statusDotConnected_14qng_250 {
+  background: var(--color--success);
+}
+._directoryRow_14qng_254 {
+  padding-left: calc(var(--spacing--2xs) + var(--spacing--3xs));
+}
+._toolCategories_14qng_258 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing--4xs);
+  padding-left: calc(var(--spacing--2xs) + var(--spacing--3xs));
+}
+._categoryPill_14qng_265 {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing--5xs);
+  padding: var(--spacing--5xs) var(--spacing--3xs);
+  background: var(--color--background);
+  border: var(--border);
+  border-radius: var(--radius);
+  font-size: var(--font-size--3xs);
+  color: var(--color--text--tint-1);
+}
+._categoryPillDisabled_14qng_277 {
+  opacity: 0.4;
+}
+._categorySublabel_14qng_281 {
+  color: var(--color--text--tint-1);
+}
+._waitingRow_14qng_285 {
+  display: flex;
+  font-size: var(--font-size--2xs);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing--2xs);
+  padding: var(--spacing--2xs) var(--spacing--xs);
+  border-top: var(--border);
+  color: var(--color--text--tint-1);
+}
+._waitingStatus_14qng_296 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--2xs);
+}
+._instructions_14qng_302 {
+  margin-top: var(--spacing--2xs);
+  font-size: var(--font-size--xs);
+  line-height: var(--line-height--xl);
+}
