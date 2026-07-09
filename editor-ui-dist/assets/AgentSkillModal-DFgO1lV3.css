@@ -1,0 +1,449 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._nav_1abzp_125 {
+  width: 240px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  border-right: var(--border-width) var(--border-style) var(--color--foreground);
+  padding: var(--spacing--sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--sm);
+  background: var(--color--background--light);
+}
+._section_1abzp_137 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--3xs);
+}
+._sectionHeader_1abzp_143 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing--2xs);
+}
+._item_1abzp_150 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--2xs);
+  width: 100%;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  border-radius: var(--border-radius-base);
+  color: var(--color--text);
+  padding: var(--spacing--2xs);
+  text-align: left;
+  cursor: pointer;
+}
+._item_1abzp_150:hover {
+  background: var(--color--background--light-2);
+}
+._icon_1abzp_168 {
+  flex-shrink: 0;
+}
+._referenceRow_1abzp_172 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--3xs);
+  width: 100%;
+  min-width: 0;
+  border-radius: var(--border-radius-base);
+}
+._referenceRow_1abzp_172 ._removeReference_1abzp_180 {
+  opacity: 0;
+}
+._referenceRow_1abzp_172:hover, ._referenceRow_1abzp_172:focus-within {
+  background: var(--color--background--light-2);
+}
+._referenceRow_1abzp_172:hover ._removeReference_1abzp_180, ._referenceRow_1abzp_172:focus-within ._removeReference_1abzp_180 {
+  opacity: 1;
+}
+._reference_1abzp_172 {
+  flex: 1;
+  padding-left: var(--spacing--xs);
+}
+._reference_1abzp_172:hover {
+  background: transparent;
+}
+._sectionTitle_1abzp_198 {
+  padding-inline: var(--spacing--2xs);
+}
+._addReference_1abzp_202 {
+  width: var(--spacing--lg);
+  height: var(--spacing--lg);
+}
+._removeReference_1abzp_180 {
+  width: var(--spacing--lg);
+  height: var(--spacing--lg);
+  margin-left: auto;
+  margin-right: var(--spacing--2xs);
+  flex-shrink: 0;
+}
+._selected_1abzp_215 {
+  background: var(--color--background--light-2);
+}
+._path_1abzp_219 {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._panel_edikr_125 {
+  padding: var(--spacing--lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  gap: var(--spacing--sm);
+  width: 100%;
+}
+._scrollable_edikr_136 {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+._field_edikr_142 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--3xs);
+}
+._importActions_edikr_148 {
+  display: flex;
+  gap: var(--spacing--2xs);
+}
+._instructionsField_edikr_153 {
+  flex: 1;
+  min-height: 0;
+}
+._fileInput_edikr_158 {
+  display: none;
+}
+._editor_edikr_162 {
+  flex: 1;
+  min-height: 0;
+}
+._allowedTools_edikr_167 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing--2xs);
+  margin-top: var(--spacing--5xs);
+}
+._allowedToolChip_edikr_175 {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing--2xs);
+  height: var(--height--md);
+  max-width: min(12rem, 100%);
+  padding: var(--spacing--xs) var(--spacing--4xs) var(--spacing--xs) var(--spacing--xs);
+  border: var(--border);
+  border-radius: var(--radius--full);
+  background: light-dark(var(--background--surface), var(--background--subtle));
+  box-shadow: var(--shadow--xs);
+}
+._allowedToolLabel_edikr_188 {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: var(--font-weight--medium);
+}
+._allowedToolRemove_edikr_196 {
+  --button--color--background-hover: transparent;
+  --button--color--background-active: transparent;
+}
+._allowedToolOptions_edikr_201 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing--2xs);
+  margin-top: var(--spacing--sm);
+}
+._allowedToolOption_edikr_201 {
+  max-width: min(12rem, 100%);
+}
+._fullHeightEditor_edikr_212 {
+  height: 100%;
+}
+._fullHeightEditor_edikr_212 .n8n-markdown {
+  min-height: 100%;
+}
+._editorLabel_edikr_219 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  gap: var(--spacing--2xs);
+}
+._editorMeta_edikr_227 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--4xs);
+}
+._content_1pnuy_2 {
+	height: 620px;
+	min-height: 0;
+	margin: 0 calc(-1 * var(--spacing--lg)) calc(-1 * var(--spacing--lg));
+	display: flex;
+}
+._modal_1pnuy_9 {
+.modal-content {
+		overflow: hidden;
+}
+}
+._footer_1pnuy_15 {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--spacing--2xs);
+}
+._footerActions_1pnuy_21 {
+	display: flex;
+	gap: var(--spacing--2xs);
+	margin-left: auto;
+}
