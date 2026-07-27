@@ -1,0 +1,213 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._wrapper_1xqun_125 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--sm);
+  padding: var(--spacing--lg);
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+._embedded_1xqun_137 {
+  height: auto;
+  padding: 0;
+  overflow-y: visible;
+}
+._tableContainer_1xqun_143 {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+._titleCell_1xqun_150 {
+  width: 46%;
+}
+._sessionTitle_1xqun_154 {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--text-color);
+  font-size: var(--font-size--sm);
+  font-weight: var(--font-weight--medium);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+._originCell_1xqun_165,
+._dateCell_1xqun_166,
+._tokenCell_1xqun_167,
+._durationCell_1xqun_168 {
+  width: 1%;
+  white-space: nowrap;
+}
+._originPill_1xqun_173 {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing--4xs);
+  padding: var(--spacing--5xs) var(--spacing--xs);
+  border: var(--border);
+  border-radius: var(--radius--xl);
+  color: var(--text-color);
+  font-size: var(--font-size--sm);
+  font-weight: var(--font-weight--medium);
+  line-height: var(--line-height--sm);
+  white-space: nowrap;
+}
+._dateCell_1xqun_166,
+._tokenCell_1xqun_167,
+._durationCell_1xqun_168 {
+  color: var(--text-color--subtler);
+  font-size: var(--font-size--sm);
+  font-weight: var(--font-weight--medium);
+}
+._actionCell_1xqun_195 {
+  width: 1%;
+  min-width: var(--spacing--2xl);
+  color: var(--text-color--subtler);
+  white-space: nowrap;
+}
+._clickableRow_1xqun_202 {
+  cursor: pointer;
+}
+._clickableRow_1xqun_202 td {
+  color: var(--text-color--subtler);
+}
+._clickableRow_1xqun_202 ._actionCell_1xqun_195 {
+  text-align: right;
+}
+._clickableRow_1xqun_202:hover {
+  background-color: var(--background--hover);
+}
+._lastRow_1xqun_215 td {
+  text-align: center;
+}
+._lastRow_1xqun_215 td button {
+  margin: 0 auto;
+}
+._lastRow_1xqun_215:hover {
+  background-color: var(--background--surface) !important;
+}

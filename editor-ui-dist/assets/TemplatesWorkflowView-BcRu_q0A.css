@@ -1,0 +1,202 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._notFound_x9bex_125 {
+  padding-top: var(--spacing--sm);
+}
+._previewWrapper_x9bex_129 {
+  position: relative;
+}
+._image_x9bex_133 {
+  width: 100%;
+  height: 500px;
+  border: var(--border);
+  overflow: hidden;
+}
+._image_x9bex_133 img {
+  width: 100%;
+}
+._button_x9bex_143 {
+  position: absolute;
+  bottom: var(--spacing--sm);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--canvas-select-box--z);
+}
+._contentContainer_x9bex_151 {
+  max-width: var(--content-container--width);
+  margin: var(--spacing--lg) auto 0;
+  padding: 0 var(--spacing--2xl);
+}
+._content_x9bex_151 {
+  display: flex;
+  gap: var(--spacing--lg);
+}
+@media (max-width: 768px) {
+._content_x9bex_151 {
+    display: block;
+}
+}
+._templateActions_x9bex_167 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing--xs);
+}
+._startWithAi_x9bex_174._startWithAi_x9bex_174 {
+  --button--color: var(--assistant--color--highlight-2);
+  border: 1px solid transparent;
+  background: var(--assistant--button--color--background--gradient) padding-box, var(--assistant--color--highlight-gradient) border-box;
+}
+._startWithAi_x9bex_174._startWithAi_x9bex_174:hover {
+  background: var(--assistant--button--color--background--hover) padding-box, var(--assistant--button--color--background--gradient--hover) padding-box, var(--assistant--color--highlight-gradient--reverse) border-box;
+}
+._startWithAi_x9bex_174._startWithAi_x9bex_174:active {
+  background: var(--assistant--button--color--background--active) padding-box, var(--assistant--button--color--background--gradient--active) padding-box, var(--assistant--color--highlight-gradient--reverse) border-box;
+}
+._startWithAi_x9bex_174._startWithAi_x9bex_174 span {
+  background: var(--assistant--color--highlight-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+._templateCard_x9bex_192 {
+  width: 380px;
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--spacing--lg);
+  align-self: flex-start;
+}
+@media (max-width: 768px) {
+._templateCard_x9bex_192 {
+    width: 100%;
+    position: static;
+    margin-bottom: var(--spacing--lg);
+}
+}
+._markdown_x9bex_207 {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: var(--spacing--lg);
+}

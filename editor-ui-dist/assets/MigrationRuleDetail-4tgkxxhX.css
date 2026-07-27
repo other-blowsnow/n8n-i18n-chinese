@@ -1,0 +1,24 @@
+
+._backButton_1kw04_2 {
+	padding-left: 0;
+}
+._clickableRow_1kw04_6 {
+	cursor: pointer;
+}
+._filterControls_1kw04_10 {
+	display: flex;
+	gap: var(--spacing--xs);
+	margin-bottom: var(--spacing--md);
+	align-items: center;
+	justify-content: end;
+}
+._filterControls_1kw04_10 > :first-child {
+	flex: 1;
+	max-width: 400px;
+}
+._NoLineBreak_1kw04_23 {
+	white-space: nowrap;
+}
+._UnderlinedText_1kw04_27 {
+	text-decoration: underline;
+}
