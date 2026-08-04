@@ -1,0 +1,28 @@
+
+/* Mirrors N8nSettingsPageHeader's self-capping so the header column stays centered
+   while the table below spans the full-width layout. */
+._pageHeader_wd5rq_4 {
+	width: 100%;
+	max-width: var(--settings-content--max-width, 45rem);
+	margin-inline: auto;
+}
+._clickableRow_wd5rq_10 {
+	cursor: pointer;
+}
+._filterControls_wd5rq_14 {
+	display: flex;
+	gap: var(--spacing--xs);
+	margin-bottom: var(--spacing--md);
+	align-items: center;
+	justify-content: end;
+}
+._filterControls_wd5rq_14 > :first-child {
+	flex: 1;
+	max-width: 400px;
+}
+._NoLineBreak_wd5rq_27 {
+	white-space: nowrap;
+}
+._UnderlinedText_wd5rq_31 {
+	text-decoration: underline;
+}
