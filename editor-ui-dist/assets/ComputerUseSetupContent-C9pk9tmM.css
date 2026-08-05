@@ -1,0 +1,285 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._body_kak6j_125 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--sm);
+  padding: var(--spacing--md);
+}
+._bodyEmbedded_kak6j_132 {
+  padding: 0;
+}
+._header_kak6j_136 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing--xs);
+}
+._title_kak6j_143 {
+  margin: 0;
+  font-size: var(--font-size--xl);
+}
+._textBlock_kak6j_148 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--2xs);
+  font-size: var(--font-size--2xs);
+  line-height: var(--line-height--xl);
+  color: var(--color--text--tint-1);
+}
+._osTabs_kak6j_157 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing--4xs);
+  gap: var(--spacing--4xs);
+  background: var(--color--foreground);
+}
+._osTab_kak6j_157 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing--2xs);
+  border: 0;
+  border-radius: var(--radius);
+  padding: var(--spacing--2xs);
+  background: transparent;
+  color: var(--color--text--tint-1);
+  font-weight: var(--font-weight--bold);
+  cursor: pointer;
+  opacity: 0.7;
+}
+._osTabActive_kak6j_182 {
+  background: var(--color--background--light-2);
+  color: var(--color--text);
+  opacity: 1;
+}
+._osTabIcon_kak6j_188 {
+  width: var(--spacing--sm);
+  height: var(--spacing--sm);
+}
+._commandCard_kak6j_193 {
+  border: var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+._commandRow_kak6j_199 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing--2xs);
+  padding: var(--spacing--xs);
+  background: var(--color--neutral-950);
+}
+._commandText_kak6j_208 {
+  color: var(--color--neutral-300);
+  white-space: nowrap;
+  overflow: auto;
+  font-size: var(--font-size--xs);
+  font-family: monospace;
+}
+._commandText_kak6j_208::-webkit-scrollbar {
+  display: none;
+}
+._commandText_kak6j_208 {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+._commandTextFaded_kak6j_223 {
+  mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+}
+._copyButton_kak6j_227 {
+  flex-shrink: 0;
+  color: var(--color--neutral-300);
+}
+._connectedBlock_kak6j_232 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--3xs);
+  padding: var(--spacing--2xs) var(--spacing--xs);
+  background: var(--color--foreground--tint-2);
+  border-radius: var(--radius--lg);
+}
+._statusRow_kak6j_241 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--3xs);
+}
+._statusDot_kak6j_247 {
+  width: var(--spacing--2xs);
+  height: var(--spacing--2xs);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+._statusDotConnected_kak6j_254 {
+  background: var(--color--success);
+}
+._directoryRow_kak6j_258 {
+  padding-left: calc(var(--spacing--2xs) + var(--spacing--3xs));
+}
+._toolCategories_kak6j_262 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing--4xs);
+  padding-left: calc(var(--spacing--2xs) + var(--spacing--3xs));
+}
+._categoryPill_kak6j_269 {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing--5xs);
+  padding: var(--spacing--5xs) var(--spacing--3xs);
+  background: var(--color--background);
+  border: var(--border);
+  border-radius: var(--radius);
+  font-size: var(--font-size--3xs);
+  color: var(--color--text--tint-1);
+}
+._categoryPillDisabled_kak6j_281 {
+  opacity: 0.4;
+}
+._categorySublabel_kak6j_285 {
+  color: var(--color--text--tint-1);
+}
+._waitingRow_kak6j_289 {
+  display: flex;
+  font-size: var(--font-size--2xs);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing--2xs);
+  padding: var(--spacing--2xs) var(--spacing--xs);
+  border-top: var(--border);
+  color: var(--color--text--tint-1);
+}
+._waitingStatus_kak6j_300 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--2xs);
+}
+._instructions_kak6j_306 {
+  margin-top: var(--spacing--2xs);
+  font-size: var(--font-size--xs);
+  line-height: var(--line-height--xl);
+}

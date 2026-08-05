@@ -1,0 +1,629 @@
+/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._info_1svef_125 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing--4xs);
+  min-width: 0;
+}
+._title_1svef_132 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing--3xs);
+}
+._envInfo_1svef_138 {
+  display: inline-flex;
+  align-items: center;
+  color: var(--icon-color);
+  border-radius: var(--radius--4xs);
+}
+._envInfo_1svef_138:hover, ._envInfo_1svef_138:focus-visible {
+  color: var(--icon-color--strong);
+}
+._envInfo_1svef_138:focus-visible {
+  outline: var(--border-width) solid var(--border-color--strong);
+  outline-offset: var(--spacing--4xs);
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+/*
+ * No status-dot primitive exists in the design system (N8nPulse is a fixed-size
+ * hero element), so this stays a tokens-only local component. Green + pulse only:
+ * the disabled state renders a plain "Enable" action button with no dot at all.
+ */
+._dot_616g0_130 {
+  display: inline-block;
+  width: var(--spacing--2xs);
+  height: var(--spacing--2xs);
+  flex-shrink: 0;
+  border-radius: var(--radius--full);
+  background-color: var(--color--success);
+  animation: _status-dot-pulse_616g0_1 calc(var(--duration--slow) * 2) var(--easing--ease-out) infinite;
+}
+@keyframes _status-dot-pulse_616g0_1 {
+from {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color--success) 55%, transparent);
+}
+to {
+    box-shadow: 0 0 0 var(--spacing--3xs) color-mix(in srgb, var(--color--success) 0%, transparent);
+}
+}
+@media (prefers-reduced-motion: reduce) {
+._dot_616g0_130 {
+    animation: none;
+}
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+/*
+ * Destructive menu item: native at rest and on hover (standard hover surface),
+ * except the label and icon turn the design system's danger colors.
+ */
+._dangerItem_lxwz8_129:not([data-disabled]):hover span, ._dangerItem_lxwz8_129:not([data-disabled])[data-highlighted] span, ._dangerItem_lxwz8_129:not([data-disabled])[aria-selected=true] span {
+  color: var(--color--text--danger);
+}
+._dangerItem_lxwz8_129:not([data-disabled]):hover svg, ._dangerItem_lxwz8_129:not([data-disabled])[data-highlighted] svg, ._dangerItem_lxwz8_129:not([data-disabled])[aria-selected=true] svg {
+  color: var(--color--text--danger) !important;
+}/* BEM support Func
+ -------------------------- */
+/* Transition
+-------------------------- */
+/* Color
+-------------------------- */
+/* Link
+-------------------------- */
+/* Border
+-------------------------- */
+/* Outline
+-------------------------- */
+/* Box shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Typography
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* MessageBox
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popup
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Timeline
+--------------------------*/
+/* Backtop
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
+/* Form
+-------------------------- */
+/* Avatar
+--------------------------*/
+/* Break-point
+--------------------------*/
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Focus State
+ -------------------------- */
+._layout_1yqe3_125 {
+  padding-top: 0;
+}
+._settingsContent_1yqe3_129 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+._saveBar_1yqe3_135 {
+  /*
+   * Same separation sections keep between each other (32px), so the bar reads as a
+   * page-level action rather than part of the preceding Tracing section.
+   */
+  margin-block-start: var(--spacing--xl);
+}
+._loading_1yqe3_143 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing--2xl);
+  color: var(--icon-color--subtle);
+}
+._control_1yqe3_151 {
+  width: 100%;
+}
+._headersBlock_1yqe3_155 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing--2xs);
+  width: 100%;
+}
+._headerRow_1yqe3_163 {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing--2xs);
+  width: 100%;
+}
+._headerRow_1yqe3_163 > div {
+  flex: 1;
+  min-width: 0;
+}
+._headerRemove_1yqe3_174 {
+  display: flex;
+  flex: 0 0 auto !important;
+  align-items: center;
+  justify-content: center;
+  height: var(--height--lg);
+}
+._addHeaderButton_1yqe3_182 {
+  margin-top: var(--spacing--4xs);
+}
+._inputWithSlug_1yqe3_186 {
+  display: flex;
+  align-items: stretch;
+}
+._inputWithSlug_1yqe3_186 > :first-child {
+  --input--radius--top-right: 0;
+  --input--radius--bottom-right: 0;
+  width: var(--spacing--4xl);
+  min-width: 0;
+}
+._slug_1yqe3_197 {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--spacing--2xs);
+  border: var(--border-width) solid var(--border-color);
+  border-left: none;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  background: var(--background--hover);
+  color: var(--text-color--subtle);
+  font-size: var(--font-size--xs);
+  white-space: nowrap;
+}
