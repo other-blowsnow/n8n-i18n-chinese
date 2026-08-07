@@ -1,0 +1,36 @@
+
+._NoIssuesContainer_1o8ra_2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: var(--spacing--4xl) 0;
+}
+
+._CardTitleContainer_18p7b_2 {
+	display: flex;
+	align-items: center;
+	margin-bottom: var(--spacing--2xs);
+	gap: var(--spacing--2xs);
+}
+._NoLineBreak_18p7b_9 {
+	white-space: nowrap;
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing--4xs);
+}
+._ActionBar_18p7b_16 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: var(--spacing--sm);
+}
+._PLoading_18p7b_23 {
+.el-skeleton__p {
+		margin-top: 0;
+}
+}
+._UnderlinedText_18p7b_29 {
+	text-decoration: underline;
+}
