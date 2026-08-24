@@ -158,7 +158,12 @@ function collectMessages(oldSourceLanguages, newSourceLanguages, targetLanguages
 async function run(){
     const oldEnLanguages = require("./en.json");
     const newEnNodesLanguages = fs.existsSync("./en-nodes.json") ? require("./en-nodes.json") : {};
-    let newEnLanguages = await fetch("https://raw.githubusercontent.com/n8n-io/n8n/master/packages/frontend/%40n8n/i18n/src/locales/en.json")
+    const enJsonUrl = "https://raw.githubusercontent.com/n8n-io/n8n/master/packages/frontend/%40n8n/i18n/src/locales/en.json";
+    const parsedEnJsonUrl = new URL(enJsonUrl);
+    if (parsedEnJsonUrl.hostname !== "raw.githubusercontent.com") {
+        throw new Error(`Fetch URL not allowed: ${parsedEnJsonUrl.hostname}`);
+    }
+    let newEnLanguages = await fetch(enJsonUrl)
         .then(res => res.json())
 
     for (const targetLanguage of targetLanguages) {
